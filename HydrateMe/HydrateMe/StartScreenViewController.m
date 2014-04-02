@@ -267,15 +267,7 @@ NSString *actlevel = @"medium";
     [self.sportyButtonOutlet setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     self.sportyButtonOutlet.backgroundColor =[UIColor greenColor];
     
-    
-    
-    
-    //[lazySelected setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ];
-    // [lazySelected addTarget:self action:@selector(changeButtonBackGroundColor:) forControlEvents:UIControlEventTouchDown];
-    //  [lazySelected addTarget:self action:@selector(setButtonBackGroundColorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //    [mediumSelected addTarget:self action:@selector(setButtonBackGroundColorNotSelected:) forControlEvents:UIControlEventTouchUpInside];
-    
+
     
     
 }
@@ -380,14 +372,6 @@ NSString *actlevel = @"medium";
         [context save:&error];
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 
