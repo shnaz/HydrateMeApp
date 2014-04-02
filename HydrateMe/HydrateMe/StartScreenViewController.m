@@ -47,7 +47,6 @@ NSString *actlevel = @"medium";
     userTemperatureGolabal=[NSNumber numberWithInt:1];
 	// Do any additional setup after loading the view.
     
-    // self.weightArray = [[NSArray alloc] initWithObjects:@"78",@"79",@"80",@"81",@"82",@"83", nil];
     [self.weightPicker setHidden:YES];
     
     userActivityGolabal =[NSNumber numberWithDouble:1.2];
@@ -64,6 +63,8 @@ NSString *actlevel = @"medium";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - PickerView
+
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -77,17 +78,18 @@ NSString *actlevel = @"medium";
     return 100;
 }
 
-
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    //return [self.weightArray objectAtIndex:row];
-    
     NSNumber *weight = [NSNumber numberWithInt:row + 27];
-    //NSAttributedString *attString = [[NSAttributedString alloc] initWithString:[weight stringValue] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    return [weight stringValue];
-    //return attString;
+    
+    
+    NSString *title = [weight stringValue];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+    
 }
+
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
