@@ -14,7 +14,6 @@
 		D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60B927718EC304000AF04DE /* InfoPlist.strings */; };
 		D60B927B18EC304000AF04DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B927A18EC304000AF04DE /* main.m */; };
 		D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B927E18EC304000AF04DE /* AppDelegate.m */; };
-		D60B928218EC304000AF04DE /* HydrateMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */; };
 		D60B928418EC304000AF04DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60B928318EC304000AF04DE /* Images.xcassets */; };
 		D60B928B18EC304000AF04DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B928A18EC304000AF04DE /* XCTest.framework */; };
 		D60B928C18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
@@ -22,6 +21,13 @@
 		D60B928E18EC304000AF04DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927218EC304000AF04DE /* CoreData.framework */; };
 		D60B929618EC304000AF04DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60B929418EC304000AF04DE /* InfoPlist.strings */; };
 		D60B929818EC304000AF04DE /* HydrateMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B929718EC304000AF04DE /* HydrateMeTests.m */; };
+		D60B92A218EC374300AF04DE /* HydrateMeDB.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D60B92A118EC374300AF04DE /* HydrateMeDB.xcdatamodel */; };
+		D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A318EC380D00AF04DE /* womanwhite.png */; };
+		D60B92A818EC380D00AF04DE /* womanblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A418EC380D00AF04DE /* womanblue.png */; };
+		D60B92A918EC380D00AF04DE /* manblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A518EC380D00AF04DE /* manblue.png */; };
+		D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A618EC380D00AF04DE /* manwhite.png */; };
+		D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60B92AD18EC386D00AF04DE /* Main.storyboard */; };
+		D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B92B018EC395300AF04DE /* StartScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +52,20 @@
 		D60B927C18EC304000AF04DE /* HydrateMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HydrateMe-Prefix.pch"; sourceTree = "<group>"; };
 		D60B927D18EC304000AF04DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D60B927E18EC304000AF04DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HydrateMe.xcdatamodel; sourceTree = "<group>"; };
 		D60B928318EC304000AF04DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D60B928918EC304000AF04DE /* HydrateMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HydrateMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B928A18EC304000AF04DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D60B929318EC304000AF04DE /* HydrateMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HydrateMeTests-Info.plist"; sourceTree = "<group>"; };
 		D60B929518EC304000AF04DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D60B929718EC304000AF04DE /* HydrateMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HydrateMeTests.m; sourceTree = "<group>"; };
+		D60B92A118EC374300AF04DE /* HydrateMeDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HydrateMeDB.xcdatamodel; sourceTree = "<group>"; };
+		D60B92A318EC380D00AF04DE /* womanwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womanwhite.png; sourceTree = "<group>"; };
+		D60B92A418EC380D00AF04DE /* womanblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womanblue.png; sourceTree = "<group>"; };
+		D60B92A518EC380D00AF04DE /* manblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manblue.png; sourceTree = "<group>"; };
+		D60B92A618EC380D00AF04DE /* manwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manwhite.png; sourceTree = "<group>"; };
+		D60B92AD18EC386D00AF04DE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D60B92AF18EC395300AF04DE /* StartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenViewController.h; sourceTree = "<group>"; };
+		D60B92B018EC395300AF04DE /* StartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +131,11 @@
 				D60B927D18EC304000AF04DE /* AppDelegate.h */,
 				D60B927E18EC304000AF04DE /* AppDelegate.m */,
 				D60B928318EC304000AF04DE /* Images.xcassets */,
-				D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */,
+				D60B92A118EC374300AF04DE /* HydrateMeDB.xcdatamodel */,
 				D60B927518EC304000AF04DE /* Supporting Files */,
+				D60B92AD18EC386D00AF04DE /* Main.storyboard */,
+				D60B92AF18EC395300AF04DE /* StartScreenViewController.h */,
+				D60B92B018EC395300AF04DE /* StartScreenViewController.m */,
 			);
 			path = HydrateMe;
 			sourceTree = "<group>";
@@ -127,6 +143,10 @@
 		D60B927518EC304000AF04DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D60B92A318EC380D00AF04DE /* womanwhite.png */,
+				D60B92A418EC380D00AF04DE /* womanblue.png */,
+				D60B92A518EC380D00AF04DE /* manblue.png */,
+				D60B92A618EC380D00AF04DE /* manwhite.png */,
 				D60B927618EC304000AF04DE /* HydrateMe-Info.plist */,
 				D60B927718EC304000AF04DE /* InfoPlist.strings */,
 				D60B927A18EC304000AF04DE /* main.m */,
@@ -228,7 +248,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
+				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
+				D60B92A818EC380D00AF04DE /* womanblue.png in Resources */,
+				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
+				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,9 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D60B928218EC304000AF04DE /* HydrateMe.xcdatamodeld in Sources */,
+				D60B92A218EC374300AF04DE /* HydrateMeDB.xcdatamodel in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
+				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,19 +483,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */,
-			);
-			currentVersion = D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */;
-			path = HydrateMe.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D60B926118EC304000AF04DE /* Project object */;
 }
