@@ -252,13 +252,6 @@ NSString *actlevel = @"medium";
 }
 
 
-
-
-
-
-
-
-
 //ACTIVITY BUTTONS
 
 - (IBAction)lazy:(id)sender {
