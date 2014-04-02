@@ -9,7 +9,7 @@
 #import "StartScreenViewController.h"
 #define selectedButtonColor [UIColor colorWithRed:(41/255.0) green:(128/255.0) blue:(185/255.0) alpha:1.0]
 #define unselectedButtonColor [UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0]
-#define selectedLabelColor [UIColor colorWithRed:(52/255.0) green:(73/255.0) blue:(94/255.0) alpha:1.0]
+#define selectedLabelColor [UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0]
 #define unselectedLabelColor [UIColor whiteColor]
 
 @interface StartScreenViewController ()
