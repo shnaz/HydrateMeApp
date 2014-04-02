@@ -37,6 +37,8 @@
 		D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A618EC380D00AF04DE /* manwhite.png */; };
 		D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60B92AD18EC386D00AF04DE /* Main.storyboard */; };
 		D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B92B018EC395300AF04DE /* StartScreenViewController.m */; };
+		D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F318EC6945001A8BAA /* AppIcon.png */; };
+		D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F418EC6945001A8BAA /* AppIcon_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		D60B92AD18EC386D00AF04DE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D60B92AF18EC395300AF04DE /* StartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenViewController.h; sourceTree = "<group>"; };
 		D60B92B018EC395300AF04DE /* StartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
+		D62A58F318EC6945001A8BAA /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		D62A58F418EC6945001A8BAA /* AppIcon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 		D60B927518EC304000AF04DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D62A58F318EC6945001A8BAA /* AppIcon.png */,
+				D62A58F418EC6945001A8BAA /* AppIcon_1.png */,
 				0031864618EC526300528B23 /* Images */,
 				D60B92A318EC380D00AF04DE /* womanwhite.png */,
 				D60B92A418EC380D00AF04DE /* womanblue.png */,
@@ -317,7 +323,9 @@
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
 				D60B92A818EC380D00AF04DE /* womanblue.png in Resources */,
+				D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */,
 				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
+				D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */,
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
