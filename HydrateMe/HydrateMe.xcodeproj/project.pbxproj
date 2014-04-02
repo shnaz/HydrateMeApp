@@ -14,6 +14,8 @@
 		0031865018EC5DB500528B23 /* statistics_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864A18EC5DB500528B23 /* statistics_final.png */; };
 		0031865118EC5DB500528B23 /* sugar_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864B18EC5DB500528B23 /* sugar_final.png */; };
 		0031865218EC5DB500528B23 /* water_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864C18EC5DB500528B23 /* water_final.png */; };
+		0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031865318EC64E700528B23 /* caffein_unselected_final.png */; };
+		0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */ = {isa = PBXBuildFile; fileRef = 0031865418EC64E700528B23 /* sugar_unselected_final.psd */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -56,6 +58,8 @@
 		0031864A18EC5DB500528B23 /* statistics_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_final.png; sourceTree = "<group>"; };
 		0031864B18EC5DB500528B23 /* sugar_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sugar_final.png; sourceTree = "<group>"; };
 		0031864C18EC5DB500528B23 /* water_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_final.png; sourceTree = "<group>"; };
+		0031865318EC64E700528B23 /* caffein_unselected_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_unselected_final.png; sourceTree = "<group>"; };
+		0031865418EC64E700528B23 /* sugar_unselected_final.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = sugar_unselected_final.psd; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +116,8 @@
 		0031864618EC526300528B23 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0031865318EC64E700528B23 /* caffein_unselected_final.png */,
+				0031865418EC64E700528B23 /* sugar_unselected_final.psd */,
 				0031864718EC5DB500528B23 /* caffein_final.png */,
 				0031864818EC5DB500528B23 /* glass_final.png */,
 				0031864918EC5DB500528B23 /* settings_final.png */,
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */,
 				0031864E18EC5DB500528B23 /* glass_final.png in Resources */,
 				0031864F18EC5DB500528B23 /* settings_final.png in Resources */,
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
@@ -314,6 +321,7 @@
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
+				0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */,
 				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
 				0031865018EC5DB500528B23 /* statistics_final.png in Resources */,
 			);
