@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
+		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
+		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
+		D60B927318EC304000AF04DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927218EC304000AF04DE /* CoreData.framework */; };
+		D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60B927718EC304000AF04DE /* InfoPlist.strings */; };
+		D60B927B18EC304000AF04DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B927A18EC304000AF04DE /* main.m */; };
+		D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B927E18EC304000AF04DE /* AppDelegate.m */; };
+		D60B928218EC304000AF04DE /* HydrateMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */; };
+		D60B928418EC304000AF04DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60B928318EC304000AF04DE /* Images.xcassets */; };
+		D60B928B18EC304000AF04DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B928A18EC304000AF04DE /* XCTest.framework */; };
+		D60B928C18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
+		D60B928D18EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
+		D60B928E18EC304000AF04DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927218EC304000AF04DE /* CoreData.framework */; };
+		D60B929618EC304000AF04DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60B929418EC304000AF04DE /* InfoPlist.strings */; };
+		D60B929818EC304000AF04DE /* HydrateMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B929718EC304000AF04DE /* HydrateMeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D60B928F18EC304000AF04DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60B926118EC304000AF04DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D60B926818EC304000AF04DE;
+			remoteInfo = HydrateMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D60B927018EC304000AF04DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D60B927218EC304000AF04DE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D60B927618EC304000AF04DE /* HydrateMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HydrateMe-Info.plist"; sourceTree = "<group>"; };
+		D60B927818EC304000AF04DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D60B927A18EC304000AF04DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D60B927C18EC304000AF04DE /* HydrateMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HydrateMe-Prefix.pch"; sourceTree = "<group>"; };
+		D60B927D18EC304000AF04DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D60B927E18EC304000AF04DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HydrateMe.xcdatamodel; sourceTree = "<group>"; };
+		D60B928318EC304000AF04DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D60B928918EC304000AF04DE /* HydrateMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HydrateMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60B928A18EC304000AF04DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D60B929318EC304000AF04DE /* HydrateMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HydrateMeTests-Info.plist"; sourceTree = "<group>"; };
+		D60B929518EC304000AF04DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D60B929718EC304000AF04DE /* HydrateMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HydrateMeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D60B926618EC304000AF04DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */,
+				D60B927318EC304000AF04DE /* CoreData.framework in Frameworks */,
+				D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */,
+				D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60B928618EC304000AF04DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B928B18EC304000AF04DE /* XCTest.framework in Frameworks */,
+				D60B928E18EC304000AF04DE /* CoreData.framework in Frameworks */,
+				D60B928D18EC304000AF04DE /* UIKit.framework in Frameworks */,
+				D60B928C18EC304000AF04DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D60B926018EC304000AF04DE = {
+			isa = PBXGroup;
+			children = (
+				D60B927418EC304000AF04DE /* HydrateMe */,
+				D60B929118EC304000AF04DE /* HydrateMeTests */,
+				D60B926B18EC304000AF04DE /* Frameworks */,
+				D60B926A18EC304000AF04DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D60B926A18EC304000AF04DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D60B926918EC304000AF04DE /* HydrateMe.app */,
+				D60B928918EC304000AF04DE /* HydrateMeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D60B926B18EC304000AF04DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D60B926C18EC304000AF04DE /* Foundation.framework */,
+				D60B926E18EC304000AF04DE /* CoreGraphics.framework */,
+				D60B927018EC304000AF04DE /* UIKit.framework */,
+				D60B927218EC304000AF04DE /* CoreData.framework */,
+				D60B928A18EC304000AF04DE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D60B927418EC304000AF04DE /* HydrateMe */ = {
+			isa = PBXGroup;
+			children = (
+				D60B927D18EC304000AF04DE /* AppDelegate.h */,
+				D60B927E18EC304000AF04DE /* AppDelegate.m */,
+				D60B928318EC304000AF04DE /* Images.xcassets */,
+				D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */,
+				D60B927518EC304000AF04DE /* Supporting Files */,
+			);
+			path = HydrateMe;
+			sourceTree = "<group>";
+		};
+		D60B927518EC304000AF04DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D60B927618EC304000AF04DE /* HydrateMe-Info.plist */,
+				D60B927718EC304000AF04DE /* InfoPlist.strings */,
+				D60B927A18EC304000AF04DE /* main.m */,
+				D60B927C18EC304000AF04DE /* HydrateMe-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D60B929118EC304000AF04DE /* HydrateMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D60B929718EC304000AF04DE /* HydrateMeTests.m */,
+				D60B929218EC304000AF04DE /* Supporting Files */,
+			);
+			path = HydrateMeTests;
+			sourceTree = "<group>";
+		};
+		D60B929218EC304000AF04DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D60B929318EC304000AF04DE /* HydrateMeTests-Info.plist */,
+				D60B929418EC304000AF04DE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D60B926818EC304000AF04DE /* HydrateMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60B929B18EC304000AF04DE /* Build configuration list for PBXNativeTarget "HydrateMe" */;
+			buildPhases = (
+				D60B926518EC304000AF04DE /* Sources */,
+				D60B926618EC304000AF04DE /* Frameworks */,
+				D60B926718EC304000AF04DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HydrateMe;
+			productName = HydrateMe;
+			productReference = D60B926918EC304000AF04DE /* HydrateMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D60B928818EC304000AF04DE /* HydrateMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60B929E18EC304000AF04DE /* Build configuration list for PBXNativeTarget "HydrateMeTests" */;
+			buildPhases = (
+				D60B928518EC304000AF04DE /* Sources */,
+				D60B928618EC304000AF04DE /* Frameworks */,
+				D60B928718EC304000AF04DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D60B929018EC304000AF04DE /* PBXTargetDependency */,
+			);
+			name = HydrateMeTests;
+			productName = HydrateMeTests;
+			productReference = D60B928918EC304000AF04DE /* HydrateMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D60B926118EC304000AF04DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = UNIGULD;
+				TargetAttributes = {
+					D60B928818EC304000AF04DE = {
+						TestTargetID = D60B926818EC304000AF04DE;
+					};
+				};
+			};
+			buildConfigurationList = D60B926418EC304000AF04DE /* Build configuration list for PBXProject "HydrateMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D60B926018EC304000AF04DE;
+			productRefGroup = D60B926A18EC304000AF04DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D60B926818EC304000AF04DE /* HydrateMe */,
+				D60B928818EC304000AF04DE /* HydrateMeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D60B926718EC304000AF04DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
+				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60B928718EC304000AF04DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B929618EC304000AF04DE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D60B926518EC304000AF04DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B928218EC304000AF04DE /* HydrateMe.xcdatamodeld in Sources */,
+				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
+				D60B927B18EC304000AF04DE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60B928518EC304000AF04DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60B929818EC304000AF04DE /* HydrateMeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D60B929018EC304000AF04DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D60B926818EC304000AF04DE /* HydrateMe */;
+			targetProxy = D60B928F18EC304000AF04DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D60B927718EC304000AF04DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D60B927818EC304000AF04DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D60B929418EC304000AF04DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D60B929518EC304000AF04DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D60B929918EC304000AF04DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D60B929A18EC304000AF04DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D60B929C18EC304000AF04DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
+				INFOPLIST_FILE = "HydrateMe/HydrateMe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D60B929D18EC304000AF04DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
+				INFOPLIST_FILE = "HydrateMe/HydrateMe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D60B929F18EC304000AF04DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HydrateMe.app/HydrateMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HydrateMeTests/HydrateMeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D60B92A018EC304000AF04DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HydrateMe.app/HydrateMe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
+				INFOPLIST_FILE = "HydrateMeTests/HydrateMeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D60B926418EC304000AF04DE /* Build configuration list for PBXProject "HydrateMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60B929918EC304000AF04DE /* Debug */,
+				D60B929A18EC304000AF04DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D60B929B18EC304000AF04DE /* Build configuration list for PBXNativeTarget "HydrateMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60B929C18EC304000AF04DE /* Debug */,
+				D60B929D18EC304000AF04DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D60B929E18EC304000AF04DE /* Build configuration list for PBXNativeTarget "HydrateMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60B929F18EC304000AF04DE /* Debug */,
+				D60B92A018EC304000AF04DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D60B928018EC304000AF04DE /* HydrateMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */,
+			);
+			currentVersion = D60B928118EC304000AF04DE /* HydrateMe.xcdatamodel */;
+			path = HydrateMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D60B926118EC304000AF04DE /* Project object */;
+}
