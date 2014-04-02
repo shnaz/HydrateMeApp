@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
+		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
+		0031864E18EC5DB500528B23 /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
+		0031864F18EC5DB500528B23 /* settings_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864918EC5DB500528B23 /* settings_final.png */; };
+		0031865018EC5DB500528B23 /* statistics_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864A18EC5DB500528B23 /* statistics_final.png */; };
+		0031865118EC5DB500528B23 /* sugar_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864B18EC5DB500528B23 /* sugar_final.png */; };
+		0031865218EC5DB500528B23 /* water_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864C18EC5DB500528B23 /* water_final.png */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -44,6 +50,12 @@
 /* Begin PBXFileReference section */
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		0031864318EC419B00528B23 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
+		0031864718EC5DB500528B23 /* caffein_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_final.png; sourceTree = "<group>"; };
+		0031864818EC5DB500528B23 /* glass_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_final.png; sourceTree = "<group>"; };
+		0031864918EC5DB500528B23 /* settings_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_final.png; sourceTree = "<group>"; };
+		0031864A18EC5DB500528B23 /* statistics_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_final.png; sourceTree = "<group>"; };
+		0031864B18EC5DB500528B23 /* sugar_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sugar_final.png; sourceTree = "<group>"; };
+		0031864C18EC5DB500528B23 /* water_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_final.png; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +112,12 @@
 		0031864618EC526300528B23 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0031864718EC5DB500528B23 /* caffein_final.png */,
+				0031864818EC5DB500528B23 /* glass_final.png */,
+				0031864918EC5DB500528B23 /* settings_final.png */,
+				0031864A18EC5DB500528B23 /* statistics_final.png */,
+				0031864B18EC5DB500528B23 /* sugar_final.png */,
+				0031864C18EC5DB500528B23 /* water_final.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -285,13 +303,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0031864E18EC5DB500528B23 /* glass_final.png in Resources */,
+				0031864F18EC5DB500528B23 /* settings_final.png in Resources */,
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
+				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
 				D60B92A818EC380D00AF04DE /* womanblue.png in Resources */,
 				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
+				0031865218EC5DB500528B23 /* water_final.png in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
+				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
 				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
+				0031865018EC5DB500528B23 /* statistics_final.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
