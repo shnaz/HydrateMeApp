@@ -380,7 +380,7 @@ NSString *actlevel = @"medium";
         
         [newContact setValue: userWeightGolabal forKey:@"weight"];
         [newContact setValue: @"m" forKey:@"gender"];
-        //[newContact setValue: userActivityGolabal forKey:@"activity"];
+        [newContact setValue: userActivityGolabal forKey:@"activity"];
         [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
         
         NSError *error;
@@ -390,9 +390,15 @@ NSString *actlevel = @"medium";
     }
     else{
         
-        [newContact setValue: @"60"   forKey:@"weight"];
+        //TO DO - Save Female DATA
+        //TO DO -
+        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+        
+        [newContact setValue: userWeightGolabal forKey:@"weight"];
         [newContact setValue: @"f" forKey:@"gender"];
-        _change_label.text = @"Female";
+        [newContact setValue: userActivityGolabal forKey:@"activity"];
+        [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
+        
         NSError *error;
         [context save:&error];
         
