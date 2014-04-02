@@ -376,11 +376,11 @@ NSString *actlevel = @"medium";
     if(toggleIsOnman == YES && toggleIsOnwoman == NO){
         // NSNumber *ma = [NSNumber numberWithFloat:80];
         
-        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal intValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
         
         [newContact setValue: userWeightGolabal forKey:@"weight"];
         [newContact setValue: @"m" forKey:@"gender"];
-        [newContact setValue: userActivityGolabal forKey:@"activity"];
+        //[newContact setValue: userActivityGolabal forKey:@"activity"];
         [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
         
         NSError *error;
