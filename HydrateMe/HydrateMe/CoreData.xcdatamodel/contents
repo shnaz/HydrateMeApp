@@ -7,13 +7,13 @@
         <attribute name="temp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="UserData" syncable="YES">
-        <attribute name="activity" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="activity" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="fluidgoal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="LoggingData" positionX="-2916" positionY="-540" width="128" height="103"/>
-        <element name="UserData" positionX="-2916" positionY="-585" width="128" height="103"/>
+        <element name="UserData" positionX="-2916" positionY="-585" width="128" height="105"/>
     </elements>
 </model>
