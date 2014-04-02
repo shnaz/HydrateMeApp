@@ -7,10 +7,13 @@
 //
 
 #import "StartScreenViewController.h"
+#define selectedButtonColor [UIColor colorWithRed:(41/255.0) green:(128/255.0) blue:(185/255.0) alpha:1.0]
+#define unselectedButtonColor [UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0]
+#define selectedLabelColor [UIColor colorWithRed:(52/255.0) green:(73/255.0) blue:(94/255.0) alpha:1.0]
+#define unselectedLabelColor [UIColor whiteColor]
 
 @interface StartScreenViewController ()
--(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(int)activityLevel environmentLevelaug:(int)enviromentLevel;
-
+-(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel;
 
 
 @end
@@ -19,14 +22,12 @@ NSInteger selectedRow = 53;
 NSString *actlevel = @"medium";
 
 
+//[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1]
 
 
 
 
 @implementation StartScreenViewController
-
-
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,6 +49,11 @@ NSString *actlevel = @"medium";
     
     // self.weightArray = [[NSArray alloc] initWithObjects:@"78",@"79",@"80",@"81",@"82",@"83", nil];
     [self.weightPicker setHidden:YES];
+    
+    userActivityGolabal =[NSNumber numberWithDouble:1.2];
+    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
+    NSString *dayW = [NSString stringWithFormat:@"%d", daily];
+    _change_label.text = dayW;
     
     
 }
@@ -96,9 +102,9 @@ NSString *actlevel = @"medium";
     
 }
 
--(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(int)activityLevel environmentLevelaug:(int)enviromentLevel
+-(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel
 {
-    return ((((userWeight)-20)*15)+1500)*activityLevel*enviromentLevel;
+    return ((((userWeight)-20)*15)+1500)*(activityLevel)*(enviromentLevel);
 }
 
 
@@ -257,43 +263,62 @@ NSString *actlevel = @"medium";
 
 - (IBAction)lazy:(id)sender {
     
-    userActivityGolabal =[NSNumber numberWithInt:1];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal intValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+    userActivityGolabal =[NSNumber numberWithDouble:1];
+    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
     NSString *dayW = [NSString stringWithFormat:@"%d", daily];
     _change_label.text = dayW;
     
     
+    //LAZY
+    [self.lazyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+    self.lazyButtonOutlet.backgroundColor = selectedButtonColor;
+    //MEDIUM
+    [self.mediumButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.mediumButtonOutlet.backgroundColor = unselectedButtonColor;
+    //SPORTY
+    [self.sportyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.sportyButtonOutlet.backgroundColor = unselectedButtonColor;
     
-    [self.sportyButtonOutlet setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    self.sportyButtonOutlet.backgroundColor =[UIColor greenColor];
-    
-
-    
-    
+ 
 }
 
 - (IBAction)medium:(id)sender {
     
-    userActivityGolabal =[NSNumber numberWithInt:1.2];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal intValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+    userActivityGolabal =[NSNumber numberWithDouble:1.2];
+    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
     NSString *dayW = [NSString stringWithFormat:@"%d", daily];
     _change_label.text = dayW;
     
     
-    [lazySelected setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ];
-    
-    
+    //LAZY
+    [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.lazyButtonOutlet.backgroundColor = unselectedButtonColor;
+    //MEDIUM
+    [self.mediumButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+    self.mediumButtonOutlet.backgroundColor = selectedButtonColor;
+    //SPORTY
+    [self.sportyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.sportyButtonOutlet.backgroundColor = unselectedButtonColor;
     
 }
 
 - (IBAction)sporty:(id)sender {
-    userActivityGolabal =[NSNumber numberWithInt:1.4];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal intValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+    userActivityGolabal =[NSNumber numberWithDouble:1.4];
+    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
     NSString *dayW = [NSString stringWithFormat:@"%d", daily];
     _change_label.text = dayW;
     
     [lazySelected setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ];
     
+    //LAZY
+    [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.lazyButtonOutlet.backgroundColor = unselectedButtonColor;
+    //MEDIUM
+    [self.mediumButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.mediumButtonOutlet.backgroundColor = unselectedButtonColor;
+    //SPORTY
+    [self.sportyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+    self.sportyButtonOutlet.backgroundColor = selectedButtonColor;
     
 }
 
@@ -373,6 +398,8 @@ NSString *actlevel = @"medium";
         
     }
     
+    //GO TO NEXT VIEW
+    
 }
 
 
@@ -386,7 +413,7 @@ NSString *actlevel = @"medium";
     } else {
         [self.weightPicker setHidden:YES];
         
-        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal intValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
         NSString *dayW = [NSString stringWithFormat:@"%d", daily];
         _change_label.text = dayW;
         
