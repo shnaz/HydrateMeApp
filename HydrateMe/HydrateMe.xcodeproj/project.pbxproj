@@ -97,6 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0031864618EC526300528B23 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		D60B926018EC304000AF04DE = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +153,7 @@
 		D60B927518EC304000AF04DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0031864618EC526300528B23 /* Images */,
 				D60B92A318EC380D00AF04DE /* womanwhite.png */,
 				D60B92A418EC380D00AF04DE /* womanblue.png */,
 				D60B92A518EC380D00AF04DE /* manblue.png */,
