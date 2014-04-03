@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */; };
+		0004ED0118EDE21B00EAE3F5 /* WaterSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */; };
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
 		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
 		0031864E18EC5DB500528B23 /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterSubViewController.h; sourceTree = "<group>"; };
+		0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterSubViewController.m; sourceTree = "<group>"; };
+		0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterSubViewController.xib; sourceTree = "<group>"; };
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		0031864318EC419B00528B23 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 		0031864718EC5DB500528B23 /* caffein_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_final.png; sourceTree = "<group>"; };
@@ -229,6 +234,9 @@
 				D60B92B018EC395300AF04DE /* StartScreenViewController.m */,
 				0031864218EC419B00528B23 /* MainScreenViewController.h */,
 				0031864318EC419B00528B23 /* MainScreenViewController.m */,
+				0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */,
+				0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */,
+				0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
 				0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */,
+				0004ED0118EDE21B00EAE3F5 /* WaterSubViewController.xib in Resources */,
 				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
 				0031865018EC5DB500528B23 /* statistics_final.png in Resources */,
 			);
@@ -355,6 +364,7 @@
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
 				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
 				0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */,
+				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

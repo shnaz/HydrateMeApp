@@ -7,10 +7,14 @@
 //
 
 #import "MainScreenViewController.h"
+#import "WaterSubViewController.h"
 
-@interface MainScreenViewController ()
+@interface MainScreenViewController () <UIScrollViewDelegate>
 
 @end
+
+WaterSubViewController *waterSubViewController;
+
 
 @implementation MainScreenViewController
 
@@ -27,6 +31,29 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    waterSubViewController = [[WaterSubViewController alloc] init];
+    
+    //self.theScrollView.delegate = self;
+    [self.mainScrollView setContentSize:CGSizeMake(3 * self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
+    
+    CGRect aFrame = self.mainScrollView.bounds;
+    waterSubViewController.view.frame = aFrame;
+    [self.mainScrollView addSubview:waterSubViewController.view];
+    
+    
+    aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
+    UIView *view = [[UIView alloc] initWithFrame:aFrame];
+    [view setBackgroundColor:[UIColor redColor]];
+    [self.mainScrollView addSubview:view];
+    
+    
+    aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
+    view = [[UIView alloc] initWithFrame:aFrame];
+    [view setBackgroundColor:[UIColor yellowColor]];
+    [self.mainScrollView addSubview:view];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
