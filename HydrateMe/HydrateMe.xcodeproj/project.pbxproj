@@ -181,14 +181,14 @@
 		D60B927418EC304000AF04DE /* HydrateMe */ = {
 			isa = PBXGroup;
 			children = (
+				D60B927D18EC304000AF04DE /* AppDelegate.h */,
+				D60B927E18EC304000AF04DE /* AppDelegate.m */,
 				D6A0DAC818EC3E8B00E97AE4 /* Models */,
 				D6A0DAC718EC3E6F00E97AE4 /* Controllers */,
 				D6A0DAC618EC3E4800E97AE4 /* Views */,
-				D60B927D18EC304000AF04DE /* AppDelegate.h */,
-				D60B927E18EC304000AF04DE /* AppDelegate.m */,
-				D60B928318EC304000AF04DE /* Images.xcassets */,
 				D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */,
 				D60B927518EC304000AF04DE /* Supporting Files */,
+				D60B928318EC304000AF04DE /* Images.xcassets */,
 			);
 			path = HydrateMe;
 			sourceTree = "<group>";
