@@ -71,9 +71,7 @@ CoffeeSubViewController *coffeeSubViewController;
 {
     // Update the page when more than 50% of the previous/next page is visible
     CGFloat pageWidth = self.mainScrollView.frame.size.width;
-    int page = floor((self.mainScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    NSLog(@"inside scrollviewdidscroll %d", page);
-    
+    int page = floor((self.mainScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;    
     self.mainPageControl.currentPage = page;
 
 }

@@ -155,6 +155,8 @@
                         <color key="backgroundColor" red="0.15686274509803921" green="0.31372549019607843" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="change_label" destination="3bM-xx-675" id="uvE-EO-nvv"/>
                         <outlet property="lazyButtonOutlet" destination="Tbq-8v-QeD" id="Rce-71-VtM"/>
@@ -278,7 +280,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU1-p0-MEN">
                                 <rect key="frame" x="0.0" y="184" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="jm8-ap-n0I" id="8p7-OZ-hX5"/>
                                 </connections>
@@ -290,6 +291,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.31372549019607843" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="mainPageControl" destination="jqq-q4-SSm" id="YTp-2S-et1"/>
                         <outlet property="mainScrollView" destination="qU1-p0-MEN" id="DRf-xc-2Mn"/>

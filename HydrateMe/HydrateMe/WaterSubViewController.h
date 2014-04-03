@@ -10,4 +10,11 @@
 
 @interface WaterSubViewController : UIViewController
 
+
+- (IBAction)largeWaterButton:(id)sender;
+- (IBAction)mediumWaterButton:(id)sender;
+- (IBAction)smallWaterButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
 @end

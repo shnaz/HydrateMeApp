@@ -35,4 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)largeWaterButton:(id)sender {
+    self.testLabel.text = @"500 ml";
+}
+
+- (IBAction)mediumWaterButton:(id)sender {
+    self.testLabel.text = @"330 ml";
+}
+
+- (IBAction)smallWaterButton:(id)sender {
+    self.testLabel.text = @"200 ml";
+}
 @end

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CoffeeSubViewController : UIViewController
+- (IBAction)largeCoffeeButton:(id)sender;
+- (IBAction)mediumCoffeeButton:(id)sender;
+- (IBAction)smallCoffeeButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end

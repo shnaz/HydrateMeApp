@@ -35,4 +35,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)largeCoffeeButton:(id)sender {
+    self.testLabel.text = @"500 ml";
+}
+
+- (IBAction)mediumCoffeeButton:(id)sender {
+    self.testLabel.text = @"330 ml";
+}
+
+- (IBAction)smallCoffeeButton:(id)sender {
+    self.testLabel.text = @"200 ml";
+}
 @end
