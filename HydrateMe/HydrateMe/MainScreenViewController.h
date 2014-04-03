@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *mainPageControl;
+
 @end

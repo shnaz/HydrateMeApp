@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */; };
 		0004ED0118EDE21B00EAE3F5 /* WaterSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */; };
+		0004ED0518EDE9C000EAE3F5 /* SoftDrinkSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */; };
+		0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */; };
+		0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */; };
+		0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */; };
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
 		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
 		0031864E18EC5DB500528B23 /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
@@ -57,6 +61,12 @@
 		0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterSubViewController.h; sourceTree = "<group>"; };
 		0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterSubViewController.m; sourceTree = "<group>"; };
 		0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterSubViewController.xib; sourceTree = "<group>"; };
+		0004ED0218EDE9C000EAE3F5 /* SoftDrinkSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftDrinkSubViewController.h; sourceTree = "<group>"; };
+		0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftDrinkSubViewController.m; sourceTree = "<group>"; };
+		0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoftDrinkSubViewController.xib; sourceTree = "<group>"; };
+		0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeSubViewController.h; sourceTree = "<group>"; };
+		0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeSubViewController.m; sourceTree = "<group>"; };
+		0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeSubViewController.xib; sourceTree = "<group>"; };
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		0031864318EC419B00528B23 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 		0031864718EC5DB500528B23 /* caffein_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_final.png; sourceTree = "<group>"; };
@@ -222,6 +232,9 @@
 		D6A0DAC618EC3E4800E97AE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */,
+				0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */,
+				0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */,
 				D60B92AD18EC386D00AF04DE /* Main.storyboard */,
 			);
 			name = Views;
@@ -236,7 +249,10 @@
 				0031864318EC419B00528B23 /* MainScreenViewController.m */,
 				0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */,
 				0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */,
-				0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */,
+				0004ED0218EDE9C000EAE3F5 /* SoftDrinkSubViewController.h */,
+				0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */,
+				0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */,
+				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -327,6 +343,7 @@
 				0031864E18EC5DB500528B23 /* glass_final.png in Resources */,
 				0031864F18EC5DB500528B23 /* settings_final.png in Resources */,
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
+				0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */,
 				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
@@ -335,6 +352,7 @@
 				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
 				D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */,
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
+				0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
 				0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */,
@@ -364,7 +382,9 @@
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
 				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
 				0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */,
+				0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */,
 				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
+				0004ED0518EDE9C000EAE3F5 /* SoftDrinkSubViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

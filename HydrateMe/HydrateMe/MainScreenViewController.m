@@ -8,13 +8,18 @@
 
 #import "MainScreenViewController.h"
 #import "WaterSubViewController.h"
+#import "SoftDrinkSubViewController.h"
+#import "CoffeeSubViewController.h"
 
 @interface MainScreenViewController () <UIScrollViewDelegate>
+
+
 
 @end
 
 WaterSubViewController *waterSubViewController;
-
+SoftDrinkSubViewController *softDrinkSubviewController;
+CoffeeSubViewController *coffeeSubViewController;
 
 @implementation MainScreenViewController
 
@@ -33,8 +38,10 @@ WaterSubViewController *waterSubViewController;
     // Do any additional setup after loading the view.
     
     waterSubViewController = [[WaterSubViewController alloc] init];
+    softDrinkSubviewController = [[SoftDrinkSubViewController alloc] init];
+    coffeeSubViewController = [[CoffeeSubViewController alloc] init];
     
-    //self.theScrollView.delegate = self;
+    // Initializing middle slider
     [self.mainScrollView setContentSize:CGSizeMake(3 * self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
     
     CGRect aFrame = self.mainScrollView.bounds;
@@ -43,15 +50,13 @@ WaterSubViewController *waterSubViewController;
     
     
     aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
-    UIView *view = [[UIView alloc] initWithFrame:aFrame];
-    [view setBackgroundColor:[UIColor redColor]];
-    [self.mainScrollView addSubview:view];
+    softDrinkSubviewController.view.frame = aFrame;
+    [self.mainScrollView addSubview:softDrinkSubviewController.view];
     
     
     aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
-    view = [[UIView alloc] initWithFrame:aFrame];
-    [view setBackgroundColor:[UIColor yellowColor]];
-    [self.mainScrollView addSubview:view];
+    coffeeSubViewController.view.frame = aFrame;
+    [self.mainScrollView addSubview:coffeeSubViewController.view];
     
     
 }
@@ -60,6 +65,17 @@ WaterSubViewController *waterSubViewController;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Update the page when more than 50% of the previous/next page is visible
+    CGFloat pageWidth = self.mainScrollView.frame.size.width;
+    int page = floor((self.mainScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    NSLog(@"inside scrollviewdidscroll %d", page);
+    
+    self.mainPageControl.currentPage = page;
+
 }
 
 /*
