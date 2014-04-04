@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="LoggingData" syncable="YES">
+    <entity name="LoggingData" representedClassName="LoggingData" syncable="YES">
         <attribute name="date_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fluit_amount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="fluit_type" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,7 +13,7 @@
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LoggingData" positionX="-2916" positionY="-540" width="128" height="103"/>
+        <element name="LoggingData" positionX="-2916" positionY="-540" width="128" height="105"/>
         <element name="UserData" positionX="-2916" positionY="-585" width="128" height="105"/>
     </elements>
 </model>

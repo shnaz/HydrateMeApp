@@ -22,6 +22,8 @@
 		0031865218EC5DB500528B23 /* water_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864C18EC5DB500528B23 /* water_final.png */; };
 		0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031865318EC64E700528B23 /* caffein_unselected_final.png */; };
 		0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */ = {isa = PBXBuildFile; fileRef = 0031865418EC64E700528B23 /* sugar_unselected_final.psd */; };
+		00FB422918EF5DC60011E26A /* LoggingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422818EF5DC60011E26A /* LoggingData.m */; };
+		00FB422F18EF6E7D0011E26A /* LoggingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422E18EF6E7D0011E26A /* LoggingManager.m */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -77,6 +79,10 @@
 		0031864C18EC5DB500528B23 /* water_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_final.png; sourceTree = "<group>"; };
 		0031865318EC64E700528B23 /* caffein_unselected_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_unselected_final.png; sourceTree = "<group>"; };
 		0031865418EC64E700528B23 /* sugar_unselected_final.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = sugar_unselected_final.psd; sourceTree = "<group>"; };
+		00FB422718EF5DC60011E26A /* LoggingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingData.h; sourceTree = "<group>"; };
+		00FB422818EF5DC60011E26A /* LoggingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingData.m; sourceTree = "<group>"; };
+		00FB422D18EF6E7D0011E26A /* LoggingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingManager.h; sourceTree = "<group>"; };
+		00FB422E18EF6E7D0011E26A /* LoggingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingManager.m; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,10 +189,10 @@
 			children = (
 				D60B927D18EC304000AF04DE /* AppDelegate.h */,
 				D60B927E18EC304000AF04DE /* AppDelegate.m */,
+				D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */,
 				D6A0DAC818EC3E8B00E97AE4 /* Models */,
 				D6A0DAC718EC3E6F00E97AE4 /* Controllers */,
 				D6A0DAC618EC3E4800E97AE4 /* Views */,
-				D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */,
 				D60B927518EC304000AF04DE /* Supporting Files */,
 				D60B928318EC304000AF04DE /* Images.xcassets */,
 			);
@@ -260,6 +266,10 @@
 		D6A0DAC818EC3E8B00E97AE4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00FB422718EF5DC60011E26A /* LoggingData.h */,
+				00FB422818EF5DC60011E26A /* LoggingData.m */,
+				00FB422D18EF6E7D0011E26A /* LoggingManager.h */,
+				00FB422E18EF6E7D0011E26A /* LoggingManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -378,9 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60B92A218EC374300AF04DE /* CoreData.xcdatamodel in Sources */,
+				00FB422F18EF6E7D0011E26A /* LoggingManager.m in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
 				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
+				00FB422918EF5DC60011E26A /* LoggingData.m in Sources */,
 				0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */,
 				0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */,
 				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
