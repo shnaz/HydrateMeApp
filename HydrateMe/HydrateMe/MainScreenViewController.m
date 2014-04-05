@@ -12,6 +12,7 @@
 #import "CoffeeSubViewController.h"
 #import "AppDelegate.h"
 
+
 @interface MainScreenViewController () <UIScrollViewDelegate>
 
 
@@ -37,6 +38,12 @@ CoffeeSubViewController *coffeeSubViewController;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector (iCloudChangesImported:)
+     name: NSManagedObjectContextObjectsDidChangeNotification
+     object: nil];
+    
     waterSubViewController = [[WaterSubViewController alloc] init];
     softDrinkSubviewController = [[SoftDrinkSubViewController alloc] init];
     coffeeSubViewController = [[CoffeeSubViewController alloc] init];
@@ -58,11 +65,55 @@ CoffeeSubViewController *coffeeSubViewController;
     coffeeSubViewController.view.frame = aFrame;
     [self.mainScrollView addSubview:coffeeSubViewController.view];
     
-    [[NSNotificationCenter defaultCenter]
-     addObserver: self
-     selector: @selector (iCloudChangesImported:)
-     name: NSManagedObjectContextObjectsDidChangeNotification
-     object: nil];
+
+    //SIMON edit
+    //Reading the latest userdata from core data
+    _currentWaterIntakeLabel.text = @"0";
+    
+    AppDelegate *appDelegate =
+    [[UIApplication sharedApplication] delegate];
+    //NSManagedObjectContext
+    NSManagedObjectContext *context =
+    [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc =
+    [NSEntityDescription entityForName:@"UserData"
+               inManagedObjectContext:context];
+
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+//   // Results should be in descending order of timeStamp.
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+//
+//  
+    NSManagedObject *matches = nil;
+  
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request
+                                                error:&error];
+//
+    if ([objects count] == 0) {
+    _currentWaterIntakeLabel.text = @"N/A";
+       } else {
+          matches = objects[0];
+         _currentWaterIntakeLabel.text =
+           [NSString stringWithFormat:@"%@", [matches valueForKey:@"fluidgoal"]];
+       }
+    
+    
+//    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+//    [request setEntity:entityDesc];
+    
+    // Results should be in descending order of timeStamp.
+//    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:NO];
+//    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+//    
+//    NSArray *results = [managedObjectContext executeFetchRequest:request error:NULL];
+//    Entity *latestEntity = [results objectAtIndex:0];
+//    
+    
+    
+    
     
 }
 -(void) iCloudChangesImported:(NSNotification *)notification {
