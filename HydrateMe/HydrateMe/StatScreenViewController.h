@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface StatScreenViewController : UIViewController
 - (IBAction)button1:(id)sender;
