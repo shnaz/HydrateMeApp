@@ -318,6 +318,24 @@
             </objects>
             <point key="canvasLocation" x="865" y="58"/>
         </scene>
+        <!--Statistic Screen View Controller-->
+        <scene sceneID="0T0-pP-MEA">
+            <objects>
+                <viewController id="bxo-C5-6aQ" customClass="StatisticScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sxa-eT-fKC"/>
+                        <viewControllerLayoutGuide type="bottom" id="mQY-1m-Mhh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K0n-6x-YcE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7o-ss-tdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1339" y="65"/>
+        </scene>
     </scenes>
     <resources>
         <image name="caffein_final.png" width="150" height="150"/>
