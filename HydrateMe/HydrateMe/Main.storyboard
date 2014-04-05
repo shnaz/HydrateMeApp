@@ -260,6 +260,9 @@
                                 <state key="normal" backgroundImage="statistics_final.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bxo-C5-6aQ" kind="modal" id="U10-WJ-e3l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-BC-WyX">
                                 <rect key="frame" x="12" y="524" width="30" height="30"/>
@@ -318,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="865" y="58"/>
         </scene>
-        <!--Statistic Screen View Controller-->
+        <!--Stat Screen View Controller-->
         <scene sceneID="0T0-pP-MEA">
             <objects>
-                <viewController id="bxo-C5-6aQ" customClass="StatisticScreenViewController" sceneMemberID="viewController">
+                <viewController id="bxo-C5-6aQ" customClass="StatScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sxa-eT-fKC"/>
                         <viewControllerLayoutGuide type="bottom" id="mQY-1m-Mhh"/>
@@ -329,8 +332,30 @@
                     <view key="view" contentMode="scaleToFill" id="K0n-6x-YcE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQF-Q6-eHp">
+                                <rect key="frame" x="103" y="197" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="who am i">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button1:" destination="bxo-C5-6aQ" eventType="touchUpInside" id="Mu8-r5-5gl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-Ax-3xl">
+                                <rect key="frame" x="48" y="133" width="224" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="0cQ-Ax-3xl" id="66y-gC-VI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7o-ss-tdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

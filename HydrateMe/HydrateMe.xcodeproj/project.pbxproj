@@ -13,6 +13,7 @@
 		0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */; };
 		0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */; };
 		0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */; };
+		000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */; };
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
 		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
 		0031864E18EC5DB500528B23 /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
@@ -69,6 +70,8 @@
 		0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeSubViewController.h; sourceTree = "<group>"; };
 		0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeSubViewController.m; sourceTree = "<group>"; };
 		0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeSubViewController.xib; sourceTree = "<group>"; };
+		000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatScreenViewController.h; sourceTree = "<group>"; };
+		000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatScreenViewController.m; sourceTree = "<group>"; };
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		0031864318EC419B00528B23 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 		0031864718EC5DB500528B23 /* caffein_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_final.png; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */,
 				0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */,
 				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
+				000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */,
+				000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */,
 				D60B92A218EC374300AF04DE /* CoreData.xcdatamodel in Sources */,
 				00FB422F18EF6E7D0011E26A /* LoggingManager.m in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
