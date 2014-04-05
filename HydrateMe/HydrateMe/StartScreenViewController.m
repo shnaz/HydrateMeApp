@@ -101,6 +101,7 @@ NSString *actlevel = @"medium";
     NSNumber *weight = [NSNumber numberWithInt:row + 27];
     self.weightLabel.text = [weight stringValue];
     userWeightGolabal = weight;
+    pickerView.hidden = YES;
     
 }
 
@@ -377,6 +378,7 @@ NSString *actlevel = @"medium";
         [newContact setValue: @"m" forKey:@"gender"];
         [newContact setValue: userActivityGolabal forKey:@"activity"];
         [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
+         [newContact setValue: [NSDate date] forKey:@"timestamp"];
         
         NSError *error;
         [context save:&error];
@@ -393,6 +395,7 @@ NSString *actlevel = @"medium";
         [newContact setValue: @"f" forKey:@"gender"];
         [newContact setValue: userActivityGolabal forKey:@"activity"];
         [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
+         [newContact setValue: [NSDate date] forKey:@"timestamp"];
         
         NSError *error;
         [context save:&error];

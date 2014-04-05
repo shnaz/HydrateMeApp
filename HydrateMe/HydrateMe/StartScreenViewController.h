@@ -2,7 +2,7 @@
 //  StartScreenViewController.h
 //  HydrateMe
 //
-//  Created by Mads Engels on 4/2/14.
+//  Created by Mads Engels and Simon Benfeldt Jørgensen
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
