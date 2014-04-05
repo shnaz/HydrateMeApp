@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface MainScreenViewController : UIViewController <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *currentWaterIntakeLabel;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
