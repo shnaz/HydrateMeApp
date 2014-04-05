@@ -7,8 +7,14 @@
 //
 
 #import "SoftDrinkSubViewController.h"
+#import "LoggingData.h"
+#import "AppDelegate.h"
 
 @interface SoftDrinkSubViewController ()
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (void)logSoftDrinkIntakeWithAmount: (int)amount;
 
 @end
 
@@ -27,6 +33,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,14 +44,33 @@
 }
 
 - (IBAction)largeSoftDrinkButton:(id)sender {
-    self.testLabel.text = @"500ML";
+    [self logSoftDrinkIntakeWithAmount:500];
 }
 
 - (IBAction)mediumSoftDrinkButton:(id)sender {
-    self.testLabel.text = @"330ML";
+    [self logSoftDrinkIntakeWithAmount:330];
 }
 
 - (IBAction)smallSoftDrink:(id)sender {
-    self.testLabel.text = @"200ML";
+    [self logSoftDrinkIntakeWithAmount:180];
 }
+
+# pragma Soft Drink helper methods
+
+- (void)logSoftDrinkIntakeWithAmount: (int)amount
+{
+    LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
+    
+    newEntry.date_time = [NSDate date];
+    newEntry.fluit_type = @"softdrink";
+    newEntry.fluit_amount = [NSNumber numberWithInt:amount];
+    newEntry.temp = [NSNumber numberWithInt:20];
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
+    }
+    
+}
+
 @end

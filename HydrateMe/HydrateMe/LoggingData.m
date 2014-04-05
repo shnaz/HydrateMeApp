@@ -16,4 +16,9 @@
 @dynamic fluit_type;
 @dynamic temp;
 
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Fluid: %@,  Amount: %@, Date: %@",
+            self.fluit_type, self.fluit_amount, self.date_time];
+}
 @end

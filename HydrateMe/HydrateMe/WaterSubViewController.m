@@ -14,6 +14,9 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
+- (void)logWaterIntakeWithAmount: (int)amount;
+- (void)fetchLoggingData;
+
 @end
 
 @implementation WaterSubViewController
@@ -34,9 +37,6 @@
     
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,26 +45,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)largeWaterButton:(id)sender {
-    
+- (IBAction)largeWaterButton:(id)sender
+{
+    [self logWaterIntakeWithAmount:500];
+}
+
+- (IBAction)mediumWaterButton:(id)sender
+{
+    [self logWaterIntakeWithAmount:330];
+}
+
+- (IBAction)smallWaterButton:(id)sender
+{
+    [self fetchLoggingData];
+    //[self logWaterIntakeWithAmount:200];
+}
+
+
+# pragma Water helper methods
+
+- (void)logWaterIntakeWithAmount: (int)amount
+{
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
     newEntry.date_time = [NSDate date];
     newEntry.fluit_type = @"water";
-    newEntry.fluit_amount = [NSNumber numberWithInt:330];
+    newEntry.fluit_amount = [NSNumber numberWithInt:amount];
     newEntry.temp = [NSNumber numberWithInt:20];
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Failed to save loggingData: %@", [error localizedDescription]);
+        NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
     }
-    
-    
-    //self.testLabel.text = @"500 ml";
+
 }
 
-- (IBAction)mediumWaterButton:(id)sender {
-    
+-(void)fetchLoggingData{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
     [NSEntityDescription entityForName:@"LoggingData"
@@ -73,8 +89,6 @@
     
     
     NSDate *current = [NSDate date];
-    //NSDate *past = [[NSDate alloc] initWithTimeIntervalSinceNow:-60];
-    
     
     NSPredicate *predicate =
     [NSPredicate predicateWithFormat:@"date_time < %@", current];
@@ -85,21 +99,16 @@
     if (array != nil) {
         NSUInteger count = [array count]; // May be 0 if the object has been deleted.
         
-        NSManagedObject *matche = array[0];
-        //self.testLabel.text = @"succes";
-        self.testLabel.text = [[matche valueForKey:@"fluit_amount"] stringValue];
+        //NSManagedObject *matche = array[0];
+        self.testLabel.text = [NSString stringWithFormat:@"%d", count];
     }
     else {
         // Deal with error.
         self.testLabel.text = @"error";
     }
     
-
-    
-    //self.testLabel.text = @"330 ml";
+    NSLog(@"%@",[array description]);
 }
 
-- (IBAction)smallWaterButton:(id)sender {
-    self.testLabel.text = @"200 ml";
-}
+
 @end

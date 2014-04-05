@@ -17,4 +17,5 @@
 @property (nonatomic, retain) NSString * fluit_type;
 @property (nonatomic, retain) NSNumber * temp;
 
+-(NSString *)description;
 @end

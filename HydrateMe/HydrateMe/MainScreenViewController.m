@@ -10,9 +10,9 @@
 #import "WaterSubViewController.h"
 #import "SoftDrinkSubViewController.h"
 #import "CoffeeSubViewController.h"
+#import "AppDelegate.h"
 
 @interface MainScreenViewController () <UIScrollViewDelegate>
-
 
 
 @end
@@ -58,7 +58,15 @@ CoffeeSubViewController *coffeeSubViewController;
     coffeeSubViewController.view.frame = aFrame;
     [self.mainScrollView addSubview:coffeeSubViewController.view];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector (iCloudChangesImported:)
+     name: NSManagedObjectContextObjectsDidChangeNotification
+     object: nil];
     
+}
+-(void) iCloudChangesImported:(NSNotification *)notification {
+    NSLog(@"Core data changed!!");
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +83,20 @@ CoffeeSubViewController *coffeeSubViewController;
     self.mainPageControl.currentPage = page;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 #pragma mark - Navigation
