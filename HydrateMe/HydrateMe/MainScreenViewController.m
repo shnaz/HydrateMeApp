@@ -15,6 +15,9 @@
 
 @interface MainScreenViewController () <UIScrollViewDelegate>
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+- (void)calculateCurrentWaterIntakeLevel;
+-(int)getFluidIntakeUntilNow;
 
 @end
 
@@ -38,12 +41,9 @@ CoffeeSubViewController *coffeeSubViewController;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter]
-     addObserver: self
-     selector: @selector (iCloudChangesImported:)
-     name: NSManagedObjectContextObjectsDidChangeNotification
-     object: nil];
-    
+    AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext= [appDelegate managedObjectContext];
+
     waterSubViewController = [[WaterSubViewController alloc] init];
     softDrinkSubviewController = [[SoftDrinkSubViewController alloc] init];
     coffeeSubViewController = [[CoffeeSubViewController alloc] init];
@@ -51,73 +51,35 @@ CoffeeSubViewController *coffeeSubViewController;
     // Initializing middle slider
     [self.mainScrollView setContentSize:CGSizeMake(3 * self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
     
+    //Adding subviews
     CGRect aFrame = self.mainScrollView.bounds;
     waterSubViewController.view.frame = aFrame;
     [self.mainScrollView addSubview:waterSubViewController.view];
-    
     
     aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
     softDrinkSubviewController.view.frame = aFrame;
     [self.mainScrollView addSubview:softDrinkSubviewController.view];
     
-    
     aFrame = CGRectOffset(aFrame, self.mainScrollView.bounds.size.width, 0);
     coffeeSubViewController.view.frame = aFrame;
     [self.mainScrollView addSubview:coffeeSubViewController.view];
     
-
-    //SIMON edit
-    //Reading the latest userdata from core data
-    _currentWaterIntakeLabel.text = @"0";
     
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    //NSManagedObjectContext
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"UserData"
-               inManagedObjectContext:context];
-
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-//   // Results should be in descending order of timeStamp.
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
-    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-//
-//  
-    NSManagedObject *matches = nil;
-  
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                                error:&error];
-//
-    if ([objects count] == 0) {
-    _currentWaterIntakeLabel.text = @"N/A";
-       } else {
-          matches = objects[0];
-         _currentWaterIntakeLabel.text =
-           [NSString stringWithFormat:@"%@", [matches valueForKey:@"fluidgoal"]];
-       }
+    //Updating Current intake level
+    [self calculateCurrentWaterIntakeLevel];
     
-    
-//    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-//    [request setEntity:entityDesc];
-    
-    // Results should be in descending order of timeStamp.
-//    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:NO];
-//    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-//    
-//    NSArray *results = [managedObjectContext executeFetchRequest:request error:NULL];
-//    Entity *latestEntity = [results objectAtIndex:0];
-//    
-    
-    
-    
+    //Setting a notification center for CoreData
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector (updateEverything:)
+     name: NSManagedObjectContextObjectsDidChangeNotification
+     object: nil];
     
 }
--(void) iCloudChangesImported:(NSNotification *)notification {
-    NSLog(@"Core data changed!!");
+-(void) updateEverything:(NSNotification *)notification
+{
+    NSLog(@"New enities added to CoreData!!!");
+    [self calculateCurrentWaterIntakeLevel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +96,88 @@ CoffeeSubViewController *coffeeSubViewController;
     self.mainPageControl.currentPage = page;
 
 }
+
+- (void)calculateCurrentWaterIntakeLevel
+{
+    float currentFluidLevel=0.0;
+    float fluidGoal = [self fetchUserFluidIntakeGoal];
+    float fluidIntakeSoFar = [self getFluidIntakeUntilNow];
+    
+    currentFluidLevel = (fluidIntakeSoFar/fluidGoal)*100;
+    
+    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentFluidLevel];
+}
+
+- (int)fetchUserFluidIntakeGoal
+{
+    int fluidGoal;
+    //Reading the latest userdata from core data
+    NSEntityDescription *entityDesc =
+    [NSEntityDescription entityForName:@"UserData"
+                inManagedObjectContext:self.managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    // Results should be in descending order of timeStamp.
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+
+    NSManagedObject *matches = nil;
+    
+    NSError *error;
+    NSArray *objects = [self.managedObjectContext executeFetchRequest:request
+                                              error:&error];
+    if ([objects count] == 0) {
+        fluidGoal = 0;
+    } else {
+        matches = objects[0];
+        fluidGoal= [[matches valueForKey:@"fluidgoal"] intValue];
+    }
+    
+    return fluidGoal;
+}
+
+-(int)getFluidIntakeUntilNow{
+    
+    int fluidIntakeUntilNow=0;
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
+    [components setHour:00];
+    NSDate *today00AM = [calendar dateFromComponents:components];
+    
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"LoggingData"
+                inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"(date_time > %@) && (date_time < %@)", today00AM, now];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (array == nil) {
+        NSLog(@"Fetch water logging data failed");
+    }
+    else {
+        for (NSManagedObject *logData in array) {
+            NSString *fluidType = [logData valueForKey:@"fluit_type"];
+            if ([fluidType isEqualToString:@"water"]) {
+                int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
+                fluidIntakeUntilNow += fluidAmount;
+            }
+        }
+
+    }
+    
+    //NSLog(@"%@",[array description]);
+    return fluidIntakeUntilNow;
+}
+
 
 
 

@@ -57,8 +57,7 @@
 
 - (IBAction)smallWaterButton:(id)sender
 {
-    [self fetchLoggingData];
-    //[self logWaterIntakeWithAmount:200];
+    [self logWaterIntakeWithAmount:200];
 }
 
 
@@ -79,36 +78,5 @@
     }
 
 }
-
--(void)fetchLoggingData{
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity =
-    [NSEntityDescription entityForName:@"LoggingData"
-                inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
-    
-    
-    NSDate *current = [NSDate date];
-    
-    NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"date_time < %@", current];
-    [request setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
-    if (array != nil) {
-        NSUInteger count = [array count]; // May be 0 if the object has been deleted.
-        
-        //NSManagedObject *matche = array[0];
-        self.testLabel.text = [NSString stringWithFormat:@"%d", count];
-    }
-    else {
-        // Deal with error.
-        self.testLabel.text = @"error";
-    }
-    
-    NSLog(@"%@",[array description]);
-}
-
 
 @end
