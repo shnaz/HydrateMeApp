@@ -101,6 +101,7 @@ NSString *actlevel = @"medium";
     NSNumber *weight = [NSNumber numberWithInt:row + 27];
     self.weightLabel.text = [weight stringValue];
     userWeightGolabal = weight;
+    pickerView.hidden = YES;
     
 }
 
