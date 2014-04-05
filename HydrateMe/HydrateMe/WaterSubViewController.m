@@ -15,7 +15,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (void)logWaterIntakeWithAmount: (int)amount;
-- (void)fetchLoggingData;
 
 @end
 
