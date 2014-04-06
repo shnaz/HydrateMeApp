@@ -103,6 +103,10 @@ NSString *actlevel = @"medium";
     userWeightGolabal = weight;
     pickerView.hidden = YES;
     
+    int dailyShow = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
+    NSString *dayW = [NSString stringWithFormat:@"%d", dailyShow];
+    _change_label.text = dayW;
+    
 }
 
 -(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel
