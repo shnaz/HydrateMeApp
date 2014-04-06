@@ -15,6 +15,7 @@
 @interface StartScreenViewController ()
 -(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel;
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -42,17 +43,47 @@ NSString *actlevel = @"medium";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    userWeightGolabal = [NSNumber numberWithInt:80];
-    userActivityGolabal =[NSNumber numberWithInt:1.2];
-    userTemperatureGolabal=[NSNumber numberWithInt:1];
-	// Do any additional setup after loading the view.
     
+	// Do any additional setup after loading the view.
     [self.weightPicker setHidden:YES];
     
-    userActivityGolabal =[NSNumber numberWithDouble:1.2];
+    
+    
+    //Reading the latest userdata from core data
+    AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext= [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc =
+    [NSEntityDescription entityForName:@"UserData"
+                inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    // Results should be in descending order of timeStamp.
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    NSManagedObject *matches = nil;
+    NSError *error;
+    NSArray *objects = [self.managedObjectContext executeFetchRequest:request
+                                                                error:&error];
+    if ([objects count] == 0) {
+        userWeightGolabal = [NSNumber numberWithInt:80];
+        userActivityGolabal =[NSNumber numberWithInt:1.2];
+        userTemperatureGolabal=[NSNumber numberWithInt:1];
+    } else {
+        matches = objects[0];
+        //fluidGoal= [[matches valueForKey:@"fluidgoal"] intValue];
+       
+        self.weightLabel.text =  [NSString stringWithFormat:@"%d", [[matches valueForKey:@"weight"] intValue]];
+        userWeightGolabal = [NSNumber numberWithInt:[[matches valueForKey:@"weight"] intValue]]; //[NSNumber numberWithInt:80];
+        userActivityGolabal =[NSNumber numberWithInt:1.2];  //CHANGE THIS
+       userTemperatureGolabal=[NSNumber numberWithInt:1];   //CHANGE THIS
+    }
+    
+    
     int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
     NSString *dayW = [NSString stringWithFormat:@"%d", daily];
     _change_label.text = dayW;
+
+    
     
     
 }
