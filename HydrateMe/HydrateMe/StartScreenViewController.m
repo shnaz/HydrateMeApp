@@ -70,7 +70,12 @@ NSString *actlevel = @"medium";
         userTemperatureGolabal=[NSNumber numberWithInt:1];
     } else {
         matches = objects[0];
-        //fluidGoal= [[matches valueForKey:@"fluidgoal"] intValue];
+        /*
+         TO DO 
+         activity load from DB
+         gender load from DB
+         
+         */
        
         self.weightLabel.text =  [NSString stringWithFormat:@"%d", [[matches valueForKey:@"weight"] intValue]];
         userWeightGolabal = [NSNumber numberWithInt:[[matches valueForKey:@"weight"] intValue]]; //[NSNumber numberWithInt:80];
