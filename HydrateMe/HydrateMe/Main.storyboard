@@ -250,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L02-x1-z5H">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -346,6 +346,7 @@
                         <outlet property="currentWaterIntakeLabel" destination="T5a-Zy-oUr" id="NeG-nB-t3x"/>
                         <outlet property="mainPageControl" destination="jqq-q4-SSm" id="YTp-2S-et1"/>
                         <outlet property="mainScrollView" destination="qU1-p0-MEN" id="DRf-xc-2Mn"/>
+                        <outlet property="topBarView" destination="L02-x1-z5H" id="SGo-Ce-vBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLQ-yS-XwI" userLabel="First Responder" sceneMemberID="firstResponder"/>

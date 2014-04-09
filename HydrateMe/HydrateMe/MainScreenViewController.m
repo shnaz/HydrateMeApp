@@ -10,6 +10,7 @@
 #import "WaterSubViewController.h"
 #import "SoftDrinkSubViewController.h"
 #import "CoffeeSubViewController.h"
+#import "TopBarViewController.h"
 #import "AppDelegate.h"
 
 
@@ -24,6 +25,8 @@
 WaterSubViewController *waterSubViewController;
 SoftDrinkSubViewController *softDrinkSubviewController;
 CoffeeSubViewController *coffeeSubViewController;
+
+TopBarViewController *topBarSubViewController;
 
 @implementation MainScreenViewController
 
@@ -43,7 +46,12 @@ CoffeeSubViewController *coffeeSubViewController;
     
     AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
     self.managedObjectContext= [appDelegate managedObjectContext];
-
+    
+    // Initializing and adding Topbar view
+    topBarSubViewController = [[TopBarViewController alloc] init];
+    [self.topBarView addSubview:topBarSubViewController.view];
+    
+    //Middle slider views init
     waterSubViewController = [[WaterSubViewController alloc] init];
     softDrinkSubviewController = [[SoftDrinkSubViewController alloc] init];
     coffeeSubViewController = [[CoffeeSubViewController alloc] init];
@@ -51,7 +59,7 @@ CoffeeSubViewController *coffeeSubViewController;
     // Initializing middle slider
     [self.mainScrollView setContentSize:CGSizeMake(3 * self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
     
-    //Adding subviews
+    //Adding subviews to middle slider
     CGRect aFrame = self.mainScrollView.bounds;
     waterSubViewController.view.frame = aFrame;
     [self.mainScrollView addSubview:waterSubViewController.view];
@@ -78,7 +86,7 @@ CoffeeSubViewController *coffeeSubViewController;
 }
 -(void) updateEverything:(NSNotification *)notification
 {
-    NSLog(@"New enities added to CoreData!");
+    //NSLog(@"New enities added to CoreData!");
     [self calculateCurrentFluidIntakeLevels];
 }
 

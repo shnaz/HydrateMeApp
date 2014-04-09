@@ -160,7 +160,7 @@
 -(BOOL)isEverythingFilledOut
 {
     NSUInteger count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
-    NSLog(@"count %d",count);
+    //NSLog(@"count %d",count);
     return (count>10 ? YES : NO);
 }
 

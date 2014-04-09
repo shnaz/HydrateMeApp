@@ -19,4 +19,5 @@
 
 @property (weak, nonatomic) IBOutlet UIPageControl *mainPageControl;
 
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
 @end
