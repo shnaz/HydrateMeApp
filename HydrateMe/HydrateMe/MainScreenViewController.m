@@ -16,8 +16,8 @@
 @interface MainScreenViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-- (void)calculateCurrentWaterIntakeLevel;
--(int)getFluidIntakeUntilNow;
+- (void)calculateCurrentFluidIntakeLevels;
+-(NSDictionary *)getFluidIntakesUntilNow;
 
 @end
 
@@ -66,7 +66,7 @@ CoffeeSubViewController *coffeeSubViewController;
     
     
     //Updating Current intake level
-    [self calculateCurrentWaterIntakeLevel];
+    [self calculateCurrentFluidIntakeLevels];
     
     //Setting a notification center for CoreData
     [[NSNotificationCenter defaultCenter]
@@ -78,8 +78,8 @@ CoffeeSubViewController *coffeeSubViewController;
 }
 -(void) updateEverything:(NSNotification *)notification
 {
-    NSLog(@"New enities added to CoreData!!!");
-    [self calculateCurrentWaterIntakeLevel];
+    NSLog(@"New enities added to CoreData!");
+    [self calculateCurrentFluidIntakeLevels];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,26 +97,33 @@ CoffeeSubViewController *coffeeSubViewController;
 
 }
 
-- (void)calculateCurrentWaterIntakeLevel
+- (void)calculateCurrentFluidIntakeLevels
 {
-    float currentFluidLevel=0.0;
-    float fluidGoal = [self fetchUserFluidIntakeGoal];
-    float fluidIntakeSoFar = [self getFluidIntakeUntilNow];
+    NSDictionary *fluidIntakeSoFar = [self getFluidIntakesUntilNow];
+    float waterIntake =     [[fluidIntakeSoFar objectForKey:@"waterIntake"] floatValue];
+    float softDrinkIntake = [[fluidIntakeSoFar objectForKey:@"softDrinkIntake"] floatValue];
+    float coffeeIntake =    [[fluidIntakeSoFar objectForKey:@"coffeeIntake"] floatValue];
     
-    currentFluidLevel = (fluidIntakeSoFar/fluidGoal)*100;
+    float waterGoal =       [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
+    float softDrinkGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
+    float coffeeGoal =      [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
     
-    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentFluidLevel];
+    float currentWaterLevel = (waterIntake/waterGoal)*100;
+    float currentSoftDrinkLevel = (softDrinkIntake/softDrinkGoal)*100;
+    float currentCoffeeLevel = (coffeeIntake/coffeeGoal)*100;
+    
+    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentWaterLevel];
+    self.currentSoftDrinkIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentSoftDrinkLevel];
+    self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentCoffeeLevel];
 }
 
-- (int)fetchUserFluidIntakeGoal
+
+-(NSDictionary *)getFluidIntakesUntilNow
 {
     
-    return [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
-}
-
--(int)getFluidIntakeUntilNow{
-    
-    int fluidIntakeUntilNow=0;
+    int waterIntakeUntilNow=0;
+    int coffeeIntakeUntilNow=0;
+    int softDrinkIntakeUntilNow = 0;
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
@@ -136,6 +143,7 @@ CoffeeSubViewController *coffeeSubViewController;
     
     NSError *error;
     NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
+    //NSLog(@"%@",[array description]);
     if (array == nil) {
         NSLog(@"Fetch water logging data failed");
     }
@@ -144,28 +152,24 @@ CoffeeSubViewController *coffeeSubViewController;
             NSString *fluidType = [logData valueForKey:@"fluit_type"];
             if ([fluidType isEqualToString:@"water"]) {
                 int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
-                fluidIntakeUntilNow += fluidAmount;
+                waterIntakeUntilNow += fluidAmount;
+            }else if ([fluidType isEqualToString:@"softdrink"]) {
+                int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
+                softDrinkIntakeUntilNow += fluidAmount;
+            }else{
+                int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
+                coffeeIntakeUntilNow += fluidAmount;
             }
         }
 
     }
     
-    //NSLog(@"%@",[array description]);
-    return fluidIntakeUntilNow;
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            [NSNumber numberWithInt: waterIntakeUntilNow], @"waterIntake",
+            [NSNumber numberWithInt: softDrinkIntakeUntilNow], @"softDrinkIntake",
+            [NSNumber numberWithInt: coffeeIntakeUntilNow], @"coffeeIntake",
+            nil];;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

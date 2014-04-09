@@ -10,7 +10,10 @@
 #import "AppDelegate.h"
 
 @interface MainScreenViewController : UIViewController <UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *currentWaterIntakeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentCoffeeIntakeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentSoftDrinkIntakeLabel;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
