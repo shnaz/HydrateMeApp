@@ -186,6 +186,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="coffeeGoalLabel" destination="18Y-4x-na8" id="QF3-Ny-WSI"/>
+                        <outlet property="drinkButtonOutlet" destination="dA5-mM-3hE" id="6tT-aD-jcs"/>
                         <outlet property="lazyButtonOutlet" destination="Tbq-8v-QeD" id="Rce-71-VtM"/>
                         <outlet property="manFigureAction" destination="kjL-TC-qMZ" id="eVk-pW-XVs"/>
                         <outlet property="mediumButtonOutlet" destination="zzL-YZ-3fA" id="E4p-cK-Kcg"/>

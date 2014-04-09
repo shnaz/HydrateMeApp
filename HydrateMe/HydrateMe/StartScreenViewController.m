@@ -13,6 +13,7 @@
 -(void)calculateAndShowDailyFluidGoal;
 -(void)updateGenderImageSelection;
 -(void)updateActivityButtonSelection;
+-(BOOL)isEverythingFilledOut;
 
 @end
 
@@ -34,15 +35,15 @@
     
 	// Do any additional setup after loading the view.
     
-    //[self.weightPicker setHidden:YES];
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil) {
-        //first time app is used
-        //MAYBE DELETE below instead use isEverythingFilledOut to figure out if everything is filled out
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"male" forKey:@"userGender"];
-        [defaults setInteger:80 forKey:@"userWeight"];
-        [defaults setDouble:0.0 forKey:@"activityLevel"];
-        [defaults synchronize];
+        //First time app is opened
+        
+        //Clear the NSUserdefault database just in case..
+        [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+        
+        //Disable the LETS DRINK button
+        self.drinkButtonOutlet.enabled = NO;
+        self.drinkButtonOutlet.backgroundColor = [UIColor grayColor];
         
     } else {
         int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
@@ -54,12 +55,18 @@
     }
     
     [self calculateAndShowDailyFluidGoal];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) updateEverything:(NSNotification *)notification
+{
+    [self calculateAndShowDailyFluidGoal];
 }
 
 #pragma mark - PickerView
@@ -79,12 +86,10 @@
 {
     NSNumber *weight = [NSNumber numberWithInt:row + 27];
     
-    
     NSString *title = [weight stringValue];
     NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     return attString;
-    
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -103,9 +108,11 @@
 - (IBAction)weightPickerInvoker:(id)sender {
     
     if (self.weightPicker.isHidden) {
-        int selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"]-27;
-        [self.weightPicker selectRow:selectedRow inComponent:0 animated:YES];
+        int selectedRow = 53; //Default selected row in picker
+        if([[NSUserDefaults standardUserDefaults] objectForKey:@"userWeight"] != nil)
+            selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"]-27;
         
+        [self.weightPicker selectRow:selectedRow inComponent:0 animated:YES];
         [self.weightPicker setHidden:NO];
     } else {
         [self.weightPicker setHidden:YES];
@@ -118,6 +125,14 @@
 
 -(void)calculateAndShowDailyFluidGoal
 {
+    if(![self isEverythingFilledOut]){
+        return;
+    } else {
+        UIColor *hydrateMeColor=[UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0];
+        self.drinkButtonOutlet.enabled = YES;
+        self.drinkButtonOutlet.backgroundColor = hydrateMeColor;
+    }
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger userWeight = [defaults integerForKey:@"userWeight"];
@@ -141,12 +156,12 @@
     [defaults synchronize];
 }
 
-//IMPLEMENT THIS and use it to see if everything is filled out before the lets drink button can be clicked
-//
--(bool)isEverythingFilledOut
+//Check if user has chosen gender, weight and activity level
+-(BOOL)isEverythingFilledOut
 {
-    
-    return true;
+    NSUInteger count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
+    NSLog(@"count %d",count);
+    return (count>10 ? YES : NO);
 }
 
 

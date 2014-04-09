@@ -38,6 +38,7 @@
 
 // Final Lets Drink button
 - (IBAction)drinkButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *drinkButtonOutlet;
 
 
 @end
