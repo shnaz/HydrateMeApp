@@ -110,32 +110,8 @@ CoffeeSubViewController *coffeeSubViewController;
 
 - (int)fetchUserFluidIntakeGoal
 {
-    int fluidGoal;
-    //Reading the latest userdata from core data
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"UserData"
-                inManagedObjectContext:self.managedObjectContext];
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    
-    // Results should be in descending order of timeStamp.
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
-    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-
-    NSManagedObject *matches = nil;
-    
-    NSError *error;
-    NSArray *objects = [self.managedObjectContext executeFetchRequest:request
-                                              error:&error];
-    if ([objects count] == 0) {
-        fluidGoal = 0;
-    } else {
-        matches = objects[0];
-        fluidGoal= [[matches valueForKey:@"fluidgoal"] intValue];
-    }
-    
-    return fluidGoal;
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
 }
 
 -(int)getFluidIntakeUntilNow{

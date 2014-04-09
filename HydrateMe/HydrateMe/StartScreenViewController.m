@@ -7,26 +7,14 @@
 //
 
 #import "StartScreenViewController.h"
-#define selectedButtonColor [UIColor colorWithRed:(41/255.0) green:(128/255.0) blue:(185/255.0) alpha:1.0]
-#define unselectedButtonColor [UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0]
-#define selectedLabelColor [UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0]
-#define unselectedLabelColor [UIColor whiteColor]
 
 @interface StartScreenViewController ()
--(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel;
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+-(void)calculateAndShowDailyFluidGoal;
+-(void)updateGenderImageSelection;
+-(void)updateActivityButtonSelection;
 
 @end
-
-NSInteger selectedRow = 53;
-NSString *actlevel = @"medium";
-
-
-//[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1]
-
-
-
 
 @implementation StartScreenViewController
 
@@ -45,52 +33,27 @@ NSString *actlevel = @"medium";
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
-    [self.weightPicker setHidden:YES];
     
-    
-    
-    //Reading the latest userdata from core data
-    AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
-    self.managedObjectContext= [appDelegate managedObjectContext];
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"UserData"
-                inManagedObjectContext:self.managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    // Results should be in descending order of timeStamp.
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
-    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    NSManagedObject *matches = nil;
-    NSError *error;
-    NSArray *objects = [self.managedObjectContext executeFetchRequest:request
-                                                                error:&error];
-    if ([objects count] == 0) {
-        userWeightGolabal = [NSNumber numberWithInt:80];
-        userActivityGolabal =[NSNumber numberWithInt:1.2];
-        userTemperatureGolabal=[NSNumber numberWithInt:1];
+    //[self.weightPicker setHidden:YES];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil) {
+        //first time app is used
+        //MAYBE DELETE below instead use isEverythingFilledOut to figure out if everything is filled out
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"male" forKey:@"userGender"];
+        [defaults setInteger:80 forKey:@"userWeight"];
+        [defaults setDouble:0.0 forKey:@"activityLevel"];
+        [defaults synchronize];
+        
     } else {
-        matches = objects[0];
-        /*
-         TO DO 
-         activity load from DB
-         gender load from DB
-         
-         */
-       
-        self.weightLabel.text =  [NSString stringWithFormat:@"%d", [[matches valueForKey:@"weight"] intValue]];
-        userWeightGolabal = [NSNumber numberWithInt:[[matches valueForKey:@"weight"] intValue]]; //[NSNumber numberWithInt:80];
-        userActivityGolabal =[NSNumber numberWithInt:1.2];  //CHANGE THIS
-       userTemperatureGolabal=[NSNumber numberWithInt:1];   //CHANGE THIS
+        int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
+        self.weightLabel.text = [NSString stringWithFormat:@"%d", userWeight];
+        [self.weightPicker selectRow:(userWeight-27) inComponent:0 animated:YES];
+        
+        [self updateActivityButtonSelection];
+        [self updateGenderImageSelection];
     }
     
-    
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
-    NSString *dayW = [NSString stringWithFormat:@"%d", daily];
-    _change_label.text = dayW;
-
-    
-    
-    
+    [self calculateAndShowDailyFluidGoal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,7 +63,6 @@ NSString *actlevel = @"medium";
 }
 
 #pragma mark - PickerView
-
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -110,7 +72,6 @@ NSString *actlevel = @"medium";
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    
     return 100;
 }
 
@@ -126,344 +87,159 @@ NSString *actlevel = @"medium";
     
 }
 
-
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSLog(@"Selected row %d",row);
-    
-    selectedRow = row;
-    
-    
     NSNumber *weight = [NSNumber numberWithInt:row + 27];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[weight integerValue] forKey:@"userWeight"];
+    [defaults synchronize];
+    
     self.weightLabel.text = [weight stringValue];
-    userWeightGolabal = weight;
+    [self calculateAndShowDailyFluidGoal];
     pickerView.hidden = YES;
-    
-    int dailyShow = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
-    NSString *dayW = [NSString stringWithFormat:@"%d", dailyShow];
-    _change_label.text = dayW;
-    
 }
 
--(int)calculateDailyHydrationLevel: (int) userWeight activityLevelaug:(double)activityLevel environmentLevelaug:(double)enviromentLevel
+- (IBAction)weightPickerInvoker:(id)sender {
+    
+    if (self.weightPicker.isHidden) {
+        int selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"]-27;
+        [self.weightPicker selectRow:selectedRow inComponent:0 animated:YES];
+        
+        [self.weightPicker setHidden:NO];
+    } else {
+        [self.weightPicker setHidden:YES];
+        
+        [self calculateAndShowDailyFluidGoal];
+    }
+}
+
+#pragma mark - Daily fluid goal calculation method
+
+-(void)calculateAndShowDailyFluidGoal
 {
-    return ((((userWeight)-20)*15)+1500)*(activityLevel)*(enviromentLevel);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger userWeight = [defaults integerForKey:@"userWeight"];
+    NSString *gender = [defaults objectForKey:@"userGender"];
+    double activityLevel = [defaults doubleForKey:@"activityLevel"];
+    double temperatur = 1.0;
+    double genderFactor = [gender isEqualToString:@"male"] ? 1.3 : 1.0; //Maybe some other values
+    
+    int waterGoal= ((((userWeight)-20)*15)+1500)*(activityLevel)*(temperatur)* genderFactor;
+    [defaults setInteger:waterGoal forKey:@"waterGoal"];
+    self.waterGoalLabel.text = [NSString stringWithFormat:@"%d", waterGoal];
+    
+    int softDrinkGoal = 500; //maybe another amount i dunno
+    [defaults setInteger:softDrinkGoal forKey:@"softDrinkGoal"];//fix amount
+    self.softDrinkGoalLabel.text = [NSString stringWithFormat:@"%d", softDrinkGoal];
+    
+    int coffeeGoal = 750; //maybe another amount i dunno
+    [defaults setInteger:coffeeGoal forKey:@"coffeeGoal"];
+    self.coffeeGoalLabel.text = [NSString stringWithFormat:@"%d", coffeeGoal];
+    
+    [defaults synchronize];
+}
+
+//IMPLEMENT THIS and use it to see if everything is filled out before the lets drink button can be clicked
+//
+-(bool)isEverythingFilledOut
+{
+    
+    return true;
 }
 
 
+#pragma mark - Activity buttons
 
-- (IBAction)saveData:(id)sender {
-    
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    NSManagedObject *newContact;
-    newContact = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"Contacts"
-                  inManagedObjectContext:context];
-    [newContact setValue: _weight_textfield.text forKey:@"weight"];
-    [newContact setValue: _gender_textfield.text forKey:@"gender"];
-    [newContact setValue: [NSDate date] forKey:@"log_date"];
-    _weight_textfield.text = @"";
-    _gender_textfield.text = @"";
-    NSError *error;
-    [context save:&error];
-    _change_label.text = @"Contact saved";
+- (IBAction)lazyButtonAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setDouble:1.0 forKey:@"activityLevel"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self calculateAndShowDailyFluidGoal];
+    [self updateActivityButtonSelection];
 }
 
-
-- (IBAction)findData:(id)sender {
-    
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"Contacts"
-                inManagedObjectContext:context];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    
-    NSPredicate *pred =
-    [NSPredicate predicateWithFormat:@"(weight = %@)",
-     _weight_textfield.text];
-    [request setPredicate:pred];
-    NSManagedObject *matches = nil;
-    
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                              error:&error];
-    
-    if ([objects count] == 0) {
-        _change_label.text = @"No matches";
-    } else {
-        matches = objects[0];
-        _weight_textfield.text = [matches valueForKey:@"weight"];
-        _gender_textfield.text = [matches valueForKey:@"gender"];
-        //_change_label.text =  @"test2";
-        _change_label.text = [NSString stringWithFormat:
-                              @"Logged date: %@", [matches valueForKey:@"log_date"]];
-    }
+- (IBAction)mediumButtonAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setDouble:1.2 forKey:@"activityLevel"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self calculateAndShowDailyFluidGoal];
+    [self updateActivityButtonSelection];
 }
 
-- (IBAction)clearData:(id)sender {
-    
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"Contacts"
-                inManagedObjectContext:context];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    
-    NSPredicate *pred =
-    [NSPredicate predicateWithFormat:@"(weight = %@)",
-     _weight_textfield.text];
-    [request setPredicate:pred];
-    NSManagedObject *matches = nil;
-    
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                              error:&error];
-    
-    if ([objects count] == 0) {
-        _change_label.text = @"No matches";
-    } else {
-        matches = objects[0];
-        _weight_textfield.text = [NSString stringWithFormat:@"Deleted: %@", [matches valueForKey:@"weight"]];
-        _gender_textfield.text = [matches valueForKey:@"gender"];
-        
-        [context deleteObject:matches];
-        
-        _change_label.text = [NSString stringWithFormat:
-                              @"%lu matches found", (unsigned long)[objects count]];
-    }
-    
-    
+- (IBAction)sportyButtonAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setDouble:1.4 forKey:@"activityLevel"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self calculateAndShowDailyFluidGoal];
+    [self updateActivityButtonSelection];
 }
 
-
-
-- (IBAction)getData:(id)sender {
+-(void)updateActivityButtonSelection
+{
+    UIColor *selectedButtonColor=[UIColor colorWithRed:(41/255.0) green:(128/255.0) blue:(185/255.0) alpha:1.0];
+    UIColor *unselectedButtonColor=[UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0];
+    UIColor *selectedLabelColor=[UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0];
+    UIColor *unselectedLabelColor=[UIColor whiteColor];
     
-    NSDate *current = [NSDate date];
-    NSDate *past = [[NSDate alloc] initWithTimeIntervalSinceNow:-60];
-    
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    
-    NSEntityDescription *entityDesc =
-    [NSEntityDescription entityForName:@"Contacts"
-                inManagedObjectContext:context];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    
-    NSPredicate *pred =[NSPredicate predicateWithFormat:@"(log_date > %@) && (log_date < %@)",past,current];
-    [request setPredicate:pred];
-    NSManagedObject *matches = nil;
-    
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request
-                                              error:&error];
-    
-    if ([objects count] == 0) {
-        _change_label.text = @"No matches";
-    } else {
-        matches = objects[0];
-        _weight_textfield.text = [matches valueForKey:@"weight"];
-        _gender_textfield.text = [matches valueForKey:@"gender"];
-        //_change_label.text =  @"test2";
-        _change_label.text = [NSString stringWithFormat:
-                              @"%lu matches found", (unsigned long)[objects count]];
-    }
-    
-    
-}
-
-
-//ACTIVITY BUTTONS
-
-- (IBAction)lazy:(id)sender {
-    
-    userActivityGolabal =[NSNumber numberWithDouble:1];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
-    NSString *dayW = [NSString stringWithFormat:@"%d", daily];
-    _change_label.text = dayW;
-    
-    
-    //LAZY
-    [self.lazyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
-    self.lazyButtonOutlet.backgroundColor = selectedButtonColor;
-    //MEDIUM
+    [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
+    self.lazyButtonOutlet.backgroundColor = unselectedButtonColor;
     [self.mediumButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
     self.mediumButtonOutlet.backgroundColor = unselectedButtonColor;
-    //SPORTY
     [self.sportyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
     self.sportyButtonOutlet.backgroundColor = unselectedButtonColor;
     
- 
+    double activityLevel = [[NSUserDefaults standardUserDefaults] doubleForKey:@"activityLevel"];
+    if (activityLevel == 1.0) {
+        [self.lazyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+        self.lazyButtonOutlet.backgroundColor = selectedButtonColor;
+    } else if(activityLevel == 1.2) {
+        [self.mediumButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+        self.mediumButtonOutlet.backgroundColor = selectedButtonColor;
+    } else{
+        [self.sportyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
+        self.sportyButtonOutlet.backgroundColor = selectedButtonColor;
+    }
 }
 
-- (IBAction)medium:(id)sender {
+#pragma mark - Gender Selection
+
+- (IBAction)manFigureAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:@"male" forKey:@"userGender"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    userActivityGolabal =[NSNumber numberWithDouble:1.2];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
-    NSString *dayW = [NSString stringWithFormat:@"%d", daily];
-    _change_label.text = dayW;
-    
-    
-    //LAZY
-    [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
-    self.lazyButtonOutlet.backgroundColor = unselectedButtonColor;
-    //MEDIUM
-    [self.mediumButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
-    self.mediumButtonOutlet.backgroundColor = selectedButtonColor;
-    //SPORTY
-    [self.sportyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
-    self.sportyButtonOutlet.backgroundColor = unselectedButtonColor;
-    
+    [self updateGenderImageSelection];
+    [self calculateAndShowDailyFluidGoal];
 }
 
-- (IBAction)sporty:(id)sender {
-    userActivityGolabal =[NSNumber numberWithDouble:1.4];
-    int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal doubleValue]];
-    NSString *dayW = [NSString stringWithFormat:@"%d", daily];
-    _change_label.text = dayW;
-    
-    [lazySelected setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ];
-    
-    //LAZY
-    [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
-    self.lazyButtonOutlet.backgroundColor = unselectedButtonColor;
-    //MEDIUM
-    [self.mediumButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
-    self.mediumButtonOutlet.backgroundColor = unselectedButtonColor;
-    //SPORTY
-    [self.sportyButtonOutlet setTitleColor:selectedLabelColor forState:UIControlStateNormal];
-    self.sportyButtonOutlet.backgroundColor = selectedButtonColor;
-    
+- (IBAction)womanFigureAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:@"female" forKey:@"userGender"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [self updateGenderImageSelection];
+    [self calculateAndShowDailyFluidGoal];
 }
 
-//GENDER BUTTONS
-
-- (IBAction)blueman:(id)sender {
-    if(toggleIsOnman){
-        toggleIsOnwoman = NO;
+-(void)updateGenderImageSelection
+{
+    NSString *gender = [[NSUserDefaults standardUserDefaults] objectForKey:@"userGender"];
+    if ([gender isEqualToString:@"male"]) {
+        [self.manFigureAction setImage:[UIImage imageNamed:@"manblue.png"] forState:UIControlStateNormal];
+        [self.womanFigureAction setImage:[UIImage imageNamed:@"womanwhite.png"] forState:UIControlStateNormal];
         
+    } else if([gender isEqualToString:@"female"]) {
+        [self.manFigureAction setImage:[UIImage imageNamed:@"manwhite.png"] forState:UIControlStateNormal];
+        [self.womanFigureAction setImage:[UIImage imageNamed:@"womanblue.png"] forState:UIControlStateNormal];
     }
-    else {
-        toggleIsOnwoman = NO;
-        toggleIsOnman = YES;
-        
-    }
-    
-    
-    [self.toggleman setImage:[UIImage imageNamed:toggleIsOnman ? @"manblue.png" :@"manwhite.png"] forState:UIControlStateNormal];
-    
-    [self.womanwhite setImage:[UIImage imageNamed:toggleIsOnwoman ? @"womanblue.png" :@"womanwhite.png"] forState:UIControlStateNormal];
-    
-}
-
-- (IBAction)whitewoman:(id)sender {
-    if(toggleIsOnwoman){
-        toggleIsOnman = NO;
-        
-    }
-    else {
-        toggleIsOnman = NO;
-        toggleIsOnwoman = YES;
-    }
-    
-    
-    [self.toggleman setImage:[UIImage imageNamed:toggleIsOnman ? @"manblue.png" :@"manwhite.png"] forState:UIControlStateNormal];
-    
-    [self.womanwhite setImage:[UIImage imageNamed:toggleIsOnwoman ? @"womanblue.png" :@"womanwhite.png"] forState:UIControlStateNormal];
-    
 }
 
 
-//SAVE BUTTON
+#pragma mark - Lets drink button
 - (IBAction)drinkButton:(id)sender {
-    
-    AppDelegate *appDelegate =
-    [[UIApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *context =
-    [appDelegate managedObjectContext];
-    NSManagedObject *newContact;
-    newContact = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"UserData"
-                  inManagedObjectContext:context];
-    
-    if(toggleIsOnman == YES && toggleIsOnwoman == NO){
-        // NSNumber *ma = [NSNumber numberWithFloat:80];
-        
-        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
-        
-        [newContact setValue: userWeightGolabal forKey:@"weight"];
-        [newContact setValue: @"m" forKey:@"gender"];
-        [newContact setValue: userActivityGolabal forKey:@"activity"];
-        [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
-         [newContact setValue: [NSDate date] forKey:@"timestamp"];
-        
-        NSError *error;
-        [context save:&error];
-        //_change_label.text = [userWeightGolabal stringValue];
-        
-    }
-    else{
-        
-        //TO DO - Save Female DATA
-        //TO DO -
-        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
-        
-        [newContact setValue: userWeightGolabal forKey:@"weight"];
-        [newContact setValue: @"f" forKey:@"gender"];
-        [newContact setValue: userActivityGolabal forKey:@"activity"];
-        [newContact setValue: [NSNumber numberWithInt:daily] forKey:@"fluidgoal"];
-         [newContact setValue: [NSDate date] forKey:@"timestamp"];
-        
-        NSError *error;
-        [context save:&error];
-        
-    }
+    [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"beenHereBefore"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     //GO TO NEXT VIEW
     
 }
 
 
-
-- (IBAction)weightFieldAction2:(id)sender {
-    
-    if (self.weightPicker.isHidden) {
-        [self.weightPicker selectRow:selectedRow inComponent:0 animated:YES];
-        [self.weightPicker setHidden:NO];
-        
-    } else {
-        [self.weightPicker setHidden:YES];
-        
-        int daily = [self calculateDailyHydrationLevel:[userWeightGolabal intValue] activityLevelaug:[userActivityGolabal doubleValue] environmentLevelaug:[userTemperatureGolabal intValue]];
-        NSString *dayW = [NSString stringWithFormat:@"%d", daily];
-        _change_label.text = dayW;
-        
-        
-    }
-    
-    
-}
 @end
