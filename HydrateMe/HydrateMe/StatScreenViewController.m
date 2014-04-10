@@ -14,9 +14,9 @@
 
 @implementation StatScreenViewController
 
-@synthesize amountStatLabel = _amountStatLabel;
-@synthesize fluidTypeStatLabel = _fluidTypeStatLabel;
-@synthesize timestampStatLabel = _timestampStatLabel;
+//@synthesize amountStatLabel = _amountStatLabel;
+//@synthesize fluidTypeStatLabel = _fluidTypeStatLabel;
+//@synthesize timestampStatLabel = _timestampStatLabel;
 NSArray *amountArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
