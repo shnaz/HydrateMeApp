@@ -23,6 +23,9 @@
 		0031865218EC5DB500528B23 /* water_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864C18EC5DB500528B23 /* water_final.png */; };
 		0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031865318EC64E700528B23 /* caffein_unselected_final.png */; };
 		0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */ = {isa = PBXBuildFile; fileRef = 0031865418EC64E700528B23 /* sugar_unselected_final.psd */; };
+		0062D5C718F5DF3100BD97FD /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062D5C518F5DF3100BD97FD /* TopBarViewController.m */; };
+		0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */; };
+		0062D5CA18F5F98900BD97FD /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C918F5F98900BD97FD /* man.png */; };
 		00FB422918EF5DC60011E26A /* LoggingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422818EF5DC60011E26A /* LoggingData.m */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
@@ -87,6 +90,10 @@
 		0031864C18EC5DB500528B23 /* water_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_final.png; sourceTree = "<group>"; };
 		0031865318EC64E700528B23 /* caffein_unselected_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_unselected_final.png; sourceTree = "<group>"; };
 		0031865418EC64E700528B23 /* sugar_unselected_final.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = sugar_unselected_final.psd; sourceTree = "<group>"; };
+		0062D5C418F5DF3100BD97FD /* TopBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopBarViewController.h; sourceTree = "<group>"; };
+		0062D5C518F5DF3100BD97FD /* TopBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBarViewController.m; sourceTree = "<group>"; };
+		0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopBarViewController.xib; sourceTree = "<group>"; };
+		0062D5C918F5F98900BD97FD /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		00FB422718EF5DC60011E26A /* LoggingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingData.h; sourceTree = "<group>"; };
 		00FB422818EF5DC60011E26A /* LoggingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingData.m; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +263,7 @@
 		D6A0DAC618EC3E4800E97AE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */,
 				0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */,
 				0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */,
 				0004ECFF18EDE21B00EAE3F5 /* WaterSubViewController.xib */,
@@ -267,6 +275,8 @@
 		D6A0DAC718EC3E6F00E97AE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0062D5C418F5DF3100BD97FD /* TopBarViewController.h */,
+				0062D5C518F5DF3100BD97FD /* TopBarViewController.m */,
 				D60B92AF18EC395300AF04DE /* StartScreenViewController.h */,
 				D60B92B018EC395300AF04DE /* StartScreenViewController.m */,
 				0031864218EC419B00528B23 /* MainScreenViewController.h */,
@@ -384,6 +394,7 @@
 				D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */,
 				D6AD7BA518F557690073521D /* soda_bottle.png in Resources */,
 				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
+				0062D5CA18F5F98900BD97FD /* man.png in Resources */,
 				D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */,
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
 				D6AD7BA318F557690073521D /* coffee_cup_big.png in Resources */,
@@ -423,6 +434,7 @@
 				0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */,
 				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
 				0004ED0518EDE9C000EAE3F5 /* SoftDrinkSubViewController.m in Sources */,
+				0062D5C718F5DF3100BD97FD /* TopBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

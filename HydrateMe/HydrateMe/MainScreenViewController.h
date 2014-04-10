@@ -10,10 +10,20 @@
 #import "AppDelegate.h"
 
 @interface MainScreenViewController : UIViewController <UIScrollViewDelegate>
+
+- (IBAction)currentWaterIntakeAction:(id)sender;
+- (IBAction)settingsButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentWaterDetailedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentWaterIntakeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentCoffeeIntakeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentSoftDrinkIntakeLabel;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 
 @property (weak, nonatomic) IBOutlet UIPageControl *mainPageControl;
+
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
+
 
 @end
