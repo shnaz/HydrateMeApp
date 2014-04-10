@@ -84,6 +84,33 @@ TopBarViewController *topBarSubViewController;
      object: nil];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil) {
+        self.view.hidden = YES;
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil) {
+        [self performSegueWithIdentifier:@"settingsScreenSegue" sender:self];
+    }
+    //Updating Current intake level
+    [self calculateCurrentFluidIntakeLevels];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.view.hidden = NO;
+}
+
 -(void) updateEverything:(NSNotification *)notification
 {
     //NSLog(@"New enities added to CoreData!");
@@ -120,9 +147,12 @@ TopBarViewController *topBarSubViewController;
     float currentSoftDrinkLevel = (softDrinkIntake/softDrinkGoal)*100;
     float currentCoffeeLevel = (coffeeIntake/coffeeGoal)*100;
     
-    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentWaterLevel];
-    self.currentSoftDrinkIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentSoftDrinkLevel];
-    self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f", currentCoffeeLevel];
+    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+                                         (isnan(currentWaterLevel) ? 0.0 : currentWaterLevel) ];
+    self.currentSoftDrinkIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+                                             (isnan(currentSoftDrinkLevel) ? 0.0 : currentSoftDrinkLevel) ];
+    self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+                                          (isnan(currentCoffeeLevel) ? 0.0 : currentCoffeeLevel) ];
 }
 
 
@@ -202,16 +232,11 @@ TopBarViewController *topBarSubViewController;
     }
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)settingsButton:(id)sender {
+    [self performSegueWithIdentifier:@"settingsScreenSegue" sender:self];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
 
 
 @end

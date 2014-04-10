@@ -12,6 +12,7 @@
 @interface MainScreenViewController : UIViewController <UIScrollViewDelegate>
 
 - (IBAction)currentWaterIntakeAction:(id)sender;
+- (IBAction)settingsButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentWaterIntakeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentCoffeeIntakeLabel;
@@ -22,4 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *mainPageControl;
 
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
+
+
 @end

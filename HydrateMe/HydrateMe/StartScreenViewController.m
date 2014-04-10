@@ -252,7 +252,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"beenHereBefore"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    //GO TO NEXT VIEW
+    //Dismiss start screen and return to mainscreen
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
