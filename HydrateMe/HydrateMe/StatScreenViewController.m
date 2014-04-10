@@ -8,11 +8,16 @@
 
 #import "StatScreenViewController.h"
 
-@interface StatScreenViewController ()
+@interface StatScreenViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation StatScreenViewController
+
+@synthesize amountStatLabel = _amountStatLabel;
+@synthesize fluidTypeStatLabel = _fluidTypeStatLabel;
+@synthesize timestampStatLabel = _timestampStatLabel;
+NSArray *amountArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //Update List
+    
+//    self.amounttypeArray = [[NSArray alloc]
+//                      initWithObjects:@"250",
+//                      @"330",
+//                      @"500",
+//                       nil];
+    
+   amountArray = [NSArray arrayWithObjects:@"250",
+                                      @"330",
+                                       @"500",
+                                        nil];
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +62,33 @@
 
 - (IBAction)button1:(id)sender {
     self.label1.text = @"you are stat screen";
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [amountArray count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [amountArray objectAtIndex:indexPath.row];
+    return cell;
 }
 
 /*

@@ -32,9 +32,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBw-ZG-QZK">
-                    <rect key="frame" x="47" y="102" width="50" height="50"/>
+                    <rect key="frame" x="39" y="101" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="coffee_cup_final.png">
+                    <state key="normal" backgroundImage="cafe_coffee_final.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -78,8 +78,8 @@
         </view>
     </objects>
     <resources>
+        <image name="cafe_coffee_final.png" width="256" height="256"/>
         <image name="coffee_cup_big.png" width="512" height="512"/>
-        <image name="coffee_cup_final.png" width="780" height="780"/>
         <image name="glass_final.png" width="209" height="226"/>
     </resources>
 </document>
