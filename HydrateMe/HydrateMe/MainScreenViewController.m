@@ -153,12 +153,13 @@ TopBarViewController *topBarSubViewController;
                                              (isnan(currentSoftDrinkLevel) ? 0.0 : currentSoftDrinkLevel) ];
     self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
                                           (isnan(currentCoffeeLevel) ? 0.0 : currentCoffeeLevel) ];
+    self.currentWaterDetailedLabel.text = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntake, waterGoal];
+
 }
 
 
 -(NSDictionary *)getFluidIntakesUntilNow
 {
-    
     int waterIntakeUntilNow=0;
     int coffeeIntakeUntilNow=0;
     int softDrinkIntakeUntilNow = 0;
@@ -209,30 +210,16 @@ TopBarViewController *topBarSubViewController;
             nil];;
 }
 
+//This switches between the two label, percentage and detailed
 - (IBAction)currentWaterIntakeAction:(id)sender
 {
-    UIColor *hydrateMeColor=[UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0];
-    if(self.currentWaterIntakeLabel.hidden){
-        // Show percentage label
-        self.currentWaterIntakeLabel.hidden = NO;
-        [sender setBackgroundColor: [UIColor clearColor]];
-        [sender setTitle:@"" forState:UIControlStateNormal];
-        
-    } else {
-        // Show detailed decimal label
-        self.currentWaterIntakeLabel.hidden = YES;
-        float percent = [self.currentWaterIntakeLabel.text intValue];
-        float waterGoalmL = [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
-        float waterIntakemL = (percent/100)*waterGoalmL;
-        NSString *detailedAmount = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntakemL,waterGoalmL];
-
-        [sender setBackgroundColor:hydrateMeColor];
-        [sender setTitle:detailedAmount forState:UIControlStateNormal];
-        
-    }
+    self.currentWaterDetailedLabel.hidden = !self.currentWaterDetailedLabel.hidden;
+    self.currentWaterIntakeLabel.hidden = !self.currentWaterIntakeLabel.hidden;
 }
 
-- (IBAction)settingsButton:(id)sender {
+//This navigates to 'startScreen'
+- (IBAction)settingsButton:(id)sender
+{
     [self performSegueWithIdentifier:@"settingsScreenSegue" sender:self];
 
 }

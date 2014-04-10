@@ -14,6 +14,7 @@
 - (IBAction)currentWaterIntakeAction:(id)sender;
 - (IBAction)settingsButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentWaterDetailedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentWaterIntakeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentCoffeeIntakeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentSoftDrinkIntakeLabel;
