@@ -33,11 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //Initializing managedObjectContext to be able to use Core data
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
-    
-    //Update hydration bar
-    [self updateBarIndicatorPosition];
     
     //Setting a notification center for CoreData
     [[NSNotificationCenter defaultCenter]
@@ -45,15 +43,15 @@
      selector: @selector (updatePositionOfMan:)
      name: NSManagedObjectContextObjectsDidChangeNotification
      object: nil];
-    NSLog(@"viewDidLoad!");
-
+    
 }
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewDidLayoutSubviews
 {
-    //Update hydration bar
+    [super viewDidLayoutSubviews];
+    
+    //Update manOnBar's position
     [self updateBarIndicatorPosition];
-        NSLog(@"viewDidAppear!");
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,13 +60,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Change manOnBar's position with animation
 -(void) updatePositionOfMan:(NSNotification *)notification
 {
-    [self updateBarIndicatorPosition];
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self updateBarIndicatorPosition];
+                     }
+                     completion:^(BOOL finished){
+                     }];
     
-    NSLog(@"Inside top bar!");
 }
 
+//Changes manOnBar's position without animation
 -(void)updateBarIndicatorPosition
 {
     float periodWaterGoal = 500.0; //water goal for the 3 hours period
@@ -76,29 +82,16 @@
     float newX =  self.view.frame.size.width*([self getWaterIntakeUntilNow]/periodWaterGoal);
     if(newX > self.view.frame.size.width)
         newX =  self.view.frame.size.width-self.manOnBar.frame.size.width;
-
-    /*
-    [UIView animateWithDuration:1.0
-                          delay:0.0
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         [self.manOnBar setFrame:CGRectMake(newX, self.manOnBar.frame.origin.y, self.manOnBar.frame.size.width, self.manOnBar .frame.size.height)];
-                     }
-                     completion:^(BOOL finished){
-                         NSLog(@"Moved to pos: %f", newX);
-                     }];
-     */
     
     [self.manOnBar setFrame:CGRectMake(newX, self.manOnBar.frame.origin.y, self.manOnBar.frame.size.width, self.manOnBar.frame.size.height)];
-    
 }
 
 -(int)getWaterIntakeUntilNow
 {
     int waterIntakeUntilNow=1;
-
+    
     NSDate *now = [NSDate date];
-    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*2)]; // (60*60*3)
+    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*2)];//3hours=(60*60*3)<-TODO
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
@@ -128,10 +121,6 @@
     
     return waterIntakeUntilNow;
 }
-
-
-
-
 
 
 @end
