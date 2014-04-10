@@ -179,7 +179,28 @@ TopBarViewController *topBarSubViewController;
             nil];;
 }
 
+- (IBAction)currentWaterIntakeAction:(id)sender
+{
+    UIColor *hydrateMeColor=[UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0];
+    if(self.currentWaterIntakeLabel.hidden){
+        // Show percentage label
+        self.currentWaterIntakeLabel.hidden = NO;
+        [sender setBackgroundColor: [UIColor clearColor]];
+        [sender setTitle:@"" forState:UIControlStateNormal];
+        
+    } else {
+        // Show detailed decimal label
+        self.currentWaterIntakeLabel.hidden = YES;
+        float percent = [self.currentWaterIntakeLabel.text intValue];
+        float waterGoalmL = [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
+        float waterIntakemL = (percent/100)*waterGoalmL;
+        NSString *detailedAmount = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntakemL,waterGoalmL];
 
+        [sender setBackgroundColor:hydrateMeColor];
+        [sender setTitle:detailedAmount forState:UIControlStateNormal];
+        
+    }
+}
 
 /*
 #pragma mark - Navigation
@@ -191,5 +212,6 @@ TopBarViewController *topBarSubViewController;
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
