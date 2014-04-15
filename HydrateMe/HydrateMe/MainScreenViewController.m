@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "MainScreenViewController.h"
 #import "WaterSubViewController.h"
 #import "SoftDrinkSubViewController.h"
 #import "CoffeeSubViewController.h"
 #import "TopBarViewController.h"
-#import "AppDelegate.h"
+#import "WeatherSubViewController.h"
 
 
 @interface MainScreenViewController () <UIScrollViewDelegate>
@@ -27,6 +28,7 @@ SoftDrinkSubViewController *softDrinkSubviewController;
 CoffeeSubViewController *coffeeSubViewController;
 
 TopBarViewController *topBarSubViewController;
+WeatherSubViewController *weatherSubViewController;
 
 @implementation MainScreenViewController
 
@@ -50,6 +52,10 @@ TopBarViewController *topBarSubViewController;
     // Initializing and adding Topbar view
     topBarSubViewController = [[TopBarViewController alloc] init];
     [self.topBarView addSubview:topBarSubViewController.view];
+    
+    // Initializing and adding Weather view
+    weatherSubViewController = [[WeatherSubViewController alloc] init];
+    [self.weatherView addSubview:weatherSubViewController.view];
     
     //Middle slider views init
     waterSubViewController = [[WaterSubViewController alloc] init];

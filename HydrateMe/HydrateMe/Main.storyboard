@@ -354,6 +354,11 @@
                                     <action selector="currentWaterIntakeAction:" destination="jm8-ap-n0I" eventType="touchUpInside" id="Erg-Yh-tcb"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-PW-PJh">
+                                <rect key="frame" x="80" y="523" width="160" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.31372549019607843" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -367,6 +372,7 @@
                         <outlet property="mainPageControl" destination="jqq-q4-SSm" id="YTp-2S-et1"/>
                         <outlet property="mainScrollView" destination="qU1-p0-MEN" id="DRf-xc-2Mn"/>
                         <outlet property="topBarView" destination="L02-x1-z5H" id="SGo-Ce-vBg"/>
+                        <outlet property="weatherView" destination="PE0-PW-PJh" id="lsP-Tc-uPp"/>
                         <segue destination="SpW-s6-s1L" kind="modal" identifier="settingsScreenSegue" modalTransitionStyle="crossDissolve" id="ECD-Gc-hj2"/>
                     </connections>
                 </viewController>
@@ -435,6 +441,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7o-ss-tdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018" y="-43"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XcK-AR-CSZ">
+            <objects>
+                <viewController id="2CG-vC-IFC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ste-XJ-438"/>
+                        <viewControllerLayoutGuide type="bottom" id="rMA-QM-HBr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="md5-pP-Xif">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PD5-My-g12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x6n-V7-tPK">
+            <objects>
+                <viewController id="Pl5-wH-cjB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sqW-Ia-Tmf"/>
+                        <viewControllerLayoutGuide type="bottom" id="j2K-0q-pNW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HZD-kI-hwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLz-k9-2pD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

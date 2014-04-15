@@ -13,6 +13,8 @@
 		0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */; };
 		0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */; };
 		0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */; };
+		0007A65018FDBB580029CD2C /* WeatherSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */; };
+		0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0007A64F18FDBB580029CD2C /* WeatherSubViewController.xib */; };
 		000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */; };
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
 		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
@@ -72,6 +74,9 @@
 		0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeSubViewController.h; sourceTree = "<group>"; };
 		0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeSubViewController.m; sourceTree = "<group>"; };
 		0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeSubViewController.xib; sourceTree = "<group>"; };
+		0007A64D18FDBB580029CD2C /* WeatherSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherSubViewController.h; sourceTree = "<group>"; };
+		0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherSubViewController.m; sourceTree = "<group>"; };
+		0007A64F18FDBB580029CD2C /* WeatherSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherSubViewController.xib; sourceTree = "<group>"; };
 		000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatScreenViewController.h; sourceTree = "<group>"; };
 		000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatScreenViewController.m; sourceTree = "<group>"; };
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
@@ -246,6 +251,7 @@
 		D6A0DAC618EC3E4800E97AE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0007A64F18FDBB580029CD2C /* WeatherSubViewController.xib */,
 				0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */,
 				0004ED0918EDEA4900EAE3F5 /* CoffeeSubViewController.xib */,
 				0004ED0418EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib */,
@@ -258,6 +264,8 @@
 		D6A0DAC718EC3E6F00E97AE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0007A64D18FDBB580029CD2C /* WeatherSubViewController.h */,
+				0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */,
 				0062D5C418F5DF3100BD97FD /* TopBarViewController.h */,
 				0062D5C518F5DF3100BD97FD /* TopBarViewController.m */,
 				D60B92AF18EC395300AF04DE /* StartScreenViewController.h */,
@@ -366,6 +374,7 @@
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
 				0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */,
 				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
+				0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
@@ -410,6 +419,7 @@
 				0004ED0A18EDEA4900EAE3F5 /* CoffeeSubViewController.m in Sources */,
 				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
 				0004ED0518EDE9C000EAE3F5 /* SoftDrinkSubViewController.m in Sources */,
+				0007A65018FDBB580029CD2C /* WeatherSubViewController.m in Sources */,
 				0062D5C718F5DF3100BD97FD /* TopBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

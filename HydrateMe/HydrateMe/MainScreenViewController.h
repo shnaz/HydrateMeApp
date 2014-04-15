@@ -25,5 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 
+@property (weak, nonatomic) IBOutlet UIView *weatherView;
 
 @end
