@@ -40,6 +40,8 @@ NSString *areaName;
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
+    [locationManager startUpdatingLocation];
+
     areaTemperature = @"-";
     areaName = @"-";
 }
@@ -49,14 +51,15 @@ NSString *areaName;
     [super viewDidLayoutSubviews];
     
     //Update manOnBar's position
-    [locationManager startUpdatingLocation];}
+    //[locationManager startUpdatingLocation];
+}
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    //[locationManager startUpdatingLocation];}
+    //[locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,9 +100,14 @@ NSString *areaName;
         
         self.areaNameLabel.text = areaName;
         self.areaTempLabel.text = areaTemperature;
-        
-        [super.view setNeedsDisplay];
-        
+        NSLog(@"WeatherSubView: City=%@  Temp=%d", areaName,temperature);
+
+        //Update UILabels async
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.areaNameLabel setNeedsDisplay];
+            [self.areaTempLabel setNeedsDisplay];
+            
+        });
     } else {
         NSLog(@"WeatherSubView: processData error %@", parseJsonError);
     }
