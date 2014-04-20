@@ -20,5 +20,5 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *cellinTable;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UITableView *recentLogDataTable;
-
 @end
+
