@@ -98,32 +98,13 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
        
         for (NSManagedObject *logData in array) {
             NSString *fluidType = [logData valueForKey:@"fluit_type"];
-           
             
             NSString *dateTimeStamp =  [NSString stringWithFormat:
                                         @"%@", [logData valueForKey:@"date_time"]];
             
-            
             NSString *fluidAmount =  [NSString stringWithFormat:
                                         @"%@", [logData valueForKey:@"fluit_amount"]];
-            //if ([fluidType isEqualToString:@"water"]) {
-               // int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
-               // waterIntakeUntilNow += fluidAmount;
-           // }else if ([fluidType isEqualToString:@"softdrink"]) {
-                //int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
-                //softDrinkIntakeUntilNow += fluidAmount;
-           // }else{
-               // int fluidAmount = [[logData valueForKey:@"fluit_amount"] intValue];
-                //coffeeIntakeUntilNow += fluidAmount;
-            //}
-            
-            
-          
-            
-            array2 = [array2 arrayByAddingObject:fluidType];
-            array3 = [array3 arrayByAddingObject:[dateTimeStamp substringToIndex:[dateTimeStamp length]-5]];
-            array4 = [array4 arrayByAddingObject:fluidAmount];
-            
+
             //fluidTypeColor
             UIColor *fluidColor;
             UIColor *softDrinkColor=[UIColor colorWithRed:(231/255.0) green:(76/255.0) blue:(60/255.0) alpha:1.0];
@@ -132,37 +113,38 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
             
             if ([fluidType  isEqual: @"softdrink"]) {
                 fluidColor = softDrinkColor;
-            
-            array5 = [array5 arrayByAddingObject:fluidColor];
             }else if ([fluidType  isEqual: @"coffee"]) {
-                 fluidColor = coffeeColor;
-            }else {
-            fluidColor = waterColor;
+                fluidColor = coffeeColor;
+            }else if ([fluidType  isEqual: @"water"]){
+                fluidColor = waterColor;
             }
             
+            array2 = [array2 arrayByAddingObject:fluidType];
+            array3 = [array3 arrayByAddingObject:[dateTimeStamp substringToIndex:[dateTimeStamp length]-5]];
+            array4 = [array4 arrayByAddingObject:fluidAmount];
             array5 = [array5 arrayByAddingObject:fluidColor];
+            
         }
         
         //reverse arraylists
         NSMutableArray * dateTimeStampArray = [NSMutableArray arrayWithCapacity:[array2 count]];
-        for(int i = 0; i < [array count]; i++) {
+        for(int i = 0; i < [array2 count]; i++) {
             [dateTimeStampArray addObject:[array2 objectAtIndex:[array2 count] - i - 1]];
         }
         NSMutableArray * fluidTypeArray = [NSMutableArray arrayWithCapacity:[array3 count]];
-        for(int i = 0; i < [array count]; i++) {
+        for(int i = 0; i < [array3 count]; i++) {
             [fluidTypeArray addObject:[array3 objectAtIndex:[array3 count] - i - 1]];
         }
         
         NSMutableArray * fluidAmountArray = [NSMutableArray arrayWithCapacity:[array4 count]];
-        for(int i = 0; i < [array count]; i++) {
+        for(int i = 0; i < [array4 count]; i++) {
             [fluidAmountArray addObject:[array4 objectAtIndex:[array4 count] - i - 1]];
         }
         
         NSMutableArray * fluidAmountColorArray = [NSMutableArray arrayWithCapacity:[array5 count]];
-        for(int i = 0; i < [array count]; i++) {
+        for(int i = 0; i < [array5 count]; i++) {
             [fluidAmountColorArray addObject:[array5 objectAtIndex:[array5 count] - i - 1]];
         }
-        
         
         //found arraylist to the labelArraylists
         _statLogFluidType = fluidTypeArray;
@@ -214,10 +196,7 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
     cell.modelLabel.text = _statLogDates[row];
     cell.fluidAmountLabel.text = _statLogAmount[row];
     cell.makeLabel.text = _statLogFluidType[row];
-    
-    //colorlabel
-   
-cell.fluidTypeColorLabel.backgroundColor = _statLogFluidColor[row];
+    cell.fluidTypeColorLabel.backgroundColor = _statLogFluidColor[row];
     
 
 
