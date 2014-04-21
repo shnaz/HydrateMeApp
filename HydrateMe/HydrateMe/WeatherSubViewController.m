@@ -40,7 +40,7 @@ NSString *areaName;
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    [locationManager startUpdatingLocation];
+    //[locationManager startUpdatingLocation];
 
     areaTemperature = @"-";
     areaName = @"-";
@@ -59,7 +59,7 @@ NSString *areaName;
 {
     [super viewWillAppear:animated];
     
-    //[locationManager startUpdatingLocation];
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
