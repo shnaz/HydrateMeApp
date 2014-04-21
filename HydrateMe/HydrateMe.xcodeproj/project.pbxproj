@@ -55,6 +55,9 @@
 		D69F4AD0190429ED00FFC74E /* manblue_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACE190429ED00FFC74E /* manblue_newblue.png */; };
 		D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */; };
 		D69F4AD319042AC600FFC74E /* bluewoman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */; };
+		D6AD21A719050608008772A4 /* CarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD21A419050608008772A4 /* CarTableViewController.m */; };
+		D6AD21A819050608008772A4 /* CarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD21A619050608008772A4 /* CarTableViewCell.m */; };
+		D6AD21AB1905068D008772A4 /* TableViewStoryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD21AA1905068D008772A4 /* TableViewStoryAppDelegate.m */; };
 		D6AD7BA318F557690073521D /* coffee_cup_big.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7B9F18F557690073521D /* coffee_cup_big.png */; };
 		D6AD7BA518F557690073521D /* soda_bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7BA118F557690073521D /* soda_bottle.png */; };
 		D6AD7BA618F557690073521D /* soda_can.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7BA218F557690073521D /* soda_can.png */; };
@@ -132,6 +135,12 @@
 		D69F4ACE190429ED00FFC74E /* manblue_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manblue_newblue.png; sourceTree = "<group>"; };
 		D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteman_newblue.png; sourceTree = "<group>"; };
 		D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoman_newblue.png; sourceTree = "<group>"; };
+		D6AD21A319050608008772A4 /* CarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarTableViewController.h; sourceTree = "<group>"; };
+		D6AD21A419050608008772A4 /* CarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarTableViewController.m; sourceTree = "<group>"; };
+		D6AD21A519050608008772A4 /* CarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarTableViewCell.h; sourceTree = "<group>"; };
+		D6AD21A619050608008772A4 /* CarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarTableViewCell.m; sourceTree = "<group>"; };
+		D6AD21A91905068D008772A4 /* TableViewStoryAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewStoryAppDelegate.h; sourceTree = "<group>"; };
+		D6AD21AA1905068D008772A4 /* TableViewStoryAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewStoryAppDelegate.m; sourceTree = "<group>"; };
 		D6AD7B9F18F557690073521D /* coffee_cup_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_cup_big.png; sourceTree = "<group>"; };
 		D6AD7BA118F557690073521D /* soda_bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soda_bottle.png; sourceTree = "<group>"; };
 		D6AD7BA218F557690073521D /* soda_can.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soda_can.png; sourceTree = "<group>"; };
@@ -222,6 +231,8 @@
 		D60B927418EC304000AF04DE /* HydrateMe */ = {
 			isa = PBXGroup;
 			children = (
+				D6AD21A91905068D008772A4 /* TableViewStoryAppDelegate.h */,
+				D6AD21AA1905068D008772A4 /* TableViewStoryAppDelegate.m */,
 				D60B927D18EC304000AF04DE /* AppDelegate.h */,
 				D60B927E18EC304000AF04DE /* AppDelegate.m */,
 				D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */,
@@ -285,6 +296,10 @@
 		D6A0DAC718EC3E6F00E97AE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6AD21A319050608008772A4 /* CarTableViewController.h */,
+				D6AD21A419050608008772A4 /* CarTableViewController.m */,
+				D6AD21A519050608008772A4 /* CarTableViewCell.h */,
+				D6AD21A619050608008772A4 /* CarTableViewCell.m */,
 				0062D5C418F5DF3100BD97FD /* TopBarViewController.h */,
 				0062D5C518F5DF3100BD97FD /* TopBarViewController.m */,
 				D60B92AF18EC395300AF04DE /* StartScreenViewController.h */,
@@ -437,8 +452,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AD21A819050608008772A4 /* CarTableViewCell.m in Sources */,
 				000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */,
 				D60B92A218EC374300AF04DE /* CoreData.xcdatamodel in Sources */,
+				D6AD21A719050608008772A4 /* CarTableViewController.m in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
 				D69BFA4F18F58C4100ECD2C7 /* StatTableViewController.m in Sources */,
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
@@ -449,6 +466,7 @@
 				0004ED0018EDE21B00EAE3F5 /* WaterSubViewController.m in Sources */,
 				0004ED0518EDE9C000EAE3F5 /* SoftDrinkSubViewController.m in Sources */,
 				0062D5C718F5DF3100BD97FD /* TopBarViewController.m in Sources */,
+				D6AD21AB1905068D008772A4 /* TableViewStoryAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
