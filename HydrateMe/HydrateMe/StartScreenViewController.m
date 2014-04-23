@@ -146,7 +146,7 @@
     self.waterGoalLabel.text = [NSString stringWithFormat:@"%d", waterGoal];
     
     int softDrinkGoal = 500; //maybe another amount i dunno
-    [defaults setInteger:softDrinkGoal forKey:@"softDrinkGoal"];//fix amount
+    [defaults setInteger:softDrinkGoal forKey:@"softDrinkGoal"];
     self.softDrinkGoalLabel.text = [NSString stringWithFormat:@"%d", softDrinkGoal];
     
     int coffeeGoal = 750; //maybe another amount i dunno
@@ -159,9 +159,12 @@
 //Check if user has chosen gender, weight and activity level
 -(BOOL)isEverythingFilledOut
 {
-    NSUInteger count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
-    //NSLog(@"count %d",count);
-    return (count>10 ? YES : NO);
+    bool isWeightEntered = [[NSUserDefaults standardUserDefaults] objectForKey:@"userWeight"] != nil;
+    bool isGenderChosen  = [[NSUserDefaults standardUserDefaults] objectForKey:@"userGender"] != nil;
+    bool isActLvlSet     = [[NSUserDefaults standardUserDefaults] objectForKey:@"activityLevel"] != nil;
+    
+    //NSLog(@"Weight= %u , Gender= %u , Activity= %u ", isWeightEntered,isGenderChosen,isActLvlSet);
+    return (isWeightEntered && isGenderChosen && isActLvlSet);
 }
 
 
