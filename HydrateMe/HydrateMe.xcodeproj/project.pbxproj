@@ -297,6 +297,10 @@
 		D6A0DAC718EC3E6F00E97AE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6AD21A319050608008772A4 /* CarTableViewController.h */,
+				D6AD21A419050608008772A4 /* CarTableViewController.m */,
+				D6AD21A519050608008772A4 /* CarTableViewCell.h */,
+				D6AD21A619050608008772A4 /* CarTableViewCell.m */,
 				0007A64D18FDBB580029CD2C /* WeatherSubViewController.h */,
 				0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */,
 				0062D5C418F5DF3100BD97FD /* TopBarViewController.h */,
@@ -410,6 +414,8 @@
 				0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */,
 				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
 				0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */,
+				D6AD7BA618F557690073521D /* soda_can.png in Resources */,
+				D6AD7BA818F559250073521D /* coffee_cup_final.png in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
 				D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */,
 				0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */,
