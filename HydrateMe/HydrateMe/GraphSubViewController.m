@@ -18,6 +18,14 @@
 -(int)getDayDate:(int) minusDays;
 -(void)updateFluidIntakeFor:(NSString*)day withFluidAmmounts: (int)water : (int)softDrink :(int)coffee;
 
+-(void)updateGraph;
+-(double)getWaterIntakeLevelFor:(NSString*)day;
+-(double)getSoftDrinkIntakeLevelFor:(NSString*)day;
+-(double)getCoffeeIntakeLevelFor:(NSString*)day;
+-(CGRect)getUpdatedBarFrame:(CGRect)barFrame withFluid:(double)percent;
+-(NSString*)getWeekDayName:(int) minusDays;
+
+
 @end
 
 @implementation GraphSubViewController
@@ -41,11 +49,11 @@
     
     // Initializing dict for Last seven days
     NSMutableDictionary *fluids = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                            [NSNumber numberWithInt: 0], @"waterIntake",
-                            [NSNumber numberWithInt: 0], @"softDrinkIntake",
-                            [NSNumber numberWithInt: 0], @"coffeeIntake",
-                            nil];
-
+                                   [NSNumber numberWithInt: 0], @"waterIntake",
+                                   [NSNumber numberWithInt: 0], @"softDrinkIntake",
+                                   [NSNumber numberWithInt: 0], @"coffeeIntake",
+                                   nil];
+    
     self.lastSevenDays = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                           fluids, @"todayMinus1",
                           fluids, @"todayMinus2",
@@ -54,11 +62,21 @@
                           fluids, @"todayMinus5",
                           fluids, @"todayMinus6",
                           fluids, @"todayMinus7",
-     nil];
+                          nil];
     
     // Get last week's fluid intakes
     [self getLastSevenDaysFluidIntakes];
     
+    
+    
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    //Update graph
+    [self updateGraph];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +84,92 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)updateGraph
+{
+    self.todayMinus1DayName.text = [self getWeekDayName:-1];
+    self.todayMinus1WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus1WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus1"]];
+    self.todayMinus1SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus1SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus1"]];
+    self.todayMinus1CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus1CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus1"]];
+    
+    self.todayMinus2DayName.text = [self getWeekDayName:-2];
+    self.todayMinus2WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus2WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus2"]];
+    self.todayMinus2SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus2SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus2"]];
+    self.todayMinus2CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus2CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus2"]];
+    
+    self.todayMinus3DayName.text = [self getWeekDayName:-3];
+    self.todayMinus3WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus3WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus3"]];
+    self.todayMinus3SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus3SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus3"]];
+    self.todayMinus3CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus3CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus3"]];
+    
+    self.todayMinus4DayName.text = [self getWeekDayName:-4];
+    self.todayMinus4WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus4WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus4"]];
+    self.todayMinus4SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus4SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus4"]];
+    self.todayMinus4CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus4CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus4"]];
+    
+    self.todayMinus5DayName.text = [self getWeekDayName:-5];
+    self.todayMinus5WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus5WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus5"]];
+    self.todayMinus5SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus5SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus5"]];
+    self.todayMinus5CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus5CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus5"]];
+    
+    self.todayMinus6DayName.text = [self getWeekDayName:-6];
+    self.todayMinus6WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus6WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus6"]];
+    self.todayMinus6SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus6SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus6"]];
+    self.todayMinus6CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus6CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus6"]];
+    
+    self.todayMinus7DayName.text = [self getWeekDayName:-7];
+    self.todayMinus7WaterBar.frame = [self getUpdatedBarFrame:self.todayMinus7WaterBar.frame withFluid:[self getWaterIntakeLevelFor:@"todayMinus7"]];
+    self.todayMinus7SoftDrinkBar.frame = [self getUpdatedBarFrame:self.todayMinus7SoftDrinkBar.frame withFluid:[self getSoftDrinkIntakeLevelFor:@"todayMinus7"]];
+    self.todayMinus7CoffeeBar.frame = [self getUpdatedBarFrame:self.todayMinus7CoffeeBar.frame withFluid:[self getCoffeeIntakeLevelFor:@"todayMinus7"]];
+}
+
+-(CGRect)getUpdatedBarFrame:(CGRect)barFrame withFluid:(double)percent
+{
+    CGFloat height = 120 * percent;
+    if (height<1) {
+        height = 2;
+    }else if(height > 180){
+        height = 179;
+    }
+    CGRect newFrame = barFrame;
+    newFrame.size.height = height;
+    newFrame.origin.y = 180 - newFrame.size.height;
+    return newFrame;
+}
+
+-(double)getWaterIntakeLevelFor:(NSString*)day
+{
+    NSMutableDictionary *root = [[NSMutableDictionary alloc] initWithDictionary:( [self.lastSevenDays valueForKey:day]) copyItems:YES];
+    
+    double waterIntake = [[root valueForKey:@"waterIntake"] doubleValue];
+    
+    NSInteger waterGoal = [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
+    
+    return (waterIntake/waterGoal);
+}
+
+-(double)getSoftDrinkIntakeLevelFor:(NSString*)day
+{
+    NSMutableDictionary *root = [[NSMutableDictionary alloc] initWithDictionary:( [self.lastSevenDays valueForKey:day]) copyItems:YES];
+    
+    double softDrinkIntake = [[root valueForKey:@"softDrinkIntake"] doubleValue];
+    
+    NSInteger softDrinkGoal = [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
+    
+    return (softDrinkIntake/softDrinkGoal);
+}
+
+-(double)getCoffeeIntakeLevelFor:(NSString*)day
+{
+    NSMutableDictionary *root = [[NSMutableDictionary alloc] initWithDictionary:( [self.lastSevenDays valueForKey:day]) copyItems:YES];
+    
+    double coffeeIntake = [[root valueForKey:@"coffeeIntake"] doubleValue];
+    
+    NSInteger coffeeGoal = [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
+    
+    return (coffeeIntake/coffeeGoal);
+}
+
 
 -(int)getDayDate:(int) minusDays
 {
@@ -79,6 +183,23 @@
     NSDateComponents* yesterdayComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:previousDay];
     
     return [yesterdayComponents day];
+}
+
+-(NSString*)getWeekDayName:(int) minusDays
+{
+    NSDate *now = [NSDate date];
+    [now descriptionWithLocale:[NSLocale systemLocale]];
+    
+    NSDateComponents* todayComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
+    [todayComponents setDay: minusDays];
+    NSDate *previousDay = [[NSCalendar currentCalendar] dateByAddingComponents:todayComponents toDate:now options:0];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *dayName = [dateFormatter stringFromDate:previousDay];
+    
+    return [dayName substringWithRange:NSMakeRange(0, 3)];
+
 }
 
 -(void)getLastSevenDaysFluidIntakes
@@ -111,7 +232,7 @@
     
     NSError *error;
     NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
-
+    
     if (array == nil) {
         NSLog(@"Fetch water logging data failed");
     }

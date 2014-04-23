@@ -61,9 +61,11 @@
 {
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
-    newEntry.date_time = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*24)]; //debugging purposes
+    //newEntry.date_time = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*24)]; //debugging purposes
     
-    //newEntry.date_time = [NSDate date];
+    NSDate *now = [NSDate date];
+    [now descriptionWithLocale:[NSLocale systemLocale]];
+    newEntry.date_time = now;
     newEntry.fluit_type = @"softdrink";
     newEntry.fluit_amount = [NSNumber numberWithInt:amount];
     newEntry.temp = [NSNumber numberWithInt:20];

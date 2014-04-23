@@ -66,7 +66,9 @@
 {
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
-    newEntry.date_time = [NSDate date];
+    NSDate *now = [NSDate date];
+    [now descriptionWithLocale:[NSLocale systemLocale]];
+    newEntry.date_time = now;
     newEntry.fluit_type = @"water";
     newEntry.fluit_amount = [NSNumber numberWithInt:amount];
     newEntry.temp = [NSNumber numberWithInt:20];
