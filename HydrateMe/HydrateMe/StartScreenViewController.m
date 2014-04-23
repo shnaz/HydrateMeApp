@@ -128,7 +128,7 @@
     if(![self isEverythingFilledOut]){
         return;
     } else {
-        UIColor *hydrateMeColor=[UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0];
+        UIColor *hydrateMeColor=[UIColor colorWithRed:(49/255.0) green:(139/255.0) blue:(255/255.0) alpha:1.0];
         self.drinkButtonOutlet.enabled = YES;
         self.drinkButtonOutlet.backgroundColor = hydrateMeColor;
     }
@@ -139,7 +139,7 @@
     NSString *gender = [defaults objectForKey:@"userGender"];
     double activityLevel = [defaults doubleForKey:@"activityLevel"];
     double temperatur = 1.0;
-    double genderFactor = [gender isEqualToString:@"male"] ? 1.3 : 1.0; //Maybe some other values
+    double genderFactor = [gender isEqualToString:@"male"] ? 1.1 : 0.9; //Maybe some other values
     
     int waterGoal= ((((userWeight)-20)*15)+1500)*(activityLevel)*(temperatur)* genderFactor;
     [defaults setInteger:waterGoal forKey:@"waterGoal"];
@@ -190,9 +190,9 @@
 
 -(void)updateActivityButtonSelection
 {
-    UIColor *selectedButtonColor=[UIColor colorWithRed:(41/255.0) green:(128/255.0) blue:(185/255.0) alpha:1.0];
-    UIColor *unselectedButtonColor=[UIColor colorWithRed:(52/255.0) green:(152/255.0) blue:(219/255.0) alpha:1.0];
-    UIColor *selectedLabelColor=[UIColor colorWithRed:(40/255.0) green:(80/255.0) blue:(110/255.0) alpha:1.0];
+    UIColor *selectedButtonColor=[UIColor colorWithRed:(0/255.0) green:(174/255.0) blue:(255/255.0) alpha:1.0];
+    UIColor *unselectedButtonColor=[UIColor colorWithRed:(49/255.0) green:(139/255.0) blue:(255/255.0) alpha:1.0];
+    UIColor *selectedLabelColor=[UIColor colorWithRed:(51/255.0) green:(51/255.0) blue:(51/255.0) alpha:1.0];
     UIColor *unselectedLabelColor=[UIColor whiteColor];
     
     [self.lazyButtonOutlet setTitleColor:unselectedLabelColor forState:UIControlStateNormal];
@@ -237,12 +237,12 @@
 {
     NSString *gender = [[NSUserDefaults standardUserDefaults] objectForKey:@"userGender"];
     if ([gender isEqualToString:@"male"]) {
-        [self.manFigureAction setImage:[UIImage imageNamed:@"manblue.png"] forState:UIControlStateNormal];
+        [self.manFigureAction setImage:[UIImage imageNamed:@"manblue_newblue.png"] forState:UIControlStateNormal];
         [self.womanFigureAction setImage:[UIImage imageNamed:@"womanwhite.png"] forState:UIControlStateNormal];
         
     } else if([gender isEqualToString:@"female"]) {
-        [self.manFigureAction setImage:[UIImage imageNamed:@"manwhite.png"] forState:UIControlStateNormal];
-        [self.womanFigureAction setImage:[UIImage imageNamed:@"womanblue.png"] forState:UIControlStateNormal];
+        [self.manFigureAction setImage:[UIImage imageNamed:@"whiteman_newblue.png"] forState:UIControlStateNormal];
+        [self.womanFigureAction setImage:[UIImage imageNamed:@"bluewoman_newblue.png"] forState:UIControlStateNormal];
     }
 }
 

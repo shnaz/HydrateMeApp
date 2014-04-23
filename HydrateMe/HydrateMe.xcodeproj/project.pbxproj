@@ -52,6 +52,17 @@
 		D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B92B018EC395300AF04DE /* StartScreenViewController.m */; };
 		D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F318EC6945001A8BAA /* AppIcon.png */; };
 		D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F418EC6945001A8BAA /* AppIcon_1.png */; };
+		D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */ = {isa = PBXBuildFile; fileRef = D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */; };
+		D69BFA4F18F58C4100ECD2C7 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */; };
+		D69F4AD0190429ED00FFC74E /* manblue_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACE190429ED00FFC74E /* manblue_newblue.png */; };
+		D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */; };
+		D69F4AD319042AC600FFC74E /* bluewoman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */; };
+		D6AD21A719050608008772A4 /* CarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD21A419050608008772A4 /* CarTableViewController.m */; };
+		D6AD21A819050608008772A4 /* CarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AD21A619050608008772A4 /* CarTableViewCell.m */; };
+		D6AD7BA318F557690073521D /* coffee_cup_big.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7B9F18F557690073521D /* coffee_cup_big.png */; };
+		D6AD7BA518F557690073521D /* soda_bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7BA118F557690073521D /* soda_bottle.png */; };
+		D6AD7BA618F557690073521D /* soda_can.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7BA218F557690073521D /* soda_can.png */; };
+		D6AD7BA818F559250073521D /* coffee_cup_final.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AD7BA718F559250073521D /* coffee_cup_final.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +133,20 @@
 		D60B92B018EC395300AF04DE /* StartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
 		D62A58F318EC6945001A8BAA /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		D62A58F418EC6945001A8BAA /* AppIcon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1.png; sourceTree = "<group>"; };
+		D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe_coffee_final.png; sourceTree = "<group>"; };
+		D69BFA4D18F58C4100ECD2C7 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
+		D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
+		D69F4ACE190429ED00FFC74E /* manblue_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manblue_newblue.png; sourceTree = "<group>"; };
+		D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteman_newblue.png; sourceTree = "<group>"; };
+		D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoman_newblue.png; sourceTree = "<group>"; };
+		D6AD21A319050608008772A4 /* CarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarTableViewController.h; sourceTree = "<group>"; };
+		D6AD21A419050608008772A4 /* CarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarTableViewController.m; sourceTree = "<group>"; };
+		D6AD21A519050608008772A4 /* CarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarTableViewCell.h; sourceTree = "<group>"; };
+		D6AD21A619050608008772A4 /* CarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarTableViewCell.m; sourceTree = "<group>"; };
+		D6AD7B9F18F557690073521D /* coffee_cup_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_cup_big.png; sourceTree = "<group>"; };
+		D6AD7BA118F557690073521D /* soda_bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soda_bottle.png; sourceTree = "<group>"; };
+		D6AD7BA218F557690073521D /* soda_can.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soda_can.png; sourceTree = "<group>"; };
+		D6AD7BA718F559250073521D /* coffee_cup_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_cup_final.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +178,14 @@
 		0031864618EC526300528B23 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */,
+				D69F4ACE190429ED00FFC74E /* manblue_newblue.png */,
+				D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */,
+				D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */,
+				D6AD7BA718F559250073521D /* coffee_cup_final.png */,
+				D6AD7B9F18F557690073521D /* coffee_cup_big.png */,
+				D6AD7BA118F557690073521D /* soda_bottle.png */,
+				D6AD7BA218F557690073521D /* soda_can.png */,
 				0062D5C918F5F98900BD97FD /* man.png */,
 				0031865318EC64E700528B23 /* caffein_unselected_final.png */,
 				0031865418EC64E700528B23 /* sugar_unselected_final.psd */,
@@ -280,6 +313,8 @@
 				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
 				000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */,
 				000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */,
+				D69BFA4D18F58C4100ECD2C7 /* StatTableViewController.h */,
+				D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -376,14 +411,20 @@
 				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
 				0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
+				D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */,
 				0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */,
+				D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */,
+				D69F4AD0190429ED00FFC74E /* manblue_newblue.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
 				D60B92A818EC380D00AF04DE /* womanblue.png in Resources */,
 				D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */,
+				D6AD7BA518F557690073521D /* soda_bottle.png in Resources */,
+				D69F4AD319042AC600FFC74E /* bluewoman_newblue.png in Resources */,
 				D60B92A918EC380D00AF04DE /* manblue.png in Resources */,
 				0062D5CA18F5F98900BD97FD /* man.png in Resources */,
 				D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */,
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
+				D6AD7BA318F557690073521D /* coffee_cup_big.png in Resources */,
 				0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
@@ -409,9 +450,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AD21A819050608008772A4 /* CarTableViewCell.m in Sources */,
 				000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */,
 				D60B92A218EC374300AF04DE /* CoreData.xcdatamodel in Sources */,
+				D6AD21A719050608008772A4 /* CarTableViewController.m in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
+				D69BFA4F18F58C4100ECD2C7 /* StatTableViewController.m in Sources */,
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
 				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
 				00FB422918EF5DC60011E26A /* LoggingData.m in Sources */,
