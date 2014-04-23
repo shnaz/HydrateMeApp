@@ -217,7 +217,7 @@
     NSDate *sevenDaysAgo = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:today00AM options:0];
     
     
-    NSLog(@"\ncurrentDate: %@\nseven days ago: %@", now, sevenDaysAgo);
+    //NSLog(@"\ncurrentDate: %@\nseven days ago: %@", now, sevenDaysAgo);
     
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -278,7 +278,7 @@
         
     }
     
-    NSLog(@"Fetch logdates: %@",self.lastSevenDays);
+    //NSLog(@"Fetch logdates: %@",self.lastSevenDays);
 }
 
 -(void)updateFluidIntakeFor:(NSString*)day withFluidAmmounts: (int)water : (int)softDrink :(int)coffee
