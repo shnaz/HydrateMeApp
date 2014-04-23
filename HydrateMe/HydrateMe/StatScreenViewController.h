@@ -13,6 +13,9 @@
 - (IBAction)button1:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 
+@property (weak, nonatomic) IBOutlet UIView *graphViewContainer;
+
+
 //@property (weak, nonatomic) IBOutlet UILabel *fluidTypeStatLabel;
 //@property (weak, nonatomic) IBOutlet UILabel *timestampStatLabel;
 //@property (weak, nonatomic) IBOutlet UILabel *amountStatLabel;

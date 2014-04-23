@@ -7,8 +7,11 @@
 //
 
 #import "StatScreenViewController.h"
+#import "GraphSubViewController.h"
 
 @interface StatScreenViewController () <UITableViewDelegate, UITableViewDataSource>
+
+
 
 @end
 
@@ -18,6 +21,8 @@
 //@synthesize fluidTypeStatLabel = _fluidTypeStatLabel;
 //@synthesize timestampStatLabel = _timestampStatLabel;
 NSArray *amountArray;
+
+GraphSubViewController *graphSubViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +36,11 @@ NSArray *amountArray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Initializing and adding Topbar view
+    graphSubViewController = [[GraphSubViewController alloc] init];
+    [self.graphViewContainer addSubview:graphSubViewController.view];
+    
     // Do any additional setup after loading the view.
     
     //Update List
