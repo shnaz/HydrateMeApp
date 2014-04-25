@@ -16,6 +16,7 @@
 		0007A65018FDBB580029CD2C /* WeatherSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */; };
 		0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0007A64F18FDBB580029CD2C /* WeatherSubViewController.xib */; };
 		000846EE18F0B0F1000EB4B2 /* StatScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */; };
+		001FD08F190B0F6400EF0EE1 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 001FD08E190B0F6400EF0EE1 /* home.png */; };
 		0031864418EC419B00528B23 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0031864318EC419B00528B23 /* MainScreenViewController.m */; };
 		0031864D18EC5DB500528B23 /* caffein_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864718EC5DB500528B23 /* caffein_final.png */; };
 		0031864E18EC5DB500528B23 /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
@@ -92,6 +93,7 @@
 		0007A64F18FDBB580029CD2C /* WeatherSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherSubViewController.xib; sourceTree = "<group>"; };
 		000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatScreenViewController.h; sourceTree = "<group>"; };
 		000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatScreenViewController.m; sourceTree = "<group>"; };
+		001FD08E190B0F6400EF0EE1 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		0031864218EC419B00528B23 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		0031864318EC419B00528B23 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
 		0031864718EC5DB500528B23 /* caffein_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_final.png; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		0031864618EC526300528B23 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				001FD08E190B0F6400EF0EE1 /* home.png */,
 				D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */,
 				D69F4ACE190429ED00FFC74E /* manblue_newblue.png */,
 				D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */,
@@ -421,6 +424,7 @@
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
 				0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */,
 				0031864D18EC5DB500528B23 /* caffein_final.png in Resources */,
+				001FD08F190B0F6400EF0EE1 /* home.png in Resources */,
 				005DDF971907D7210084428C /* GraphSubViewController.xib in Resources */,
 				0007A65118FDBB580029CD2C /* WeatherSubViewController.xib in Resources */,
 				D6AD7BA618F557690073521D /* soda_can.png in Resources */,
