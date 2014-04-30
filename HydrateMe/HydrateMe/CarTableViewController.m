@@ -79,12 +79,20 @@ NSDate *selectedDateToBeDeleted;
         NSLog(@"Stat log database failed");
     }
     else {
+        NSDateFormatter *df = [NSDateFormatter new];
+        [df setDateFormat:@"yyyy-MM-dd- HH:mm:ss"];
+        df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+        df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
         
         for (NSManagedObject *logData in array) {
             NSString *fluidType = [logData valueForKey:@"fluit_type"];
-            
-            NSString *dateTimeStamp =  [NSString stringWithFormat:
-                                        @"%@", [logData valueForKey:@"date_time"]];
+
+            //Create the date assuming the given string is in GMT
+            NSDate *date = [logData valueForKey:@"date_time"];
+
+            //Create a date string in the local timezone
+            NSString *localDateString = [df stringFromDate:date];
+            NSString *dateTimeStamp =  localDateString;
             NSDate *dateTimeStampasdate =  [logData valueForKey:@"date_time"];
             
             NSString *fluidAmount =  [NSString stringWithFormat:
@@ -221,10 +229,9 @@ NSDate *selectedDateToBeDeleted;
     // Configure the cell...
     
     long row = [indexPath row];
-    NSString *statLogDateToShow = [_statLogFluidType[row] substringToIndex:[_statLogFluidType[row] length]-5];
     cell.modelLabel.text = _statLogDates[row];
     cell.fluidAmountLabel.text = _statLogAmount[row];
-    cell.makeLabel.text = statLogDateToShow;
+    cell.makeLabel.text = _statLogFluidType[row];
     cell.fluidTypeColorLabel.backgroundColor = _statLogFluidColor[row];
     
     return cell;

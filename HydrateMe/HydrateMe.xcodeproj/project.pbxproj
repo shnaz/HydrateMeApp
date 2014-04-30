@@ -53,6 +53,12 @@
 		D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A618EC380D00AF04DE /* manwhite.png */; };
 		D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60B92AD18EC386D00AF04DE /* Main.storyboard */; };
 		D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B92B018EC395300AF04DE /* StartScreenViewController.m */; };
+		D611B66819113F29001F0926 /* icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66519113F29001F0926 /* icon_29.png */; };
+		D611B66919113F29001F0926 /* icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66619113F29001F0926 /* icon_40.png */; };
+		D611B66A19113F29001F0926 /* icon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66719113F29001F0926 /* icon_60.png */; };
+		D611B66D19114227001F0926 /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66B19114227001F0926 /* icon_80.png */; };
+		D611B66E19114227001F0926 /* icon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66C19114227001F0926 /* icon_120.png */; };
+		D611B670191142BC001F0926 /* icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = D611B66F191142BC001F0926 /* icon_58.png */; };
 		D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F318EC6945001A8BAA /* AppIcon.png */; };
 		D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F418EC6945001A8BAA /* AppIcon_1.png */; };
 		D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */ = {isa = PBXBuildFile; fileRef = D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */; };
@@ -137,6 +143,12 @@
 		D60B92AD18EC386D00AF04DE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D60B92AF18EC395300AF04DE /* StartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenViewController.h; sourceTree = "<group>"; };
 		D60B92B018EC395300AF04DE /* StartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
+		D611B66519113F29001F0926 /* icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_29.png; sourceTree = "<group>"; };
+		D611B66619113F29001F0926 /* icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_40.png; sourceTree = "<group>"; };
+		D611B66719113F29001F0926 /* icon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_60.png; sourceTree = "<group>"; };
+		D611B66B19114227001F0926 /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
+		D611B66C19114227001F0926 /* icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120.png; sourceTree = "<group>"; };
+		D611B66F191142BC001F0926 /* icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58.png; sourceTree = "<group>"; };
 		D62A58F318EC6945001A8BAA /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		D62A58F418EC6945001A8BAA /* AppIcon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1.png; sourceTree = "<group>"; };
 		D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe_coffee_final.png; sourceTree = "<group>"; };
@@ -253,6 +265,12 @@
 		D60B927518EC304000AF04DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D611B66F191142BC001F0926 /* icon_58.png */,
+				D611B66B19114227001F0926 /* icon_80.png */,
+				D611B66C19114227001F0926 /* icon_120.png */,
+				D611B66519113F29001F0926 /* icon_29.png */,
+				D611B66619113F29001F0926 /* icon_40.png */,
+				D611B66719113F29001F0926 /* icon_60.png */,
 				D62A58F318EC6945001A8BAA /* AppIcon.png */,
 				D62A58F418EC6945001A8BAA /* AppIcon_1.png */,
 				0031864618EC526300528B23 /* Images */,
@@ -415,6 +433,7 @@
 			files = (
 				0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */,
 				0031864E18EC5DB500528B23 /* glass_final.png in Resources */,
+				D611B66919113F29001F0926 /* icon_40.png in Resources */,
 				0031864F18EC5DB500528B23 /* settings_final.png in Resources */,
 				D60B92AA18EC380D00AF04DE /* manwhite.png in Resources */,
 				0004ED0618EDE9C000EAE3F5 /* SoftDrinkSubViewController.xib in Resources */,
@@ -428,8 +447,11 @@
 				D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */,
 				0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */,
 				D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */,
+				D611B670191142BC001F0926 /* icon_58.png in Resources */,
+				D611B66E19114227001F0926 /* icon_120.png in Resources */,
 				D69F4AD0190429ED00FFC74E /* manblue_newblue.png in Resources */,
 				D60B927918EC304000AF04DE /* InfoPlist.strings in Resources */,
+				D611B66D19114227001F0926 /* icon_80.png in Resources */,
 				D60B92A818EC380D00AF04DE /* womanblue.png in Resources */,
 				D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */,
 				D6AD7BA518F557690073521D /* soda_bottle.png in Resources */,
@@ -440,10 +462,12 @@
 				0031865218EC5DB500528B23 /* water_final.png in Resources */,
 				D6AD7BA318F557690073521D /* coffee_cup_big.png in Resources */,
 				0004ED0B18EDEA4900EAE3F5 /* CoffeeSubViewController.xib in Resources */,
+				D611B66A19113F29001F0926 /* icon_60.png in Resources */,
 				D60B92AE18EC386D00AF04DE /* Main.storyboard in Resources */,
 				0031865118EC5DB500528B23 /* sugar_final.png in Resources */,
 				0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */,
 				0004ED0118EDE21B00EAE3F5 /* WaterSubViewController.xib in Resources */,
+				D611B66819113F29001F0926 /* icon_29.png in Resources */,
 				D60B928418EC304000AF04DE /* Images.xcassets in Resources */,
 				0031865018EC5DB500528B23 /* statistics_final.png in Resources */,
 			);
