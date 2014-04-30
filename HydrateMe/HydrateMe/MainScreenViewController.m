@@ -21,6 +21,10 @@
 - (void)calculateCurrentFluidIntakeLevels;
 -(NSDictionary *)getFluidIntakesUntilNow;
 
+-(void)warnAgainstSoftDrink;
+-(void)warnAgainstCoffee;
+-(void)warnAgainstWater;
+
 @end
 
 WaterSubViewController *waterSubViewController;
@@ -149,6 +153,10 @@ WeatherSubViewController *weatherSubViewController;
     float softDrinkGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
     float coffeeGoal =      [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
     
+    NSString *oldWaterLevel = self.currentWaterIntakeLabel.text;
+    NSString *oldSoftdrinkLevel = self.currentSoftDrinkIntakeLabel.text;
+    NSString *oldCoffeeLevel = self.currentCoffeeIntakeLabel.text;
+    
     float currentWaterLevel = (waterIntake/waterGoal)*100;
     float currentSoftDrinkLevel = (softDrinkIntake/softDrinkGoal)*100;
     float currentCoffeeLevel = (coffeeIntake/coffeeGoal)*100;
@@ -160,6 +168,22 @@ WeatherSubViewController *weatherSubViewController;
     self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f%%",
                                           (isnan(currentCoffeeLevel) ? 0.0 : currentCoffeeLevel) ];
     self.currentWaterDetailedLabel.text = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntake, waterGoal];
+    
+    if (![oldWaterLevel isEqualToString:self.currentWaterIntakeLabel.text])
+    {
+        if (currentWaterLevel > 130.0)
+            [self warnAgainstWater];
+        
+    } else if (![oldSoftdrinkLevel isEqualToString:self.currentSoftDrinkIntakeLabel.text])
+    {
+        if (currentSoftDrinkLevel > 100.0)
+            [self warnAgainstSoftDrink];
+        
+    } else if (![oldCoffeeLevel isEqualToString:self.currentCoffeeIntakeLabel.text])
+    {
+        if (currentCoffeeLevel > 100.0)
+            [self warnAgainstCoffee];
+    }
 
 }
 
@@ -230,6 +254,38 @@ WeatherSubViewController *weatherSubViewController;
 
 }
 
+-(void)warnAgainstSoftDrink
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Softdrink warning!"
+                                                     message:@"Softdrink contains alot of sugar and too much suger can cause diabetes"
+                                                    delegate:self
+                                           cancelButtonTitle:@"No thanks to diabetes!"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
+}
+
+-(void)warnAgainstCoffee
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Coffee warning!"
+                                                     message:@"Coffee contains alot of caffeine and too much caffeine can cause dehydration"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Oh..okay"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
+}
+
+-(void)warnAgainstWater
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Water is good"
+                                                     message:@"But too much water causes too many toilet visits"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Totally agree!"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
+}
 
 
 @end
