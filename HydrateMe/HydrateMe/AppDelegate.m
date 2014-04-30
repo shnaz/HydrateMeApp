@@ -16,12 +16,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    /*self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-     // Override point for customization after application launch.
-     self.window.backgroundColor = [UIColor whiteColor];
-     [self.window makeKeyAndVisible];*/
+    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotification) {
+        application.applicationIconBadgeNumber = 0;
+    }
+    
     return YES;
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    application.applicationIconBadgeNumber = 0;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

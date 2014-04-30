@@ -47,7 +47,7 @@
         
     } else {
         int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
-        self.weightLabel.text = [NSString stringWithFormat:@"%d", userWeight];
+        self.weightLabel.text = [NSString stringWithFormat:@"%d KG", userWeight];
         [self.weightPicker selectRow:(userWeight-27) inComponent:0 animated:YES];
         
         [self updateActivityButtonSelection];
@@ -100,7 +100,7 @@
     [defaults setInteger:[weight integerValue] forKey:@"userWeight"];
     [defaults synchronize];
     
-    self.weightLabel.text = [weight stringValue];
+    self.weightLabel.text = [NSString stringWithFormat:@"%@ KG",[weight stringValue]];
     [self calculateAndShowDailyFluidGoal];
     pickerView.hidden = YES;
 }
