@@ -56,7 +56,6 @@
 		D62A58F518EC6945001A8BAA /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F318EC6945001A8BAA /* AppIcon.png */; };
 		D62A58F618EC6945001A8BAA /* AppIcon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D62A58F418EC6945001A8BAA /* AppIcon_1.png */; };
 		D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */ = {isa = PBXBuildFile; fileRef = D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */; };
-		D69BFA4F18F58C4100ECD2C7 /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */; };
 		D69F4AD0190429ED00FFC74E /* manblue_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACE190429ED00FFC74E /* manblue_newblue.png */; };
 		D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */; };
 		D69F4AD319042AC600FFC74E /* bluewoman_newblue.png in Resources */ = {isa = PBXBuildFile; fileRef = D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */; };
@@ -141,8 +140,6 @@
 		D62A58F318EC6945001A8BAA /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		D62A58F418EC6945001A8BAA /* AppIcon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_1.png; sourceTree = "<group>"; };
 		D69BFA4818F573D400ECD2C7 /* cafe_coffee_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe_coffee_final.png; sourceTree = "<group>"; };
-		D69BFA4D18F58C4100ECD2C7 /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatTableViewController.h; sourceTree = "<group>"; };
-		D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatTableViewController.m; sourceTree = "<group>"; };
 		D69F4ACE190429ED00FFC74E /* manblue_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manblue_newblue.png; sourceTree = "<group>"; };
 		D69F4ACF190429ED00FFC74E /* whiteman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteman_newblue.png; sourceTree = "<group>"; };
 		D69F4AD219042AC600FFC74E /* bluewoman_newblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoman_newblue.png; sourceTree = "<group>"; };
@@ -328,8 +325,6 @@
 				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
 				000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */,
 				000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */,
-				D69BFA4D18F58C4100ECD2C7 /* StatTableViewController.h */,
-				D69BFA4E18F58C4100ECD2C7 /* StatTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -474,7 +469,6 @@
 				D60B92A218EC374300AF04DE /* CoreData.xcdatamodel in Sources */,
 				D6AD21A719050608008772A4 /* CarTableViewController.m in Sources */,
 				D60B927F18EC304000AF04DE /* AppDelegate.m in Sources */,
-				D69BFA4F18F58C4100ECD2C7 /* StatTableViewController.m in Sources */,
 				D60B927B18EC304000AF04DE /* main.m in Sources */,
 				D60B92B118EC395300AF04DE /* StartScreenViewController.m in Sources */,
 				00FB422918EF5DC60011E26A /* LoggingData.m in Sources */,
