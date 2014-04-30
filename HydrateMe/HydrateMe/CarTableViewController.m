@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 /*
-http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_TableViews_with_Prototype_Table_View_Cells
-*/
+ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_TableViews_with_Prototype_Table_View_Cells
+ */
 
 #import "CarTableViewController.h"
 #import "CarTableViewCell.h"
@@ -16,6 +16,7 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
 @interface CarTableViewController ()
 //-(NSDictionary *)getDatabaseValuesToday;
 -(void)getDatabaseValuesToday;
+-(void)deleteselectedLogData;
 
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
@@ -23,6 +24,9 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
 @end
 
 @implementation CarTableViewController
+
+NSDate *selectedDateToBeDeleted;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,34 +44,13 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
     // Do any additional setup after loading the view.
     AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
     self.managedObjectContext= [appDelegate managedObjectContext];
-    
-    
-    
-//    _statLogDates = @[@"Chevy",
-//                  @"BMW",
-//                  @"Toyota",
-//                  @"Volvo",
-//                  @"Smart"];
-//
-    
-    
-      [self getDatabaseValuesToday];
- 
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self getDatabaseValuesToday];
 }
-
-
-
-
 
 -(void)getDatabaseValuesToday
 {
-
+    
+    
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
@@ -87,24 +70,26 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
     
     NSError *error;
     NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
-    NSArray *array2 = [NSArray arrayWithObjects:nil];
-    NSArray *array3 = [NSArray arrayWithObjects:nil];
-    NSArray *array4 = [NSArray arrayWithObjects:nil];
-    NSArray *array5 = [NSArray arrayWithObjects:nil];
+    NSMutableArray *array2 = [NSMutableArray arrayWithObjects:nil];
+    NSMutableArray *array3 = [NSMutableArray arrayWithObjects:nil];
+    NSMutableArray *array4 = [NSMutableArray arrayWithObjects:nil];
+    NSMutableArray *array5 = [NSMutableArray arrayWithObjects:nil];
+    NSMutableArray *array6 = [NSMutableArray arrayWithObjects:nil];
     if (array == nil) {
         NSLog(@"Stat log database failed");
     }
     else {
-       
+        
         for (NSManagedObject *logData in array) {
             NSString *fluidType = [logData valueForKey:@"fluit_type"];
             
             NSString *dateTimeStamp =  [NSString stringWithFormat:
                                         @"%@", [logData valueForKey:@"date_time"]];
+            NSDate *dateTimeStampasdate =  [logData valueForKey:@"date_time"];
             
             NSString *fluidAmount =  [NSString stringWithFormat:
-                                        @"%@", [logData valueForKey:@"fluit_amount"]];
-
+                                      @"%@", [logData valueForKey:@"fluit_amount"]];
+            
             //fluidTypeColor
             UIColor *fluidColor;
             UIColor *softDrinkColor=[UIColor colorWithRed:(231/255.0) green:(76/255.0) blue:(60/255.0) alpha:1.0];
@@ -119,10 +104,11 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
                 fluidColor = waterColor;
             }
             
-            array2 = [array2 arrayByAddingObject:fluidType];
-            array3 = [array3 arrayByAddingObject:[dateTimeStamp substringToIndex:[dateTimeStamp length]-5]];
-            array4 = [array4 arrayByAddingObject:fluidAmount];
-            array5 = [array5 arrayByAddingObject:fluidColor];
+            [array2 addObject:fluidType];
+            [array3 addObject:dateTimeStamp];
+            [array4 addObject:fluidAmount];
+            [array5 addObject:fluidColor];
+            [array6 addObject:dateTimeStampasdate];
             
         }
         
@@ -131,6 +117,13 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
         for(int i = 0; i < [array2 count]; i++) {
             [dateTimeStampArray addObject:[array2 objectAtIndex:[array2 count] - i - 1]];
         }
+        
+        NSMutableArray * dateTimeStampArrayAsDate = [NSMutableArray arrayWithCapacity:[array6 count]];
+        for(int i = 0; i < [array6 count]; i++) {
+            [dateTimeStampArrayAsDate addObject:[array6 objectAtIndex:[array6 count] - i - 1]];
+        }
+        
+        
         NSMutableArray * fluidTypeArray = [NSMutableArray arrayWithCapacity:[array3 count]];
         for(int i = 0; i < [array3 count]; i++) {
             [fluidTypeArray addObject:[array3 objectAtIndex:[array3 count] - i - 1]];
@@ -146,20 +139,55 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
             [fluidAmountColorArray addObject:[array5 objectAtIndex:[array5 count] - i - 1]];
         }
         
-        //found arraylist to the labelArraylists
-        _statLogFluidType = fluidTypeArray;
-        _statLogDates= dateTimeStampArray;
-        _statLogAmount = fluidAmountArray;
-        _statLogFluidColor =fluidAmountColorArray;
-
+        [_statLogFluidType removeAllObjects];
+        [_statLogDates removeAllObjects];
+        [_statLogAmount removeAllObjects];
+        [_statLogFluidColor removeAllObjects];
+        [_statLogDatesAsDates removeAllObjects];
+        
+        
+        _statLogFluidType = [[NSMutableArray alloc] initWithArray:fluidTypeArray copyItems:YES];
+        _statLogDates= [[NSMutableArray alloc] initWithArray:dateTimeStampArray copyItems:YES];
+        _statLogAmount =  [[NSMutableArray alloc] initWithArray:fluidAmountArray copyItems:YES];
+        _statLogFluidColor = [[NSMutableArray alloc] initWithArray:fluidAmountColorArray copyItems:YES];
+        _statLogDatesAsDates =  [[NSMutableArray alloc] initWithArray:dateTimeStampArrayAsDate copyItems:YES];
+        
     }
-    
- 
 }
 
 
+- (void)deleteselectedLogData
+{
+    AppDelegate *appDelegate =[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context 	= [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"LoggingData"
+                inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
 
-
+    NSPredicate *pred =
+    [NSPredicate predicateWithFormat:@"(date_time = %@)",selectedDateToBeDeleted];
+    [request setPredicate:pred];
+    
+    NSManagedObject *matches = nil;
+    NSError *error;
+    
+    NSArray *objects = [context executeFetchRequest:request
+                                              error:&error];
+    
+    if ([objects count] == 0) {
+        NSLog(@"No matches");
+    } else {
+        matches = objects[0];
+        [context deleteObject:matches];
+        [context save:nil];
+    }
+    
+    [self getDatabaseValuesToday];
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -184,6 +212,7 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"carTableCell";
     CarTableViewCell *cell = [tableView
                               dequeueReusableCellWithIdentifier:CellIdentifier
@@ -192,76 +221,38 @@ http://www.techotopia.com/index.php/Using_Xcode_5_Storyboards_to_Build_Dynamic_T
     // Configure the cell...
     
     long row = [indexPath row];
-    
+    NSString *statLogDateToShow = [_statLogFluidType[row] substringToIndex:[_statLogFluidType[row] length]-5];
     cell.modelLabel.text = _statLogDates[row];
     cell.fluidAmountLabel.text = _statLogAmount[row];
-    cell.makeLabel.text = _statLogFluidType[row];
+    cell.makeLabel.text = statLogDateToShow;
     cell.fluidTypeColorLabel.backgroundColor = _statLogFluidColor[row];
     
-
-
-    
     return cell;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+    long row = [indexPath row];
+    selectedDateToBeDeleted = _statLogDatesAsDates[row];
     
-    // Configure the cell...
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Delete this log?"
+                                                     message:@""
+                                                    delegate:self
+                                           cancelButtonTitle:@"No"
+                                           otherButtonTitles:@"Delete", nil];
     
-    return cell;
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [dialog show];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex != [alertView cancelButtonIndex])
+    {
+        [self deleteselectedLogData];
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
