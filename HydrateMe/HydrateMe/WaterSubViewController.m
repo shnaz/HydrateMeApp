@@ -91,8 +91,8 @@
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:15]; // 60*60*3
     
+    localNotification.fireDate = [self getFireDate];//[NSDate dateWithTimeIntervalSinceNow:15]; // 60*60*3
     localNotification.alertBody = @"Remember to drink";
     localNotification.alertAction = @"Let's drink!";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
@@ -103,10 +103,21 @@
 
 -(NSDate*)getFireDate
 {
-    NSDate *nineoClockToday;
-    NSDate *sixoClockTomorrow;
+    NSDate *now =[NSDate date];
     
-    return [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
+    [components setHour:21];
+    [components setMinute:00];
+    
+    NSDate *nineoClockToday = [calendar dateFromComponents:components];
+    NSDate *sixoClockTomorrow = [nineoClockToday dateByAddingTimeInterval:(60*60*9)];
+    NSDate *notificationTime = [NSDate dateWithTimeIntervalSinceNow:(60*60*3)]; // 60*60*3
+    
+    if ( [notificationTime timeIntervalSince1970] > [nineoClockToday timeIntervalSince1970] )
+        return sixoClockTomorrow;
+    
+    return notificationTime;
 }
 
 
