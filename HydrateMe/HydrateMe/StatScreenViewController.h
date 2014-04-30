@@ -9,19 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface StatScreenViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-- (IBAction)button1:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
+@interface StatScreenViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *graphViewContainer;
 
+- (IBAction)backToMainButton:(id)sender;
 
-//@property (weak, nonatomic) IBOutlet UILabel *fluidTypeStatLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *timestampStatLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *amountStatLabel;
-//@property (nonatomic, strong) NSArray *amounttypeArray;
-@property (weak, nonatomic) IBOutlet UITableViewCell *cellinTable;
-@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
-@property (weak, nonatomic) IBOutlet UITableView *recentLogDataTable;
 @end
 
