@@ -54,7 +54,7 @@
                     <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="man.png" translatesAutoresizingMaskIntoConstraints="NO" id="3nD-nV-hym">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="man2.png" translatesAutoresizingMaskIntoConstraints="NO" id="3nD-nV-hym">
                     <rect key="frame" x="0.0" y="0.0" width="10" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -63,6 +63,6 @@
         </view>
     </objects>
     <resources>
-        <image name="man.png" width="67" height="251"/>
+        <image name="man2.png" width="67" height="251"/>
     </resources>
 </document>

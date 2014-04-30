@@ -144,6 +144,10 @@ WeatherSubViewController *weatherSubViewController;
 
 - (void)calculateCurrentFluidIntakeLevels
 {
+    if (self.view.window == nil)
+        return;
+    
+    
     NSDictionary *fluidIntakeSoFar = [self getFluidIntakesUntilNow];
     float waterIntake =     [[fluidIntakeSoFar objectForKey:@"waterIntake"] floatValue];
     float softDrinkIntake = [[fluidIntakeSoFar objectForKey:@"softDrinkIntake"] floatValue];
