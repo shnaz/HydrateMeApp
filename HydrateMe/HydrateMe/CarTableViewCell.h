@@ -10,8 +10,7 @@
 #import "AppDelegate.h"
 
 @interface CarTableViewCell : UITableViewCell
-//@property (nonatomic, strong)  IBOutlet UILabel *makeLabel;
-//@property (nonatomic, strong) IBOutlet UILabel *modelLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *makeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *modelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fluidAmountLabel;
