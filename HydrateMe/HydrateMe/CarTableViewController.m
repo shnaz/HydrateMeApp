@@ -221,9 +221,10 @@ NSDate *selectedDateToBeDeleted;
     // Configure the cell...
     
     long row = [indexPath row];
+    NSString *statLogDateToShow = [_statLogFluidType[row] substringToIndex:[_statLogFluidType[row] length]-5];
     cell.modelLabel.text = _statLogDates[row];
     cell.fluidAmountLabel.text = _statLogAmount[row];
-    cell.makeLabel.text = _statLogFluidType[row];
+    cell.makeLabel.text = statLogDateToShow;
     cell.fluidTypeColorLabel.backgroundColor = _statLogFluidColor[row];
     
     return cell;
