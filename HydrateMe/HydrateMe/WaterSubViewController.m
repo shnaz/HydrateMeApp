@@ -69,6 +69,7 @@
     
     NSDate *now = [NSDate date];
     [now descriptionWithLocale:[NSLocale systemLocale]];
+    
     newEntry.date_time = now;
     newEntry.fluit_type = @"water";
     newEntry.fluit_amount = [NSNumber numberWithInt:amount];
