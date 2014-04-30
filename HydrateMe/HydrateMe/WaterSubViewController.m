@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (void)logWaterIntakeWithAmount: (int)amount;
+- (void)scheduleNotification;
 
 @end
 
@@ -77,7 +78,36 @@
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
     }
+    
+    // Schedule a notification "Remember to drink"
+    [self scheduleNotification];
 
 }
+
+
+- (void)scheduleNotification
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:15]; // 60*60*3
+    
+    localNotification.alertBody = @"Remember to drink";
+    localNotification.alertAction = @"Let's drink!";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
+-(NSDate*)getFireDate
+{
+    NSDate *nineoClockToday;
+    NSDate *sixoClockTomorrow;
+    
+    return [NSDate date];
+}
+
 
 @end
