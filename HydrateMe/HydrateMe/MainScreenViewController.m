@@ -153,11 +153,11 @@ WeatherSubViewController *weatherSubViewController;
     float currentSoftDrinkLevel = (softDrinkIntake/softDrinkGoal)*100;
     float currentCoffeeLevel = (coffeeIntake/coffeeGoal)*100;
     
-    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+    self.currentWaterIntakeLabel.text = [NSString stringWithFormat:@"%.0f%%",
                                          (isnan(currentWaterLevel) ? 0.0 : currentWaterLevel) ];
-    self.currentSoftDrinkIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+    self.currentSoftDrinkIntakeLabel.text = [NSString stringWithFormat:@"%.0f%%",
                                              (isnan(currentSoftDrinkLevel) ? 0.0 : currentSoftDrinkLevel) ];
-    self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f",
+    self.currentCoffeeIntakeLabel.text = [NSString stringWithFormat:@"%.0f%%",
                                           (isnan(currentCoffeeLevel) ? 0.0 : currentCoffeeLevel) ];
     self.currentWaterDetailedLabel.text = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntake, waterGoal];
 
