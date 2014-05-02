@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoggingData.h"
 
 @implementation AppDelegate
 
@@ -16,12 +17,66 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // FEEDING THE CORE DATA WITH FAKE DATA FOR PAST WEEK
+    //if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil)
+    //    [self feedTheHorse];
+    
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {
         application.applicationIconBadgeNumber = 0;
     }
     
     return YES;
+}
+
+-(void)feedTheHorse
+{
+    
+    for (int i = 1; i < 8; i++) {
+        
+        float rand = ((arc4random() % 11) + 5) * 0.1;
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSinceNow:-(60*60*24*i)];
+        
+        LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
+        newEntry.date_time = date;
+        newEntry.fluit_type = @"water";
+        newEntry.fluit_amount = [NSNumber numberWithInt:(3500*rand)];
+        newEntry.temp = [NSNumber numberWithInt:20];
+        
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
+        }
+        
+        LoggingData *newEntry1 = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
+        rand = ((arc4random() % 11) + 5) * 0.1;
+        newEntry1.date_time = date;
+        newEntry1.fluit_type = @"softdrink";
+        newEntry1.fluit_amount = [NSNumber numberWithInt:(600*rand)];
+        newEntry1.temp = [NSNumber numberWithInt:20];
+        
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
+        }
+        
+        LoggingData *newEntry2 = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
+        rand = ((arc4random() % 11) + 5) * 0.1;
+        newEntry2.date_time = date;
+        newEntry2.fluit_type = @"coffee";
+        newEntry2.fluit_amount = [NSNumber numberWithInt:(900*rand)];
+        newEntry2.temp = [NSNumber numberWithInt:20];
+        
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
+        }
+        
+        
+        
+    }
+    
+    
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
