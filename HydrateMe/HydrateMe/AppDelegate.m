@@ -50,10 +50,10 @@
         }
         
         LoggingData *newEntry1 = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
-        rand = ((arc4random() % 11) + 5) * 0.1;
+        rand = ((arc4random() % 11) + 3) * 0.1;
         newEntry1.date_time = date;
         newEntry1.fluit_type = @"softdrink";
-        newEntry1.fluit_amount = [NSNumber numberWithInt:(600*rand)];
+        newEntry1.fluit_amount = [NSNumber numberWithInt:(500*rand)];
         newEntry1.temp = [NSNumber numberWithInt:20];
         
         if (![self.managedObjectContext save:&error]) {
@@ -61,10 +61,10 @@
         }
         
         LoggingData *newEntry2 = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
-        rand = ((arc4random() % 11) + 5) * 0.1;
+        rand = ((arc4random() % 12) + 6) * 0.1;
         newEntry2.date_time = date;
         newEntry2.fluit_type = @"coffee";
-        newEntry2.fluit_amount = [NSNumber numberWithInt:(900*rand)];
+        newEntry2.fluit_amount = [NSNumber numberWithInt:(750*rand)];
         newEntry2.temp = [NSNumber numberWithInt:20];
         
         if (![self.managedObjectContext save:&error]) {

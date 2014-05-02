@@ -260,10 +260,10 @@ WeatherSubViewController *weatherSubViewController;
 
 -(void)warnAgainstSoftDrink
 {
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Softdrink warning!"
-                                                     message:@"Softdrink contains alot of sugar and too much suger can cause diabetes"
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"WARNING"
+                                                     message:@"Too much softdrink can cause diabetes"
                                                     delegate:self
-                                           cancelButtonTitle:@"No thanks to diabetes!"
+                                           cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
     
     [dialog show];
@@ -271,10 +271,10 @@ WeatherSubViewController *weatherSubViewController;
 
 -(void)warnAgainstCoffee
 {
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Coffee warning!"
-                                                     message:@"Coffee contains alot of caffeine and too much caffeine can cause dehydration"
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"BE CAREFUL"
+                                                     message:@"Too much caffeine can actually cause dehydration"
                                                     delegate:self
-                                           cancelButtonTitle:@"Oh..okay"
+                                           cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
     
     [dialog show];
@@ -282,10 +282,10 @@ WeatherSubViewController *weatherSubViewController;
 
 -(void)warnAgainstWater
 {
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Water is good"
-                                                     message:@"But too much water causes too many toilet visits"
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"GOOD JOB"
+                                                     message:@"One can never intake too much water.."
                                                     delegate:self
-                                           cancelButtonTitle:@"Totally agree!"
+                                           cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
     
     [dialog show];
