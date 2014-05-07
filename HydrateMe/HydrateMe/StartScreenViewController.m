@@ -45,6 +45,9 @@
         self.drinkButtonOutlet.enabled = NO;
         self.drinkButtonOutlet.backgroundColor = [UIColor grayColor];
         
+        //[[NSUserDefaults standardUserDefaults] setInteger:20 forKey:@"temperature"];
+        //[[NSUserDefaults standardUserDefaults] synchronize];
+        
     } else {
         int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
         self.weightLabel.text = [NSString stringWithFormat:@"%d KG", userWeight];
@@ -138,10 +141,15 @@
     NSInteger userWeight = [defaults integerForKey:@"userWeight"];
     NSString *gender = [defaults objectForKey:@"userGender"];
     double activityLevel = [defaults doubleForKey:@"activityLevel"];
-    double temperatur = 1.0;
+    NSInteger temperature = [defaults integerForKey:@"temperature"];
+    double temperatureFactor = (((temperature-20)>0 ? (temperature-20) : 0)+100.0)/100.0 ;
     double genderFactor = [gender isEqualToString:@"male"] ? 1.1 : 0.9; //Maybe some other values
     
-    int waterGoal= ((((userWeight)-20)*15)+1500)*(activityLevel)*(temperatur)* genderFactor;
+    NSLog(@"StartScreen Temp=%d",temperature);
+
+    
+    int waterGoal= ((((userWeight)-20)*15)+1500)*(activityLevel)*(temperatureFactor)* genderFactor;
+    
     [defaults setInteger:waterGoal forKey:@"waterGoal"];
     self.waterGoalLabel.text = [NSString stringWithFormat:@"%d", waterGoal];
     

@@ -98,6 +98,9 @@ NSString *areaName;
         int temperature = [[main objectForKey:@"temp"] integerValue] - 273;
         areaTemperature = [NSString stringWithFormat:@"%d°C", temperature];
         
+        [[NSUserDefaults standardUserDefaults] setInteger:temperature forKey:@"temperature"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         self.areaNameLabel.text = areaName;
         self.areaTempLabel.text = areaTemperature;
         NSLog(@"WeatherSubView: City=%@  Temp=%d", areaName,temperature);
@@ -106,7 +109,6 @@ NSString *areaName;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.areaNameLabel setNeedsDisplay];
             [self.areaTempLabel setNeedsDisplay];
-            
         });
     } else {
         NSLog(@"WeatherSubView: processData error %@", parseJsonError);

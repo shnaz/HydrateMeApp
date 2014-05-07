@@ -16,6 +16,7 @@
 
 - (void)logWaterIntakeWithAmount: (int)amount;
 - (void)scheduleNotification;
+-(void)warnAgainstWater;
 
 @end
 
@@ -65,6 +66,13 @@
 
 - (void)logWaterIntakeWithAmount: (int)amount
 {
+    NSInteger waterIntake = [[NSUserDefaults standardUserDefaults] integerForKey:@"waterIntake"];
+    NSInteger waterGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
+
+    if ( (waterIntake+amount) > waterGoal) {
+        [self warnAgainstWater];
+    }
+    
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
     NSDate *now = [NSDate date];
@@ -121,5 +129,15 @@
     return notificationTime;
 }
 
+-(void)warnAgainstWater
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"GOOD JOB"
+                                                     message:@"One can never intake too much water.."
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
+}
 
 @end

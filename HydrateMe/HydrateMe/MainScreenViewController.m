@@ -21,10 +21,6 @@
 - (void)calculateCurrentFluidIntakeLevels;
 -(NSDictionary *)getFluidIntakesUntilNow;
 
--(void)warnAgainstSoftDrink;
--(void)warnAgainstCoffee;
--(void)warnAgainstWater;
-
 @end
 
 WaterSubViewController *waterSubViewController;
@@ -157,10 +153,6 @@ WeatherSubViewController *weatherSubViewController;
     float softDrinkGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
     float coffeeGoal =      [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
     
-    NSString *oldWaterLevel = self.currentWaterIntakeLabel.text;
-    NSString *oldSoftdrinkLevel = self.currentSoftDrinkIntakeLabel.text;
-    NSString *oldCoffeeLevel = self.currentCoffeeIntakeLabel.text;
-    
     float currentWaterLevel = (waterIntake/waterGoal)*100;
     float currentSoftDrinkLevel = (softDrinkIntake/softDrinkGoal)*100;
     float currentCoffeeLevel = (coffeeIntake/coffeeGoal)*100;
@@ -173,22 +165,11 @@ WeatherSubViewController *weatherSubViewController;
                                           (isnan(currentCoffeeLevel) ? 0.0 : currentCoffeeLevel) ];
     self.currentWaterDetailedLabel.text = [NSString stringWithFormat:@"%0.0f/%0.0f", waterIntake, waterGoal];
     
-    if (![oldWaterLevel isEqualToString:self.currentWaterIntakeLabel.text])
-    {
-        if (currentWaterLevel > 130.0)
-            [self warnAgainstWater];
-        
-    } else if (![oldSoftdrinkLevel isEqualToString:self.currentSoftDrinkIntakeLabel.text])
-    {
-        if (currentSoftDrinkLevel > 100.0)
-            [self warnAgainstSoftDrink];
-        
-    } else if (![oldCoffeeLevel isEqualToString:self.currentCoffeeIntakeLabel.text])
-    {
-        if (currentCoffeeLevel > 100.0)
-            [self warnAgainstCoffee];
-    }
-
+    [[NSUserDefaults standardUserDefaults] setInteger:waterIntake forKey:@"waterIntake"];
+    [[NSUserDefaults standardUserDefaults] setInteger:softDrinkIntake forKey:@"softDrinkIntake"];
+    [[NSUserDefaults standardUserDefaults] setInteger:coffeeIntake forKey:@"coffeeIntake"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 
@@ -256,39 +237,6 @@ WeatherSubViewController *weatherSubViewController;
 {
     [self performSegueWithIdentifier:@"settingsScreenSegue" sender:self];
 
-}
-
--(void)warnAgainstSoftDrink
-{
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"WARNING"
-                                                     message:@"Too much softdrink can cause diabetes"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-    
-    [dialog show];
-}
-
--(void)warnAgainstCoffee
-{
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"BE CAREFUL"
-                                                     message:@"Too much caffeine can actually cause dehydration"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-    
-    [dialog show];
-}
-
--(void)warnAgainstWater
-{
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"GOOD JOB"
-                                                     message:@"One can never intake too much water.."
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-    
-    [dialog show];
 }
 
 

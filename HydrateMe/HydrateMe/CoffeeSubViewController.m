@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (void)logCoffeeIntakeWithAmount: (int)amount;
+-(void)warnAgainstCoffee;
 
 @end
 
@@ -61,6 +62,14 @@
 
 - (void)logCoffeeIntakeWithAmount: (int)amount
 {
+    NSInteger coffeeIntake = [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeIntake"];
+    NSInteger coffeeGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
+    
+    if ( (coffeeIntake+amount) > coffeeGoal) {
+        [self warnAgainstCoffee];
+    }
+    
+    
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
     //newEntry.date_time = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*24*2)]; //debugging purposes
@@ -79,5 +88,16 @@
     
 }
 
+
+-(void)warnAgainstCoffee
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"BE CAREFUL"
+                                                     message:@"Too much caffeine can actually cause dehydration"
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
+}
 
 @end

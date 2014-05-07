@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // FEEDING THE CORE DATA WITH FAKE DATA FOR PAST WEEK
-    //if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil)
-    //    [self feedTheHorse];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil)
+        [self feedTheHorse];
     
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {
@@ -41,7 +41,7 @@
         LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
         newEntry.date_time = date;
         newEntry.fluit_type = @"water";
-        newEntry.fluit_amount = [NSNumber numberWithInt:(3500*rand)];
+        newEntry.fluit_amount = [NSNumber numberWithInt:(3000*rand)];
         newEntry.temp = [NSNumber numberWithInt:20];
         
         NSError *error;
@@ -53,7 +53,7 @@
         rand = ((arc4random() % 11) + 3) * 0.1;
         newEntry1.date_time = date;
         newEntry1.fluit_type = @"softdrink";
-        newEntry1.fluit_amount = [NSNumber numberWithInt:(500*rand)];
+        newEntry1.fluit_amount = [NSNumber numberWithInt:(300*rand)];
         newEntry1.temp = [NSNumber numberWithInt:20];
         
         if (![self.managedObjectContext save:&error]) {
@@ -64,7 +64,7 @@
         rand = ((arc4random() % 12) + 6) * 0.1;
         newEntry2.date_time = date;
         newEntry2.fluit_type = @"coffee";
-        newEntry2.fluit_amount = [NSNumber numberWithInt:(750*rand)];
+        newEntry2.fluit_amount = [NSNumber numberWithInt:(500*rand)];
         newEntry2.temp = [NSNumber numberWithInt:20];
         
         if (![self.managedObjectContext save:&error]) {

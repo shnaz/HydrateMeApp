@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (void)logSoftDrinkIntakeWithAmount: (int)amount;
+-(void)warnAgainstSoftDrink;
 
 @end
 
@@ -59,6 +60,13 @@
 
 - (void)logSoftDrinkIntakeWithAmount: (int)amount
 {
+    // Warn if too much softdrink is logged
+    NSInteger softDrinkIntake = [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkIntake"];
+    NSInteger softDrinkGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
+    if ( (softDrinkIntake+amount) > softDrinkGoal) {
+        [self warnAgainstSoftDrink];
+    }
+    
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
     
     //newEntry.date_time = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*24)]; //debugging purposes
@@ -75,6 +83,17 @@
         NSLog(@"Failed to save water intake: %@", [error localizedDescription]);
     }
     
+}
+
+-(void)warnAgainstSoftDrink
+{
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"WARNING"
+                                                     message:@"Too much softdrink can cause diabetes."
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    
+    [dialog show];
 }
 
 @end
