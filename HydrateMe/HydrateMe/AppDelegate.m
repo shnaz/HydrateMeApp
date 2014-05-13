@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // FEEDING THE CORE DATA WITH FAKE DATA FOR PAST WEEK
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil)
-        [self feedTheHorse];
+    //if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil)
+    //    [self feedTheHorse];
     
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {

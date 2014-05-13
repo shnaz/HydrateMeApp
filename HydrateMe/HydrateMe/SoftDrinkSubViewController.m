@@ -53,7 +53,7 @@
 }
 
 - (IBAction)smallSoftDrink:(id)sender {
-    [self logSoftDrinkIntakeWithAmount:180];
+    [self logSoftDrinkIntakeWithAmount:200];
 }
 
 # pragma Soft Drink helper methods
