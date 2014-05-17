@@ -44,6 +44,17 @@
      name: NSManagedObjectContextObjectsDidChangeNotification
      object: nil];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+}
+
+- (void)applicationWillEnterForeground:(NSNotification *)notification
+{
+    NSLog(@"Fetch water logging data failed");
+
+    //Update manOnBar's position
+    [self updateBarIndicatorPosition];
 }
 
 -(void)viewDidLayoutSubviews
@@ -91,7 +102,7 @@
     int waterIntakeUntilNow=1;
     
     NSDate *now = [NSDate date];
-    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*3)];//3hours=(60*60*3)
+    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*1)];//3hours=(60*60*3)
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
