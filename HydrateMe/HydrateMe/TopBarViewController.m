@@ -102,7 +102,7 @@
     int waterIntakeUntilNow=1;
     
     NSDate *now = [NSDate date];
-    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*1)];//3hours=(60*60*3)
+    NSDate *fourHoursAgo = [[NSDate alloc] initWithTimeIntervalSinceNow:-(60*60*1)];//3hours=(60*60*3)
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
