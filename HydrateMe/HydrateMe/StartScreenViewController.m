@@ -51,7 +51,7 @@
     } else {
         int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
         self.weightLabel.text = [NSString stringWithFormat:@"%d KG", userWeight];
-        [self.weightPicker selectRow:(userWeight-27) inComponent:0 animated:YES];
+        [self.weightPicker selectRow:(userWeight-20) inComponent:0 animated:YES];
         
         [self updateActivityButtonSelection];
         [self updateGenderImageSelection];
@@ -82,12 +82,12 @@
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 100;
+    return 200;
 }
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSNumber *weight = [NSNumber numberWithInt:row + 27];
+    NSNumber *weight = [NSNumber numberWithInt:row + 20];
     
     NSString *title = [weight stringValue];
     NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -97,7 +97,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSNumber *weight = [NSNumber numberWithInt:row + 27];
+    NSNumber *weight = [NSNumber numberWithInt:row + 20];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:[weight integerValue] forKey:@"userWeight"];
@@ -111,9 +111,9 @@
 - (IBAction)weightPickerInvoker:(id)sender {
     
     if (self.weightPicker.isHidden) {
-        int selectedRow = 53; //Default selected row in picker
+        int selectedRow = 60; //Default selected row in picker
         if([[NSUserDefaults standardUserDefaults] objectForKey:@"userWeight"] != nil)
-            selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"]-27;
+            selectedRow = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"]-20;
         
         [self.weightPicker selectRow:selectedRow inComponent:0 animated:YES];
         [self.weightPicker setHidden:NO];

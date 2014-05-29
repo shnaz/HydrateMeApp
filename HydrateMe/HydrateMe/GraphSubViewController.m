@@ -173,34 +173,52 @@
 
 -(int)getDayDate:(int) minusDays
 {
-    NSDate *now = [NSDate date];
-    [now descriptionWithLocale:[NSLocale systemLocale]];
+    NSDate *previousDay = [NSDate dateWithTimeIntervalSinceNow:(60*60*24*minusDays)];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *dayComponents =[gregorian components:NSDayCalendarUnit fromDate:previousDay];
     
-    NSDateComponents* todayComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
-    [todayComponents setDay: minusDays];
-    NSDate *previousDay = [[NSCalendar currentCalendar] dateByAddingComponents:todayComponents toDate:now options:0];
-    
-    NSDateComponents* yesterdayComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:previousDay];
-    
-    return [yesterdayComponents day];
+    return [dayComponents day];
 }
 
 -(NSString*)getWeekDayName:(int) minusDays
 {
-    NSDate *now = [NSDate date];
-    [now descriptionWithLocale:[NSLocale systemLocale]];
+    NSDate *previousDay = [NSDate dateWithTimeIntervalSinceNow:(60*60*24*minusDays)];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *weekdayComponents =[gregorian components:NSWeekdayCalendarUnit fromDate:previousDay];
     
-    NSDateComponents* todayComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:now];
-    [todayComponents setDay: minusDays];
-    NSDate *previousDay = [[NSCalendar currentCalendar] dateByAddingComponents:todayComponents toDate:now options:0];
+    NSString *dayName=@"";
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEEE"];
-    NSString *dayName = [dateFormatter stringFromDate:previousDay];
+    switch ([weekdayComponents weekday]) {
+        case 1:
+            dayName=@"Sun";
+            break;
+        case 2:
+            dayName=@"Mon";
+            break;
+        case 3:
+            dayName=@"Tue";
+            break;
+        case 4:
+            dayName=@"Wed";
+            break;
+        case 5:
+            dayName=@"Thu";
+            break;
+        case 6:
+            dayName=@"Fri";
+            break;
+        case 7:
+            dayName=@"Sat";
+            break;
+        default:
+            break;
+    }
     
-    return [dayName substringWithRange:NSMakeRange(0, 3)];
-
+    return dayName;
 }
+
+
+
 
 -(void)getLastSevenDaysFluidIntakes
 {
