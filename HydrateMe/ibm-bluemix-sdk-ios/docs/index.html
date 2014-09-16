@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IBM Mobile Cloud Services Reference</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" media="print"
+	href="css/stylesPrint.css" />
+<meta name="generator" content="appledoc 2.2 (build 961)" />
+</head>
+<body>
+	<header id="top_header">
+		<div id="library" class="hideInXcode">
+			<h1>
+				<a id="libraryTitle" href="index.html">IBM Mobile Cloud Services
+				</a>
+			</h1>
+			<a id="developerHome" href="index.html">IBM</a>
+		</div>
+
+		<div id="title" role="banner">
+			<h1 class="hideInXcode">IBM Mobile Cloud Services Reference</h1>
+		</div>
+		<ul id="headerButtons" role="toolbar"></ul>
+	</header>
+	<article>
+		<div id="overview_contents" role="main">
+
+			<div id="header">
+				<div class="section-header">
+					<h1 class="title title-header">IBM Mobile Cloud Services
+						Reference</h1>
+				</div>
+			</div>
+			<div id="container">
+
+				<div class="section section-overview index-overview">
+
+
+					The Mobile Cloud Services SDK for iOS integrates with the Mobile
+					Cloud Services. The SDK has a modular design, so you can add add
+					services that are required by your application as needed.
+
+					<h2>Set up SDK</h2>
+
+					<p>
+						To use the Mobile Cloud Services SDK in your application, download
+						the latest <a
+							href="https://mbaas-catalog.ng.bluemix.net/sdk/ibm-bluemix-sdk-ios.zip">iOS
+							SDK</a> and add the frameworks that are required for the cloud
+						services you are using in your application. You must always
+						include the
+						<code>IBMBluemix.framework</code>
+						framework. This framework provides basic functionality to
+						communicate with Mobile Cloud application on Bluemix.
+					</p>
+					<p>
+						When your iOS application requires another service, add the
+						associated framework. For example, if your application uses the
+						Push service, add the
+						<code>IBMPush.framework</code>
+						framework to the project.
+					<p />
+					<h2>Initialize SDK</h2>
+					Your iOS application must initialize the Mobile Cloud Services SDK
+					and all services that are used by the application. A common place
+					to put the initialization code is in the Application Delegate for
+					the iOS application. The *applicationId* value is the unique key
+					that is assigned to the Mobile Cloud application that you created
+					on BlueMix. The *applicationSecret* is revokable key that is
+					assigned to the Mobile Cloud application that you created on
+					Bluemix. The *applicationRoute* value is the route that is assigned
+					to the Mobile Cloud application that you created on BlueMix.
+
+					<pre>
+// Initialize the IBMBluemix SDK
+[IBMBluemix initializeWithApplicationId: applicationId  
+  andApplicationSecret: applicationSecret 
+  andApplicationRoute: applicationRoute];
+
+// Initialize services that will be used
+[IBMCloudCode initializeService];
+[IBMData initializeService];
+[IBMPush initializeService];
+</pre>
+
+					Each of the key services for the SDK are broken out into separate
+					frameworks that you can add to the project individually. You can
+					pick and choose the services for the application.
+
+					<h2>Promises</h2>
+					<p>
+						The iOS SDK has been designed to use the <a
+							href="https://github.com/BoltsFramework/Bolts-iOS">Bolts</a>
+						framework. With the Bolts library you can better control an
+						asynchronous environment and write cleaner and easier to read
+						source code. Many of the key APIs in the SDK return a Bolts
+						<code>BFTask</code> and support this simple pattern for the success and
+						failure of a request.
+					</p>
+					<p>
+						A Bolts
+						<code>BFTask</code>
+						is similar to a JavaScript promise. Each
+						<code>BFTask</code>
+						has supporting methods
+						<code>continueWithBlock:</code>
+						and
+						<code>continueWithSuccessBlock:</code>
+						that take a continuation block. Each continuation block is
+						executed immediately after the
+						<code>BFTask</code>
+						has completed.
+					</p>
+					<p>The methods <code>continueWithBlock:</code> and
+						<code>continueWithSuccessBlock:</code> have another form that accepts a
+						<code>BFExector</code> instance: <code>continueWithExecutor:withBlock:</code> and
+						<code>continueWithExecutor:withSuccessBlock:</code>. The <code>BFExecutor</code> object
+						allows you to control execution of the task. The default executor
+						dispatches tasks to GCD. Bolts also provides several predefined
+						executors, including <code>defaultExecutor</code>, <code>immediateExecutor</code>,
+						<code>mainThreadExecutor</code>, <code>executorWithDispatchQueue:</code>, and
+						<code>executorWithOperationQueue:</code>.</p>
+						
+					<pre>
+// Let's query some data and make updates to the UI
+
+IBMQuery *query = [IBMQuery queryForClass:CLASS_NAME];
+
+[[query find] continueWithExecutor:[BFExecutor mainThreadExecutor] withBlock:^id(BFTask *task) {
+  // First let's do some error handling if our task fails
+  if (task.error) {
+    NSLog(@"%@:%@ - %@",task.error.code,task.error.domain,task.error.localizedDescription);
+    return nil;
+  }
+
+  // Here our task completed successfully, so let's update the UI
+  NSArray *objects = task.result;  
+  itemList = [NSMutableArray array];
+  for (IBMDataObject *item in objects) {
+    [itemList addObject:item];
+  }
+
+  [itemList sortItems];
+  [self updateUI];
+  return nil;
+}];
+</pre>
+
+					<h3>Chaining</h3>
+					Bolts is very convenient for stringing together asynchronous work.
+					By returning a <code>BFTask</code> from <code>continueWithBlock:</code> or
+					<code>continueWithSuccessBlock:</code>, then that task will not be considered
+					finished until the new task has returned from the new continuation
+					block.
+
+					<pre>
+// Let's query data and make updates
+IBMQuery *query = [profile query];
+
+[[[query find] continueWithSuccessBlock:^id(BFTask *task) {
+
+  // Task completes successfully, so let's grab the results
+  Profile *myProfile = task.result[0];
+
+  // Make our changes
+  [myProfile setName:@"Jane"];
+
+  // And launch our next task
+  return [myProfile save];
+
+}] continueWithBlock:^id(BFTask *task) {
+  // If either task fails let's handle it here
+  if (task.error) {
+    NSLog(@"%@:%@ - %@",task.error.code,task.error.domain,task.error.localizedDescription);
+    return nil;
+  }
+
+  NSLog(@"Success!");
+  return nil;
+}];
+</pre>
+
+				</div>
+
+
+
+
+
+				<div class="index-column">
+					<h2 class="index-title">Reference Documentation</h2>
+					<ul>
+						<li><a href="./core/index.html">IBMBluemix Framework</a></li>
+
+						<li><a href="./cloudcode/index.html">IBMCloudCode
+								Framework</a></li>
+
+						<li><a href="./mobiledata/index.html">IBMData Framework</a></li>
+
+						<li><a href="./location/index.html">IBMLocation Framework</a></li>
+
+						<li><a href="./push/index.html">IBMPush Framework</a></li>
+
+
+					</ul>
+				</div>
+
+			</div>
+			<div id="footer">
+				<hr />
+				<div class="footer-copyright">
+					<p>
+						<span class="copyright">&copy; 2013, 2014 IBM. All rights
+							reserved.</span><br /> <span class="generator">Generated by <a
+							href="http://appledoc.gentlebytes.com">appledoc 2.2 (build
+								961)</a>.
+						</span>
+					</p>
+
+
+				</div>
+			</div>
+		</div>
+	</article>
+</body>
+</html>

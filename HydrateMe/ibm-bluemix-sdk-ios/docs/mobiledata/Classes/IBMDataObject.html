@@ -1,0 +1,1851 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>IBMDataObject Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">IBM Mobile Data Services </a></h1>
+				<a id="developerHome" href="../index.html">IBM</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">IBMDataObject Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/className">&nbsp;&nbsp;&nbsp;&nbsp;className</option>
+	
+	<option value="//api/name/createdAt">&nbsp;&nbsp;&nbsp;&nbsp;createdAt</option>
+	
+	<option value="//api/name/dataAvailable">&nbsp;&nbsp;&nbsp;&nbsp;dataAvailable</option>
+	
+	<option value="//api/name/modifiedAt">&nbsp;&nbsp;&nbsp;&nbsp;modifiedAt</option>
+	
+	<option value="//api/name/objectId">&nbsp;&nbsp;&nbsp;&nbsp;objectId</option>
+	
+	<option value="//api/name/version">&nbsp;&nbsp;&nbsp;&nbsp;version</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/object">&nbsp;&nbsp;&nbsp;&nbsp;+ object</option>
+	
+	<option value="//api/name/objectOfClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectOfClass:</option>
+	
+	<option value="//api/name/query">&nbsp;&nbsp;&nbsp;&nbsp;+ query</option>
+	
+	<option value="//api/name/registerObjectDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerObjectDelegate:</option>
+	
+	<option value="//api/name/registerSpecialization">&nbsp;&nbsp;&nbsp;&nbsp;+ registerSpecialization</option>
+	
+	<option value="//api/name/unregisterObjectDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ unregisterObjectDelegate:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/allKeys">&nbsp;&nbsp;&nbsp;&nbsp;- allKeys</option>
+	
+	<option value="//api/name/delete">&nbsp;&nbsp;&nbsp;&nbsp;- delete</option>
+	
+	<option value="//api/name/fetchIfNecessary">&nbsp;&nbsp;&nbsp;&nbsp;- fetchIfNecessary</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/initWithClass:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithClass:</option>
+	
+	<option value="//api/name/isDirty">&nbsp;&nbsp;&nbsp;&nbsp;- isDirty</option>
+	
+	<option value="//api/name/objectForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- objectForKey:</option>
+	
+	<option value="//api/name/query">&nbsp;&nbsp;&nbsp;&nbsp;- query</option>
+	
+	<option value="//api/name/reapplySaves:andDirty:">&nbsp;&nbsp;&nbsp;&nbsp;- reapplySaves:andDirty:</option>
+	
+	<option value="//api/name/refresh">&nbsp;&nbsp;&nbsp;&nbsp;- refresh</option>
+	
+	<option value="//api/name/relationForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- relationForKey:</option>
+	
+	<option value="//api/name/removeObjectForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjectForKey:</option>
+	
+	<option value="//api/name/save">&nbsp;&nbsp;&nbsp;&nbsp;- save</option>
+	
+	<option value="//api/name/setObject:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:forKey:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Objects">Creating Objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting and Setting Attributes">Getting and Setting Attributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Saving, Refreshing, and Deleting an Object">Saving, Refreshing, and Deleting an Object</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating a Query">Creating a Query</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Registering an IBMDataObjectDelegate">Registering an IBMDataObjectDelegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Implementing a Custom Conflict Resolution Policy">Implementing a Custom Conflict Resolution Policy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Specialize Methods">Specialize Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/className">className</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createdAt">createdAt</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataAvailable">dataAvailable</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/modifiedAt">modifiedAt</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectId">objectId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/version">version</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/object">object</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectOfClass:">objectOfClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/query">query</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerObjectDelegate:">registerObjectDelegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerSpecialization">registerSpecialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unregisterObjectDelegate:">unregisterObjectDelegate:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allKeys">allKeys</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delete">delete</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchIfNecessary">fetchIfNecessary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithClass:">initWithClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDirty">isDirty</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectForKey:">objectForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/query">query</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reapplySaves:andDirty:">reapplySaves:andDirty:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refresh">refresh</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relationForKey:">relationForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjectForKey:">removeObjectForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/save">save</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:forKey:">setObject:forKey:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="IBMDataObject Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">IBMDataObject Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">IBMDataObject.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Mobile Data objects are entities that can be created, fetched, modified, saved and destroyed by application code.
+These objects contain any number of attributes that can be set and read by the application code.
+Object attributes are identified by an attribute name, which is an arbitrary string.
+The value for an attribute can be an NSNumber, NSString, NSArray of allowable types,
+or NSDictionary with string keys and values of allowable types.
+No other types are permitted for attribute values.
+The IBMDataObject class provides methods to read and write attributes by attribute name.</p>
+
+<p>Mobile Data objects can be created by the application running on one device, saved to the Mobile Data service, and then
+retrieved through queries performed by the application running on the same or different devices.
+Changes to an <a href="#//api/name/object">object</a> must be explicitly saved by the application to the Mobile Data service.
+Once a <a href="#//api/name/save">save</a> is complete, the <a href="#//api/name/object">object</a> data will be stored by the Mobile Data service in a manner
+that persists across application restarts even during disconnected use.</p>
+
+<p>No schema is defined for these objects other than those attributes needed by the system to maintain identity
+and consistency of the objects with the Mobile Data service.
+To help organize these arbitrary objects into groups, all objects have a classname.
+The classname is an arbitrary string that the application can use to group objects with common sets of attributes.</p>
+
+<h4>Creating New Objects:</h4>
+
+<pre><code>    IBMDataObject *obj = [IBMDataObject objectOfClass:@"Restaurant"];
+</code></pre>
+
+<h4>Reading Attribute Values in the Object:</h4>
+
+<pre><code>    id type = [obj objectForKey:@"Type"];
+    id name = [obj objectForKey:@"Name"];
+</code></pre>
+
+<h4>Setting Attribute Values within the Object:</h4>
+
+<pre><code>    [obj setObject:@"Italian" forKey:@"Type"];
+    [obj setObject:@"Noodle Factory" forKey:@"Name"];
+</code></pre>
+
+<h4>Saving Changes to the Object to the Mobile Data service:</h4>
+
+<pre><code>    [[obj save] continueWithBlock:^id(BFTask *task) {
+        if ( !error ) {
+            NSLog(@"Saved");
+        } else {
+            NSLog(@"Error: %@", error);
+        }
+        return nil;
+    }];
+</code></pre>
+
+<h3>Subclassing Notes</h3>
+
+<p>An application can create a subclass of the IBMDataObject class.  The most common purpose for subclassing
+IBMDataObject is to create an <a href="#//api/name/object">object</a> <em>specialization</em>, which has a specific classname and may contain properties
+that are stored into the underlying IBMDataObject through dynamic property synthesis.</p>
+
+<p>See <a href="../Protocols/IBMDataObjectSpecialization.html">IBMDataObjectSpecialization</a> for more information.</p>
+
+<p>This category implements most of the required methods for classes that specialize IBMDataObject.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Creating Objects" name="task_Creating Objects"></a>
+						<h3 class="subsubtitle task-title">Creating Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectOfClass:">+&nbsp;objectOfClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithClass:">&ndash;&nbsp;initWithClass:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Getting and Setting Attributes" name="task_Getting and Setting Attributes"></a>
+						<h3 class="subsubtitle task-title">Getting and Setting Attributes</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectId">&nbsp;&nbsp;objectId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/className">&nbsp;&nbsp;className</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createdAt">&nbsp;&nbsp;createdAt</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/modifiedAt">&nbsp;&nbsp;modifiedAt</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/version">&nbsp;&nbsp;version</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataAvailable">&nbsp;&nbsp;dataAvailable</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectForKey:">&ndash;&nbsp;objectForKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setObject:forKey:">&ndash;&nbsp;setObject:forKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjectForKey:">&ndash;&nbsp;removeObjectForKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relationForKey:">&ndash;&nbsp;relationForKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allKeys">&ndash;&nbsp;allKeys</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDirty">&ndash;&nbsp;isDirty</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Saving, Refreshing, and Deleting an Object" name="task_Saving, Refreshing, and Deleting an Object"></a>
+						<h3 class="subsubtitle task-title">Saving, Refreshing, and Deleting an Object</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/save">&ndash;&nbsp;save</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refresh">&ndash;&nbsp;refresh</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchIfNecessary">&ndash;&nbsp;fetchIfNecessary</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delete">&ndash;&nbsp;delete</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating a Query" name="task_Creating a Query"></a>
+						<h3 class="subsubtitle task-title">Creating a Query</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/query">&ndash;&nbsp;query</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Registering an IBMDataObjectDelegate" name="task_Registering an IBMDataObjectDelegate"></a>
+						<h3 class="subsubtitle task-title">Registering an IBMDataObjectDelegate</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerObjectDelegate:">+&nbsp;registerObjectDelegate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unregisterObjectDelegate:">+&nbsp;unregisterObjectDelegate:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Implementing a Custom Conflict Resolution Policy" name="task_Implementing a Custom Conflict Resolution Policy"></a>
+						<h3 class="subsubtitle task-title">Implementing a Custom Conflict Resolution Policy</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reapplySaves:andDirty:">&ndash;&nbsp;reapplySaves:andDirty:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Specialize Methods" name="task_Specialize Methods"></a>
+						<h3 class="subsubtitle task-title">Specialize Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerSpecialization">+&nbsp;registerSpecialization</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/object">+&nbsp;object</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/query">+&nbsp;query</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/className" title="className"></a>
+	<h3 class="subsubtitle method-title">className</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The class name of the <a href="#//api/name/object">object</a> specified when the <a href="#//api/name/object">object</a> was created. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *className</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createdAt" title="createdAt"></a>
+	<h3 class="subsubtitle method-title">createdAt</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date/time this <a href="#//api/name/object">object</a> was created on the server. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *createdAt</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataAvailable" title="dataAvailable"></a>
+	<h3 class="subsubtitle method-title">dataAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the contents of this <a href="#//api/name/object">object</a> have been retrieved
+from the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, getter=isDataAvailable) BOOL dataAvailable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/modifiedAt" title="modifiedAt"></a>
+	<h3 class="subsubtitle method-title">modifiedAt</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The date/time this <a href="#//api/name/object">object</a> was last modified on the server. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *modifiedAt</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectId" title="objectId"></a>
+	<h3 class="subsubtitle method-title">objectId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A string that uniquely identifies this <a href="#//api/name/object">object</a>. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *objectId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/version" title="version"></a>
+	<h3 class="subsubtitle method-title">version</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The version id provided by the server used to detect conflicts. (read-only)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *version</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/object" title="object"></a>
+	<h3 class="subsubtitle method-title">object</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an object of the specialized class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)object</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject+Specialize.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectOfClass:" title="objectOfClass:"></a>
+	<h3 class="subsubtitle method-title">objectOfClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns an <a href="#//api/name/object">object</a> with the specified class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)objectOfClass:(NSString *)<em>classname</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classname</em></dt>
+			<dd><p>The class name</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(IBMDataObject *) The created <a href="#//api/name/object">object</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is the designated initializer for this class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/query" title="query"></a>
+	<h3 class="subsubtitle method-title">query</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a query to fetch all objects of the specialized class by classname</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (IBMQuery *)query</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(<a href="../Classes/IBMQuery.html">IBMQuery</a> *) The query for all objects of the specialized class</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject+Specialize.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerObjectDelegate:" title="registerObjectDelegate:"></a>
+	<h3 class="subsubtitle method-title">registerObjectDelegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a delegate that conforms to the <a href="../Protocols/IBMDataObjectDelegate.html">IBMDataObjectDelegate</a> protocol for all IBMDataObjects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerObjectDelegate:(id&lt;IBMDataObjectDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>The delegate instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>void</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerSpecialization" title="registerSpecialization"></a>
+	<h3 class="subsubtitle method-title">registerSpecialization</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Registers the class (the receiver) with the Mobile Data service as a specialized class</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerSpecialization</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject+Specialize.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unregisterObjectDelegate:" title="unregisterObjectDelegate:"></a>
+	<h3 class="subsubtitle method-title">unregisterObjectDelegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unregister a delegate for all IBMDataObjects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)unregisterObjectDelegate:(id&lt;IBMDataObjectDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>The delegate instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>void</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allKeys" title="allKeys"></a>
+	<h3 class="subsubtitle method-title">allKeys</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of keys for all the attributes contained in the <a href="#//api/name/object">object</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allKeys</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(NSArray *) An array of keys</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The order of keys returned is unspecified and may change between invocations of this method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delete" title="delete"></a>
+	<h3 class="subsubtitle method-title">delete</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initiate a delete of the data <a href="#//api/name/object">object</a> from the Mobile Data service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)delete</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the BFTask that can be used to receive the result when the delete completes.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If successful, the result value of the returned BFTask contains a reference to the deleted <a href="#//api/name/object">object</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchIfNecessary" title="fetchIfNecessary"></a>
+	<h3 class="subsubtitle method-title">fetchIfNecessary</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initiate a <a href="#//api/name/refresh">refresh</a> of the data for an <a href="#//api/name/object">object</a> from the Mobile Data service only if <a href="#//api/name/dataAvailable">isDataAvailable</a> is NO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)fetchIfNecessary</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the BFTask that can be used to receive the result when the fetch completes.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If successful, the result value of the returned BFTask contains a reference to the fetched <a href="#//api/name/object">object</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize a new <a href="#//api/name/object">object</a> (the receiver) immediately after memory for it has been allocated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject+Specialize.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithClass:" title="initWithClass:"></a>
+	<h3 class="subsubtitle method-title">initWithClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and returns an <a href="#//api/name/object">object</a> with the specified class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithClass:(NSString *)<em>classname</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classname</em></dt>
+			<dd><p>The class name</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(IBMDataObject *) The initialized <a href="#//api/name/object">object</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is the designated initializer for IBMDataObject.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDirty" title="isDirty"></a>
+	<h3 class="subsubtitle method-title">isDirty</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates whether any attribute has been updated but not yet saved.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isDirty</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the <a href="#//api/name/object">object</a> has any updated but unsaved attributes, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectForKey:" title="objectForKey:"></a>
+	<h3 class="subsubtitle method-title">objectForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value for the attribute identified by the specified key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)objectForKey:(NSString *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The name of the attribute to be read</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(id) The value for this key</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is used to read an attribute value of the <a href="#//api/name/object">object</a>.  The key is the attribute name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/query" title="query"></a>
+	<h3 class="subsubtitle method-title">query</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a query to fetch this <a href="#//api/name/object">object</a> by its <a href="#//api/name/objectId">objectId</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBMQuery *)query</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(<a href="../Classes/IBMQuery.html">IBMQuery</a> *) The query for this <a href="#//api/name/object">object</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reapplySaves:andDirty:" title="reapplySaves:andDirty:"></a>
+	<h3 class="subsubtitle method-title">reapplySaves:andDirty:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reapply a set of changes to an <a href="#//api/name/object">object</a> that were made locally but discarded due to a conflict detected by the Mobile Data service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)reapplySaves:(NSDictionary *)<em>unsavedFields</em> andDirty:(NSDictionary *)<em>dirtyFields</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>unsavedFields</em></dt>
+			<dd><p>A dictionary of pending saves to the object&rsquo;s attributes</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dirtyFields</em></dt>
+			<dd><p>A dictionary of changes to an object&rsquo;s attributes that were not specifically saved</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BOOL Indicated whether the saves and dirty values could be reapplied</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The reapplySaves:andDirty method is a provisional API.  APIs that are marked provisional are evolving and might change or be removed in future releases.</p>
+
+<p>This method is used by a registered <a href="../Protocols/IBMDataObjectDelegate.html">IBMDataObjectDelegate</a> to implement a custom conflict resolution
+policy in the saveConfictFor:ofType:withSavedValues:withDirtyValues: delegate method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refresh" title="refresh"></a>
+	<h3 class="subsubtitle method-title">refresh</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initiate a refresh of the data for an <a href="#//api/name/object">object</a> from the Mobile Data service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)refresh</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the BFTask that can be used to receive the result when the refresh completes.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If successful, the result value of the returned BFTask contains a reference to the refreshed <a href="#//api/name/object">object</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relationForKey:" title="relationForKey:"></a>
+	<h3 class="subsubtitle method-title">relationForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a relation <a href="#//api/name/object">object</a> for the specified key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (IBMDataRelation *)relationForKey:(NSString *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The name of the relation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(<a href="../Classes/IBMDataRelation.html">IBMDataRelation</a> *) The relation <a href="#//api/name/object">object</a> for this key</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjectForKey:" title="removeObjectForKey:"></a>
+	<h3 class="subsubtitle method-title">removeObjectForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the attribute identified by the specified key and its value from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObjectForKey:(NSString *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The name of the attribute to be removed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(void)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is used to remove an attribute value of the <a href="#//api/name/object">object</a>.  The key is the attribute name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/save" title="save"></a>
+	<h3 class="subsubtitle method-title">save</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initiate a save of any locally modified attribute values to the Mobile Data service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)save</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the BFTask that can be used to receive the result when the save completes.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the client is disconnected, multiple saves will be combined and sent as one when
+the client is able to connect to the Mobile Data service.</p>
+
+<p>If successful, the result value of the returned BFTask contains a reference to the saved <a href="#//api/name/object">object</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setObject:forKey:" title="setObject:forKey:"></a>
+	<h3 class="subsubtitle method-title">setObject:forKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the value of an attribute of the receiver identified by the specified key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>obj</em> forKey:(NSString *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The value to be written for the specified attribute</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The name of the attribute to be written</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(void)</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is used to set an attribute value of the <a href="#//api/name/object">object</a>.  The key is the attribute name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMDataObject.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 IBM. All rights reserved. (Last updated: 2014-09-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

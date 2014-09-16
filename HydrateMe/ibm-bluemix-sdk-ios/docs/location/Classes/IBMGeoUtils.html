@@ -1,0 +1,1625 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>IBMGeoUtils Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">IBM Mobile Location Services </a></h1>
+				<a id="developerHome" href="../index.html">IBM</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">IBMGeoUtils Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toArea:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toArea:</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toArea:withBufferZoneWidth:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toArea:withBufferZoneWidth:</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toCircleWithCenter:radius:</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toCoordinate:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toCoordinate:</option>
+	
+	<option value="//api/name/getDistanceFromCoordinate:toPolygon:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceFromCoordinate:toPolygon:</option>
+	
+	<option value="//api/name/getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:">&nbsp;&nbsp;&nbsp;&nbsp;+ getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:</option>
+	
+	<option value="//api/name/isCoordinate:insideArea:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insideArea:</option>
+	
+	<option value="//api/name/isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	<option value="//api/name/isCoordinate:insideCircleWithCenter:radius:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insideCircleWithCenter:radius:</option>
+	
+	<option value="//api/name/isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	<option value="//api/name/isCoordinate:insidePolygon:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insidePolygon:</option>
+	
+	<option value="//api/name/isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	<option value="//api/name/isCoordinate:outsideArea:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsideArea:</option>
+	
+	<option value="//api/name/isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	<option value="//api/name/isCoordinate:outsideCircleWithCenter:radius:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsideCircleWithCenter:radius:</option>
+	
+	<option value="//api/name/isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	<option value="//api/name/isCoordinate:outsidePolygon:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsidePolygon:</option>
+	
+	<option value="//api/name/isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toArea:">getDistanceFromCoordinate:toArea:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toArea:withBufferZoneWidth:">getDistanceFromCoordinate:toArea:withBufferZoneWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:">getDistanceFromCoordinate:toCircleWithCenter:radius:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:">getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toCoordinate:">getDistanceFromCoordinate:toCoordinate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceFromCoordinate:toPolygon:">getDistanceFromCoordinate:toPolygon:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:">getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insideArea:">isCoordinate:insideArea:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insideCircleWithCenter:radius:">isCoordinate:insideCircleWithCenter:radius:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insidePolygon:">isCoordinate:insidePolygon:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsideArea:">isCoordinate:outsideArea:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsideCircleWithCenter:radius:">isCoordinate:outsideCircleWithCenter:radius:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsidePolygon:">isCoordinate:outsidePolygon:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="IBMGeoUtils Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">IBMGeoUtils Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">IBMGeoUtils.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Provides access to utility functions for Geo calculations.</p>
+
+<p>The IBMGeoUtils class is a provisional API.  APIs that are marked provisional are evolving and might change or be removed in future releases.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toCoordinate:">+&nbsp;getDistanceFromCoordinate:toCoordinate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:">+&nbsp;getDistanceFromCoordinate:toCircleWithCenter:radius:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:">+&nbsp;getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insideCircleWithCenter:radius:">+&nbsp;isCoordinate:insideCircleWithCenter:radius:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsideCircleWithCenter:radius:">+&nbsp;isCoordinate:outsideCircleWithCenter:radius:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toPolygon:">+&nbsp;getDistanceFromCoordinate:toPolygon:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:">+&nbsp;getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insidePolygon:">+&nbsp;isCoordinate:insidePolygon:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsidePolygon:">+&nbsp;isCoordinate:outsidePolygon:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:insideArea:">+&nbsp;isCoordinate:insideArea:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:">+&nbsp;isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCoordinate:outsideArea:">+&nbsp;isCoordinate:outsideArea:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toArea:">+&nbsp;getDistanceFromCoordinate:toArea:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDistanceFromCoordinate:toArea:withBufferZoneWidth:">+&nbsp;getDistanceFromCoordinate:toArea:withBufferZoneWidth:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toArea:" title="getDistanceFromCoordinate:toArea:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toArea:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of the coordinate from the area. Equivalent to calling <a href="#//api/name/getDistanceFromCoordinate:toArea:withBufferZoneWidth:">getDistanceFromCoordinate:toArea:withBufferZoneWidth:</a> with a <code>0</code> as the <code>bufferZoneWidth</code> parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate</em> toArea:(id&lt;IBMArea&gt;)<em>area</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to measure distance to</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The area to measure distance from</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the distance in meters to the area. The distance is positive for coordinates outside the area and negative for coordinates inside the area.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toArea:withBufferZoneWidth:" title="getDistanceFromCoordinate:toArea:withBufferZoneWidth:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toArea:withBufferZoneWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of the coordinate from the area, taking into account the buffer zone.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate</em> toArea:(id&lt;IBMArea&gt;)<em>area</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to measure distance from</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The area to measure distance to</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the area in all directions by this amount. Negative values decrease the area&rsquo;s size.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The distance, in meters, to the polygon, taking into account the buffer zone. The distance is positive for coordinates outside the area, and negative for coordinates within the area.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:" title="getDistanceFromCoordinate:toCircleWithCenter:radius:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toCircleWithCenter:radius:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of the coordinate from the circle. Equivalent to calling <a href="#//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:">getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:</a> with a <code>0</code> as the <code>bufferZoneWidth</code> parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate</em> toCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(double) the distance in meters to the circle. The distance is positive for coordinates outside the circle and negative for coordinates inside the circle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:" title="getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toCircleWithCenter:radius:withBufferZoneWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of the coordinate from the circle, taking into account the buffer zone.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate</em> toCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width, measured in meters. It enlarges the radius of the circle by this amount. Negative values make the circle smaller.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(double) The distance, in meters, to the circle, taking into account the buffer zone. The distance is positive for coordinates outside the circle, and negative for coordinates within the circle. Will return NaN if buffer zone width is negative and the absolute value is greater than the circle&rsquo;s radius.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toCoordinate:" title="getDistanceFromCoordinate:toCoordinate:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toCoordinate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance between two coordinates.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate1</em> toCoordinate:(IBMPosition *)<em>coordinate2</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate1</em></dt>
+			<dd><p>The first coordinate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate2</em></dt>
+			<dd><p>The second coordinate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The distance in meters between the two coordinates.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The distance between two coordinates is calculated. The result is returned in meters, using a spherical model of the Earth.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceFromCoordinate:toPolygon:" title="getDistanceFromCoordinate:toPolygon:"></a>
+	<h3 class="subsubtitle method-title">getDistanceFromCoordinate:toPolygon:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of a coordinate from a polygon. Equivalent to calling getDistanceFromCoordinate:toPolygon:withBufferZoneWidth: with a <code>0</code> as the <code>bufferZoneWidth</code> parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceFromCoordinate:(IBMPosition *)<em>coordinate</em> toPolygon:(IBMPolygon *)<em>polygon</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used when calculating distance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The distance, in meters, to the polygon. The distance is positive for coordinates outside the polygon, and negative for coordinates within the polygon.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:" title="getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:"></a>
+	<h3 class="subsubtitle method-title">getDistanceToPolygon:fromCoordinate:withBufferZoneWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the distance of the coordinate from the polygon, taking into account the buffer zone.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (double)getDistanceToPolygon:(IBMPolygon *)<em>polygon</em> fromCoordinate:(IBMPosition *)<em>coordinate</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used when calculating distance</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the polygon in all directions by this amount. Negative values decrease the polygon&rsquo;s size.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The distance, in meters, to the polygon, taking into account the buffer zone. The distance is positive for coordinates outside the polygon, and negative for coordinates within the polygon.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insideArea:" title="isCoordinate:insideArea:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insideArea:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value based on whether a coordinate lies within an area. Equivalent to calling <a href="#//api/name/isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insideArea:(id&lt;IBMArea&gt;)<em>area</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The id<a href="../Protocols/IBMArea.html">IBMArea</a> object to test the coordinate against</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies inside the area, at the given level of confidence. The dimensions of the area used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insideArea:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks if the location is within the area taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insideArea:(id&lt;IBMArea&gt;)<em>area</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The id<a href="../Protocols/IBMArea.html">IBMArea</a> object to test the coordinate against</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the area in all directions by this amount. Negative values decrease the area&rsquo;s size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies inside the area, at the given level of confidence. The dimensions of the area used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insideCircleWithCenter:radius:" title="isCoordinate:insideCircleWithCenter:radius:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insideCircleWithCenter:radius:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a circle. Equivalent to calling <a href="#//api/name/isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insideCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to test</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) <code>YES</code> is returned if the coordinate is within the circle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a circle, taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insideCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to test</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It enlarges the radius of the circle by this amount. Negative values make the circle smaller.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) <code>YES</code> is returned if the coordinate lies inside the circle, at the given level of confidence. The dimensions of the circle used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insidePolygon:" title="isCoordinate:insidePolygon:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insidePolygon:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a polygon. Equivalent to calling <a href="#//api/name/isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insidePolygon:(IBMPolygon *)<em>polygon</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used to test the coordinate against</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate is within the polygon.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:insidePolygon:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a polygon, taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> insidePolygon:(IBMPolygon *)<em>polygon</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used to test the coordinate against</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the polygon in all directions by this amount. Negative values decrease the polygon&rsquo;s size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies inside the polygon, at the given level of confidence. The dimensions of the polygon used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsideArea:" title="isCoordinate:outsideArea:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsideArea:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value based on whether a coordinate lies within an area. Equivalent to calling <a href="#//api/name/isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsideArea:(id&lt;IBMArea&gt;)<em>area</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The id<a href="../Protocols/IBMArea.html">IBMArea</a> object to test the coordinate against</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies outside the area, at the given level of confidence. The dimensions of the area used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsideArea:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a boolean value based on whether a coordinate lies outside an area, taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsideArea:(id&lt;IBMArea&gt;)<em>area</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to check</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>The id<a href="../Protocols/IBMArea.html">IBMArea</a> object to check the coordinate against</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the area in all directions by this amount. Negative values decrease the area&rsquo;s size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies outside the area, at the given level of confidence. The dimensions of the area used in this check incorporate any changes specified for the <b><code>bufferZoneWidth</code></b> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsideCircleWithCenter:radius:" title="isCoordinate:outsideCircleWithCenter:radius:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsideCircleWithCenter:radius:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies outside a circle. Equivalent to calling <a href="#//api/name/isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsideCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to test</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) <code>YES</code> is returned if the coordinate is outside the circle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsideCircleWithCenter:radius:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies outside a circle, taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsideCircleWithCenter:(IBMPosition *)<em>center</em> radius:(double)<em>radius</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The coordinate to test</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>radius</em></dt>
+			<dd><p>The radius used to define the circle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It enlarges the radius of the circle by this amount. Negative values make the circle smaller.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) <code>YES</code> is returned if the coordinate lies outside the circle, at the given level of confidence. The dimensions of the circle used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsidePolygon:" title="isCoordinate:outsidePolygon:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsidePolygon:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a polygon. Equivalent to calling <a href="#//api/name/isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:">isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:</a> with a <code>bufferZoneWidth</code> of <code>0</code> and a <code>confidenceLevel</code> of IBMConfidenceLevel#LOW.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsidePolygon:(IBMPolygon *)<em>polygon</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used to test the coordinate against</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate is outside the polygon.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:" title="isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:"></a>
+	<h3 class="subsubtitle method-title">isCoordinate:outsidePolygon:withBufferZoneWidth:withConfidenceLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a coordinate lies within a polygon, taking into account the buffer zone and confidence level.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCoordinate:(IBMPosition *)<em>coordinate</em> outsidePolygon:(IBMPolygon *)<em>polygon</em> withBufferZoneWidth:(double)<em>bufferZoneWidth</em> withConfidenceLevel:(IBMConfidenceLevel)<em>confidenceLevel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>coordinate</em></dt>
+			<dd><p>The starting coordinate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>polygon</em></dt>
+			<dd><p>The polygon used to test the coordinate against</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bufferZoneWidth</em></dt>
+			<dd><p>The buffer zone width is measured in meters. It increases the size of the polygon in all directions by this amount. Negative values decrease the polygon&rsquo;s size.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>confidenceLevel</em></dt>
+			<dd><p>The level of confidence indicates how accuracy is taken into account.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>(BOOL) Returns <code>YES</code> if the coordinate lies outside the polygon, at the given level of confidence. The dimensions of the polygon used in this check incorporate any changes specified for the <strong><code>bufferZoneWidth</code></strong> parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IBMGeoUtils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 IBM. All rights reserved. (Last updated: 2014-09-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
