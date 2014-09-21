@@ -9,6 +9,8 @@
 #import "CoffeeSubViewController.h"
 #import "LoggingData.h"
 #import "AppDelegate.h"
+#import <IBMBluemix/IBMBluemix.h>
+#import <IBMData/IBMData.h>
 
 @interface CoffeeSubViewController ()
 

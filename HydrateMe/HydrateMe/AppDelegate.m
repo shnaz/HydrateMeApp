@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LoggingData.h"
+#import <IBMBluemix/IBMBluemix.h>
+#import <IBMData/IBMData.h>
 
 @implementation AppDelegate
 
@@ -24,6 +26,42 @@
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {
         application.applicationIconBadgeNumber = 0;
+    }
+    
+    NSString *applicationId = nil;
+    NSString *applicationSecret = nil;
+    NSString *applicationRoute = nil;
+    
+    BOOL hasValidConfiguration = YES;
+    NSString *errorMessage = @"";
+    
+    // Read the applicationId from the HydrateMe-Info.plist.
+    NSString *configurationPath = [[NSBundle mainBundle] pathForResource:@"bluemix" ofType:@"plist"];
+    if(configurationPath){
+        NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:configurationPath];
+        applicationId = [configuration objectForKey:@"applicationId"];
+        if(!applicationId || [applicationId isEqualToString:@""]){
+            hasValidConfiguration = NO;
+            errorMessage = @"Open the HydrateMe.plist and set the applicationId to the Bluemix applicationId";
+        }
+        applicationSecret = [configuration objectForKey:@"applicationSecret"];
+        if(!applicationSecret || [applicationSecret isEqualToString:@""]){
+            hasValidConfiguration = NO;
+            errorMessage = @"Open the HydrateMe.plist and set the applicationSecret with your Bluemix application's secret";
+        }
+        applicationRoute = [configuration objectForKey:@"applicationRoute"];
+        if(!applicationRoute || [applicationRoute isEqualToString:@""]){
+            hasValidConfiguration = NO;
+            errorMessage = @"Open the HydrateMe.plist and set the applicationRoute to the Bluemix application's route";
+        }
+    }
+    
+    if(hasValidConfiguration){
+        // Initialize the SDK and Bluemix services
+		[IBMBluemix initializeWithApplicationId:applicationId  andApplicationSecret:applicationSecret andApplicationRoute:applicationRoute];
+        [IBMData initializeService];
+    }else{
+        [NSException raise:@"InvalidApplicationConfiguration" format: @"%@", errorMessage];
     }
     
     return YES;

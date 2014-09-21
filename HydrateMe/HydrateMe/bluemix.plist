@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>applicationId</key>
+	<string>4c1f54d0-83c5-4de4-bf61-25c13647ef5f</string>
+	<key>applicationSecret</key>
+	<string>9c2ab161e39d16f2f7bbb71a968de6a37f3f4de2</string>
+	<key>applicationRoute</key>
+	<string>HydrateMe.mybluemix.net</string>
+</dict>
+</plist>

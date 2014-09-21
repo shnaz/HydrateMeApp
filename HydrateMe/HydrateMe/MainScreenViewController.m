@@ -13,6 +13,8 @@
 #import "CoffeeSubViewController.h"
 #import "TopBarViewController.h"
 #import "WeatherSubViewController.h"
+#import <IBMBluemix/IBMBluemix.h>
+#import <IBMData/IBMData.h>
 
 
 @interface MainScreenViewController () <UIScrollViewDelegate>

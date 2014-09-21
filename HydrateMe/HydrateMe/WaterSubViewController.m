@@ -9,6 +9,8 @@
 #import "WaterSubViewController.h"
 #import "LoggingData.h"
 #import "AppDelegate.h"
+#import <IBMBluemix/IBMBluemix.h>
+#import <IBMData/IBMData.h>
 
 @interface WaterSubViewController ()
 
@@ -131,8 +133,8 @@
 
 -(void)warnAgainstWater
 {
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"GOOD JOB"
-                                                     message:@"One can never intake too much water.."
+    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Good Job"
+                                                     message:@"You have exceeded your daily goal!"
                                                     delegate:self
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
