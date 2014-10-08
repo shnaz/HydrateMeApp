@@ -33,6 +33,10 @@
 		0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */; };
 		0062D5CA18F5F98900BD97FD /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C918F5F98900BD97FD /* man.png */; };
 		00FB422918EF5DC60011E26A /* LoggingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422818EF5DC60011E26A /* LoggingData.m */; };
+		861B11EF19E3E06900AAE298 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861B11EE19E3E06900AAE298 /* NotificationCenter.framework */; };
+		861B11F519E3E06900AAE298 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861B11F419E3E06900AAE298 /* TodayViewController.m */; };
+		861B11F719E3E06900AAE298 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861B11F619E3E06900AAE298 /* MainInterface.storyboard */; };
+		861B11FA19E3E06900AAE298 /* NotificationCenterWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -79,6 +83,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		861B11F819E3E06900AAE298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60B926118EC304000AF04DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 861B11EC19E3E06900AAE298;
+			remoteInfo = NotificationCenterWidget;
+		};
+		861B11FB19E3E06900AAE298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60B926118EC304000AF04DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 861B11EC19E3E06900AAE298;
+			remoteInfo = NotificationCenterWidget;
+		};
 		D60B928F18EC304000AF04DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D60B926118EC304000AF04DE /* Project object */;
@@ -87,6 +105,20 @@
 			remoteInfo = HydrateMe;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		861B120019E3E06A00AAE298 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				861B11FA19E3E06900AAE298 /* NotificationCenterWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterSubViewController.h; sourceTree = "<group>"; };
@@ -124,6 +156,14 @@
 		0062D5C918F5F98900BD97FD /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		00FB422718EF5DC60011E26A /* LoggingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingData.h; sourceTree = "<group>"; };
 		00FB422818EF5DC60011E26A /* LoggingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingData.m; sourceTree = "<group>"; };
+		861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationCenterWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		861B11EE19E3E06900AAE298 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		861B11F219E3E06900AAE298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		861B11F319E3E06900AAE298 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		861B11F419E3E06900AAE298 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		861B11F619E3E06900AAE298 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		861B120119E3E07100AAE298 /* NotificationCenterWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NotificationCenterWidget.entitlements; sourceTree = "<group>"; };
+		861B120219E3E09200AAE298 /* HydrateMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HydrateMe.entitlements; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,6 +216,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		861B11EA19E3E06900AAE298 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861B11EF19E3E06900AAE298 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D60B926618EC304000AF04DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,11 +278,32 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		861B11F019E3E06900AAE298 /* NotificationCenterWidget */ = {
+			isa = PBXGroup;
+			children = (
+				861B120119E3E07100AAE298 /* NotificationCenterWidget.entitlements */,
+				861B11F319E3E06900AAE298 /* TodayViewController.h */,
+				861B11F419E3E06900AAE298 /* TodayViewController.m */,
+				861B11F619E3E06900AAE298 /* MainInterface.storyboard */,
+				861B11F119E3E06900AAE298 /* Supporting Files */,
+			);
+			path = NotificationCenterWidget;
+			sourceTree = "<group>";
+		};
+		861B11F119E3E06900AAE298 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				861B11F219E3E06900AAE298 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D60B926018EC304000AF04DE = {
 			isa = PBXGroup;
 			children = (
 				D60B927418EC304000AF04DE /* HydrateMe */,
 				D60B929118EC304000AF04DE /* HydrateMeTests */,
+				861B11F019E3E06900AAE298 /* NotificationCenterWidget */,
 				D60B926B18EC304000AF04DE /* Frameworks */,
 				D60B926A18EC304000AF04DE /* Products */,
 			);
@@ -245,6 +314,7 @@
 			children = (
 				D60B926918EC304000AF04DE /* HydrateMe.app */,
 				D60B928918EC304000AF04DE /* HydrateMeTests.xctest */,
+				861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +329,7 @@
 				D60B927018EC304000AF04DE /* UIKit.framework */,
 				D60B927218EC304000AF04DE /* CoreData.framework */,
 				D60B928A18EC304000AF04DE /* XCTest.framework */,
+				861B11EE19E3E06900AAE298 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,6 +337,7 @@
 		D60B927418EC304000AF04DE /* HydrateMe */ = {
 			isa = PBXGroup;
 			children = (
+				861B120219E3E09200AAE298 /* HydrateMe.entitlements */,
 				D60B927D18EC304000AF04DE /* AppDelegate.h */,
 				D60B927E18EC304000AF04DE /* AppDelegate.m */,
 				D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */,
@@ -376,6 +448,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		861B11EC19E3E06900AAE298 /* NotificationCenterWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 861B11FF19E3E06A00AAE298 /* Build configuration list for PBXNativeTarget "NotificationCenterWidget" */;
+			buildPhases = (
+				861B11E919E3E06900AAE298 /* Sources */,
+				861B11EA19E3E06900AAE298 /* Frameworks */,
+				861B11EB19E3E06900AAE298 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationCenterWidget;
+			productName = NotificationCenterWidget;
+			productReference = 861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D60B926818EC304000AF04DE /* HydrateMe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D60B929B18EC304000AF04DE /* Build configuration list for PBXNativeTarget "HydrateMe" */;
@@ -383,10 +472,13 @@
 				D60B926518EC304000AF04DE /* Sources */,
 				D60B926618EC304000AF04DE /* Frameworks */,
 				D60B926718EC304000AF04DE /* Resources */,
+				861B120019E3E06A00AAE298 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				861B11F919E3E06900AAE298 /* PBXTargetDependency */,
+				861B11FC19E3E06900AAE298 /* PBXTargetDependency */,
 			);
 			name = HydrateMe;
 			productName = HydrateMe;
@@ -420,8 +512,22 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = UNIGULD;
 				TargetAttributes = {
+					861B11EC19E3E06900AAE298 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9V5A6L3R8C;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D60B926818EC304000AF04DE = {
 						DevelopmentTeam = 9V5A6L3R8C;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D60B928818EC304000AF04DE = {
 						TestTargetID = D60B926818EC304000AF04DE;
@@ -442,11 +548,20 @@
 			targets = (
 				D60B926818EC304000AF04DE /* HydrateMe */,
 				D60B928818EC304000AF04DE /* HydrateMeTests */,
+				861B11EC19E3E06900AAE298 /* NotificationCenterWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		861B11EB19E3E06900AAE298 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861B11F719E3E06900AAE298 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D60B926718EC304000AF04DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +622,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		861B11E919E3E06900AAE298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861B11F519E3E06900AAE298 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D60B926518EC304000AF04DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +663,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		861B11F919E3E06900AAE298 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 861B11EC19E3E06900AAE298 /* NotificationCenterWidget */;
+			targetProxy = 861B11F819E3E06900AAE298 /* PBXContainerItemProxy */;
+		};
+		861B11FC19E3E06900AAE298 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 861B11EC19E3E06900AAE298 /* NotificationCenterWidget */;
+			targetProxy = 861B11FB19E3E06900AAE298 /* PBXContainerItemProxy */;
+		};
 		D60B929018EC304000AF04DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D60B926818EC304000AF04DE /* HydrateMe */;
@@ -567,6 +700,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		861B11FD19E3E06A00AAE298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationCenterWidget/NotificationCenterWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NotificationCenterWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		861B11FE19E3E06A00AAE298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = NotificationCenterWidget/NotificationCenterWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = NotificationCenterWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D60B929918EC304000AF04DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -642,6 +815,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HydrateMe/HydrateMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -669,6 +843,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HydrateMe/HydrateMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -734,6 +909,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		861B11FF19E3E06A00AAE298 /* Build configuration list for PBXNativeTarget "NotificationCenterWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				861B11FD19E3E06A00AAE298 /* Debug */,
+				861B11FE19E3E06A00AAE298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D60B926418EC304000AF04DE /* Build configuration list for PBXProject "HydrateMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
