@@ -2,7 +2,7 @@
 //  StatScreenViewController.h
 //  HydrateMe
 //
-//  Created by Shafi on 05/04/14.
+//  Created by Simon on 05/04/14.
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 

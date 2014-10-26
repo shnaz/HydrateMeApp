@@ -2,7 +2,7 @@
 //  StartScreenViewController.m
 //  HydrateMe
 //
-//  Created by Mads Engels on 4/2/14.
+//  Created by Simon on 4/2/14.
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
@@ -13,11 +13,18 @@
 -(void)calculateAndShowDailyFluidGoal;
 -(void)updateGenderImageSelection;
 -(void)updateActivityButtonSelection;
+-(void)updateToogles;
+-(void)checkWeightUnits;
 -(BOOL)isEverythingFilledOut;
+-(int)weightUnitConversion: (int)euWeightInput;
+-(int)fluidUnitConversion: (int)euFluidtInput;
+
 
 @end
 
 @implementation StartScreenViewController
+@synthesize weightUnits;
+@synthesize fluidUnits;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,6 +45,9 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"beenHereBefore"]==nil) {
         //First time app is opened
         
+        [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"usweightunit"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"usfluidunit"];
+        
         //Clear the NSUserdefault database just in case..
         [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
         
@@ -50,8 +60,13 @@
         
     } else {
         int userWeight = [[NSUserDefaults standardUserDefaults] integerForKey:@"userWeight"];
+        
+        
         self.weightLabel.text = [NSString stringWithFormat:@"%d KG", userWeight];
         [self.weightPicker selectRow:(userWeight-20) inComponent:0 animated:YES];
+        
+        [self updateToogles];
+        [self checkWeightUnits];
         
         [self updateActivityButtonSelection];
         [self updateGenderImageSelection];
@@ -89,8 +104,47 @@
 {
     NSNumber *weight = [NSNumber numberWithInt:row + 20];
     
+    
+    
     NSString *title = [weight stringValue];
     NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger userWeight = [defaults integerForKey:@"userWeight"];
+    NSNumber *userWeightAsNumber =  [NSNumber numberWithInt:userWeight];
+    NSString *usUnit = [defaults objectForKey:@"usweightunit"];
+    NSNumber *weightConverted = [NSNumber numberWithInt:[self weightUnitConversion:[userWeightAsNumber integerValue]]];
+    if ([usUnit  isEqual:  @"yes"]) {
+        
+        NSNumber *weight = [NSNumber numberWithInt:row*2 + 20];
+        
+        NSNumber *weightToKgTemp = [NSNumber numberWithInt:(row*2)/2.2046 + 20];
+        [defaults setInteger:[weightToKgTemp integerValue] forKey:@"userWeight"];
+        NSInteger userWeight = [defaults integerForKey:@"userWeight"];
+        userWeightAsNumber =  [NSNumber numberWithInt:userWeight];
+        weightConverted = [NSNumber numberWithInt:[self weightUnitConversion:[userWeightAsNumber integerValue]]];
+      
+     
+
+        
+        title = [weight stringValue];
+        attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        self.weightLabel.text = [NSString stringWithFormat:@"%@ lbs",[weightConverted stringValue]];
+        return attString;
+    }
+    
+    if ([usUnit  isEqual:  @"no"]) {
+        title = [weight stringValue];
+        attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+        self.weightLabel.text = [NSString stringWithFormat:@"%@ KG",[userWeightAsNumber stringValue]];
+        return attString;
+    }
+    
+    
+    
+    
     
     return attString;
 }
@@ -99,11 +153,17 @@
 {
     NSNumber *weight = [NSNumber numberWithInt:row + 20];
     
+  
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:[weight integerValue] forKey:@"userWeight"];
     [defaults synchronize];
     
-    self.weightLabel.text = [NSString stringWithFormat:@"%@ KG",[weight stringValue]];
+      //FOR UNIT CALCULATIONS
+    
+    
+    [self checkWeightUnits];
+    
     [self calculateAndShowDailyFluidGoal];
     pickerView.hidden = YES;
 }
@@ -150,17 +210,19 @@
     
     int waterGoal= ((((userWeight)-20)*15)+1500)*(activityLevel)*(temperatureFactor)* genderFactor;
     
+    //int waterGoalConv = [self fluidUnitConversion:waterGoal];
+    
     [defaults setInteger:waterGoal forKey:@"waterGoal"];
-    self.waterGoalLabel.text = [NSString stringWithFormat:@"%d", waterGoal];
+    self.waterGoalLabel.text = [NSString stringWithFormat:@"%d mL" , waterGoal];
     
     int softDrinkGoal = 500; //maybe another amount i dunno
     [defaults setInteger:softDrinkGoal forKey:@"softDrinkGoal"];
-    self.softDrinkGoalLabel.text = [NSString stringWithFormat:@"%d", softDrinkGoal];
+   // self.softDrinkGoalLabel.text = [NSString stringWithFormat:@"%d", softDrinkGoal];
     
     int coffeeGoal = 750; //maybe another amount i dunno
     [defaults setInteger:coffeeGoal forKey:@"coffeeGoal"];
-    self.coffeeGoalLabel.text = [NSString stringWithFormat:@"%d", coffeeGoal];
-    
+    //self.coffeeGoalLabel.text = [NSString stringWithFormat:@"%d", coffeeGoal];
+    [self checkFluidUnits];
     [defaults synchronize];
 }
 
@@ -258,6 +320,95 @@
 }
 
 
+-(void)updateToogles
+{
+    NSString *weightUnit = [[NSUserDefaults standardUserDefaults] objectForKey:@"usweightunit"];
+    if ([weightUnit isEqualToString:@"yes"]) {
+        self.weightUnits.selectedSegmentIndex=1;
+        
+    } else if([weightUnit isEqualToString:@"no"]) {
+        self.weightUnits.selectedSegmentIndex=0;
+    }
+    
+    NSString *fluidUnit = [[NSUserDefaults standardUserDefaults] objectForKey:@"usfluidunit"];
+    if ([fluidUnit isEqualToString:@"yes"]) {
+        self.fluidUnits.selectedSegmentIndex=0;
+        
+    } else if([fluidUnit isEqualToString:@"no"]) {
+        self.fluidUnits.selectedSegmentIndex=1;
+    }
+    
+    
+}
+
+
+
+
+-(void)checkWeightUnits
+
+{
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger userWeight = [defaults integerForKey:@"userWeight"];
+    NSNumber *userWeightAsNumber =  [NSNumber numberWithInt:userWeight];
+    NSString *usUnit = [defaults objectForKey:@"usweightunit"];
+      NSNumber *weightConverted = [NSNumber numberWithInt:[self weightUnitConversion:[userWeightAsNumber integerValue]]];
+    if ([usUnit  isEqual:  @"yes"]) {
+      
+        self.weightLabel.text = [NSString stringWithFormat:@"%@ lbs",[weightConverted stringValue]];
+    }
+    
+    if ([usUnit  isEqual:  @"no"]) {
+        
+        self.weightLabel.text = [NSString stringWithFormat:@"%@ KG",[userWeightAsNumber stringValue]];
+    }
+
+    
+}
+
+-(void)checkFluidUnits
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     NSString *usFluidUnit = [defaults objectForKey:@"usfluidunit"];
+    NSInteger waterGoal = [defaults integerForKey:@"waterGoal"];
+
+    if ([usFluidUnit  isEqual:  @"no"]) {
+        
+        int waterGoalConverted = [self fluidUnitConversion:waterGoal];
+     
+       
+        self.waterGoalLabel.text = [NSString stringWithFormat:@"%d" , waterGoalConverted];
+        
+        
+    }
+    
+    if ([usFluidUnit  isEqual:  @"yes"]) {
+        
+      self.waterGoalLabel.text = [NSString stringWithFormat:@"%d" , waterGoal];
+    }
+    
+}
+
+
+
+-(int)weightUnitConversion: (int)euWeightInput
+{
+
+    int returnInt = euWeightInput *2.2046;
+    return returnInt;
+}
+
+-(int)fluidUnitConversion: (int)euFluidtInput
+{
+
+    int returnInt = euFluidtInput * 0.0338140227018;
+    return returnInt;
+}
+
+
+
+
 #pragma mark - Lets drink button
 - (IBAction)drinkButton:(id)sender {
     [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"beenHereBefore"];
@@ -269,4 +420,50 @@
 }
 
 
+
+
+
+-(IBAction)weightUnitAction:(UISegmentedControl *)sender
+{
+    switch (self.weightUnits.selectedSegmentIndex)
+    {
+        case 0:
+            [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"usweightunit"];
+            
+            
+           [self checkWeightUnits];
+            break;
+        case 1:
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"usweightunit"];
+          [self checkWeightUnits];
+            break;
+        default: 
+            break; 
+    } 
+}
+
+-(IBAction)fluidUnitAction:(UISegmentedControl *)sender
+{
+    switch (self.fluidUnits.selectedSegmentIndex)
+    {
+        case 0:
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"usfluidunit"];
+            
+            
+            [self calculateAndShowDailyFluidGoal];
+           
+            
+            break;
+        case 1:
+            [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"usfluidunit"];
+            
+            [self calculateAndShowDailyFluidGoal];
+            
+            //  self.textLabel.text = @"Second Segment selected";
+            break;
+        default:
+            [self checkFluidUnits];
+            break;
+    }
+}
 @end

@@ -2,7 +2,7 @@
 //  MainScreenViewController.m
 //  HydrateMe
 //
-//  Created by Shafi on 02/04/14.
+//  Created by Simon on 02/04/14.
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 - (void)calculateCurrentFluidIntakeLevels;
+-(int)getWaterIntakeUntilNow;
 -(NSDictionary *)getFluidIntakesUntilNow;
 
 @end
@@ -91,6 +92,8 @@ WeatherSubViewController *weatherSubViewController;
      name: NSManagedObjectContextObjectsDidChangeNotification
      object: nil];
     
+
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -123,6 +126,7 @@ WeatherSubViewController *weatherSubViewController;
 {
     //NSLog(@"New enities added to CoreData!");
     [self calculateCurrentFluidIntakeLevels];
+    [self sentValuesToNotificationCenter];
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,6 +142,17 @@ WeatherSubViewController *weatherSubViewController;
     int page = floor((self.mainScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;    
     self.mainPageControl.currentPage = page;
 
+}
+
+
+- (void)sentValuesToNotificationCenter
+{
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.uniguld.hydrateme"];
+    
+    NSInteger perCentage =[self getWaterIntakeUntilNow];
+    
+    [sharedDefaults setInteger:perCentage forKey:@"MyNumberKey"];
+    [sharedDefaults synchronize];   // (!!) This is crucial.
 }
 
 - (void)calculateCurrentFluidIntakeLevels
@@ -225,6 +240,25 @@ WeatherSubViewController *weatherSubViewController;
             [NSNumber numberWithInt: softDrinkIntakeUntilNow], @"softDrinkIntake",
             [NSNumber numberWithInt: coffeeIntakeUntilNow], @"coffeeIntake",
             nil];;
+}
+
+
+-(int)getWaterIntakeUntilNow
+{
+    
+    
+    NSDictionary *fluidIntakeSoFar = [self getFluidIntakesUntilNow];
+    float waterIntake =     [[fluidIntakeSoFar objectForKey:@"waterIntake"] floatValue];
+
+    
+    float waterGoal =       [[NSUserDefaults standardUserDefaults] integerForKey:@"waterGoal"];
+   
+    
+    float currentWaterLevel = (waterIntake/waterGoal)*100;
+    int myInt = (int) currentWaterLevel;
+
+    
+    return myInt;
 }
 
 //This switches between the two label, percentage and detailed

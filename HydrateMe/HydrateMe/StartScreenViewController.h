@@ -15,8 +15,12 @@
 // Man-Woman Figures
 - (IBAction)manFigureAction:(id)sender;
 - (IBAction)womanFigureAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *weightUnits;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *fluidUnits;
 @property (weak, nonatomic) IBOutlet UIButton *womanFigureAction;
 @property (nonatomic, retain) IBOutlet UIButton *manFigureAction;
+- (IBAction)weightUnitAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *fluidUnitAction;
 
 // Weight picker
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
@@ -33,8 +37,8 @@
 
 // Fluid goal label
 @property (weak, nonatomic) IBOutlet UILabel *waterGoalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *coffeeGoalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *softDrinkGoalLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *coffeeGoalLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *softDrinkGoalLabel;
 
 // Final Lets Drink button
 - (IBAction)drinkButton:(id)sender;

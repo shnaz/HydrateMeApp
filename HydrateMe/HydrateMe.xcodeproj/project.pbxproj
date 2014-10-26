@@ -26,17 +26,19 @@
 		0031865118EC5DB500528B23 /* sugar_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864B18EC5DB500528B23 /* sugar_final.png */; };
 		0031865218EC5DB500528B23 /* water_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864C18EC5DB500528B23 /* water_final.png */; };
 		0031865518EC64E700528B23 /* caffein_unselected_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031865318EC64E700528B23 /* caffein_unselected_final.png */; };
-		0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */ = {isa = PBXBuildFile; fileRef = 0031865418EC64E700528B23 /* sugar_unselected_final.psd */; };
 		005DDF961907D7210084428C /* GraphSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005DDF941907D7210084428C /* GraphSubViewController.m */; };
 		005DDF971907D7210084428C /* GraphSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005DDF951907D7210084428C /* GraphSubViewController.xib */; };
 		0062D5C718F5DF3100BD97FD /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0062D5C518F5DF3100BD97FD /* TopBarViewController.m */; };
 		0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C618F5DF3100BD97FD /* TopBarViewController.xib */; };
 		0062D5CA18F5F98900BD97FD /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 0062D5C918F5F98900BD97FD /* man.png */; };
 		00FB422918EF5DC60011E26A /* LoggingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422818EF5DC60011E26A /* LoggingData.m */; };
-		861B11EF19E3E06900AAE298 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861B11EE19E3E06900AAE298 /* NotificationCenter.framework */; };
-		861B11F519E3E06900AAE298 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861B11F419E3E06900AAE298 /* TodayViewController.m */; };
-		861B11F719E3E06900AAE298 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861B11F619E3E06900AAE298 /* MainInterface.storyboard */; };
-		861B11FA19E3E06900AAE298 /* NotificationCenterWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86775D4919FD9EB2004DB759 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861B11EE19E3E06900AAE298 /* NotificationCenter.framework */; };
+		86775D4F19FD9EB2004DB759 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86775D4E19FD9EB2004DB759 /* TodayViewController.m */; };
+		86775D5119FD9EB2004DB759 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86775D5019FD9EB2004DB759 /* MainInterface.storyboard */; };
+		86775D5419FD9EB2004DB759 /* HydrateMeQuickInput.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 86775D4819FD9EB2004DB759 /* HydrateMeQuickInput.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8685702519FDAA9000B60BD3 /* glass_final_ncR.png in Resources */ = {isa = PBXBuildFile; fileRef = 86CABF0F19F7DF17005409E7 /* glass_final_ncR.png */; };
+		8685702C19FDB53200B60BD3 /* LoggingDataNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8685702B19FDB53200B60BD3 /* LoggingDataNC.m */; };
+		86CABF1019F7DF17005409E7 /* glass_final_ncR.png in Resources */ = {isa = PBXBuildFile; fileRef = 86CABF0F19F7DF17005409E7 /* glass_final_ncR.png */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -83,19 +85,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		861B11F819E3E06900AAE298 /* PBXContainerItemProxy */ = {
+		86775D5219FD9EB2004DB759 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D60B926118EC304000AF04DE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 861B11EC19E3E06900AAE298;
-			remoteInfo = NotificationCenterWidget;
-		};
-		861B11FB19E3E06900AAE298 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D60B926118EC304000AF04DE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 861B11EC19E3E06900AAE298;
-			remoteInfo = NotificationCenterWidget;
+			remoteGlobalIDString = 86775D4719FD9EB2004DB759;
+			remoteInfo = HydrateMeQuickInput;
 		};
 		D60B928F18EC304000AF04DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -113,7 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				861B11FA19E3E06900AAE298 /* NotificationCenterWidget.appex in Embed App Extensions */,
+				86775D5419FD9EB2004DB759 /* HydrateMeQuickInput.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,7 +141,6 @@
 		0031864B18EC5DB500528B23 /* sugar_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sugar_final.png; sourceTree = "<group>"; };
 		0031864C18EC5DB500528B23 /* water_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_final.png; sourceTree = "<group>"; };
 		0031865318EC64E700528B23 /* caffein_unselected_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caffein_unselected_final.png; sourceTree = "<group>"; };
-		0031865418EC64E700528B23 /* sugar_unselected_final.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = sugar_unselected_final.psd; sourceTree = "<group>"; };
 		005DDF931907D7210084428C /* GraphSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphSubViewController.h; sourceTree = "<group>"; };
 		005DDF941907D7210084428C /* GraphSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphSubViewController.m; sourceTree = "<group>"; };
 		005DDF951907D7210084428C /* GraphSubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphSubViewController.xib; sourceTree = "<group>"; };
@@ -156,14 +150,17 @@
 		0062D5C918F5F98900BD97FD /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		00FB422718EF5DC60011E26A /* LoggingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingData.h; sourceTree = "<group>"; };
 		00FB422818EF5DC60011E26A /* LoggingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingData.m; sourceTree = "<group>"; };
-		861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationCenterWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		861B11EE19E3E06900AAE298 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		861B11F219E3E06900AAE298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		861B11F319E3E06900AAE298 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		861B11F419E3E06900AAE298 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		861B11F619E3E06900AAE298 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		861B120119E3E07100AAE298 /* NotificationCenterWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NotificationCenterWidget.entitlements; sourceTree = "<group>"; };
 		861B120219E3E09200AAE298 /* HydrateMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HydrateMe.entitlements; sourceTree = "<group>"; };
+		86775D4819FD9EB2004DB759 /* HydrateMeQuickInput.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HydrateMeQuickInput.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		86775D4C19FD9EB2004DB759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86775D4D19FD9EB2004DB759 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		86775D4E19FD9EB2004DB759 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		86775D5019FD9EB2004DB759 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		8685702B19FDB53200B60BD3 /* LoggingDataNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingDataNC.m; sourceTree = "<group>"; };
+		8685702D19FDB55200B60BD3 /* LoggingDataNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingDataNC.h; sourceTree = "<group>"; };
+		86CABF0F19F7DF17005409E7 /* glass_final_ncR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glass_final_ncR.png; path = HydrateMe/glass_final_ncR.png; sourceTree = SOURCE_ROOT; };
+		86EB750D19FD9FE000AB5751 /* HydrateMeQuickInput.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HydrateMeQuickInput.entitlements; sourceTree = "<group>"; };
 		D60B926918EC304000AF04DE /* HydrateMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HydrateMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60B926C18EC304000AF04DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D60B926E18EC304000AF04DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,11 +213,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		861B11EA19E3E06900AAE298 /* Frameworks */ = {
+		86775D4519FD9EB2004DB759 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861B11EF19E3E06900AAE298 /* NotificationCenter.framework in Frameworks */,
+				86775D4919FD9EB2004DB759 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +264,6 @@
 				D6AD7BA218F557690073521D /* soda_can.png */,
 				0062D5C918F5F98900BD97FD /* man.png */,
 				0031865318EC64E700528B23 /* caffein_unselected_final.png */,
-				0031865418EC64E700528B23 /* sugar_unselected_final.psd */,
 				0031864718EC5DB500528B23 /* caffein_final.png */,
 				0031864818EC5DB500528B23 /* glass_final.png */,
 				0031864918EC5DB500528B23 /* settings_final.png */,
@@ -278,24 +274,36 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		861B11F019E3E06900AAE298 /* NotificationCenterWidget */ = {
+		86775D4A19FD9EB2004DB759 /* HydrateMeQuickInput */ = {
 			isa = PBXGroup;
 			children = (
-				861B120119E3E07100AAE298 /* NotificationCenterWidget.entitlements */,
-				861B11F319E3E06900AAE298 /* TodayViewController.h */,
-				861B11F419E3E06900AAE298 /* TodayViewController.m */,
-				861B11F619E3E06900AAE298 /* MainInterface.storyboard */,
-				861B11F119E3E06900AAE298 /* Supporting Files */,
+				86EB750D19FD9FE000AB5751 /* HydrateMeQuickInput.entitlements */,
+				8685702D19FDB55200B60BD3 /* LoggingDataNC.h */,
+				8685702B19FDB53200B60BD3 /* LoggingDataNC.m */,
+				86775D4D19FD9EB2004DB759 /* TodayViewController.h */,
+				86775D4E19FD9EB2004DB759 /* TodayViewController.m */,
+				86775D5019FD9EB2004DB759 /* MainInterface.storyboard */,
+				86775D4B19FD9EB2004DB759 /* Supporting Files */,
 			);
-			path = NotificationCenterWidget;
+			path = HydrateMeQuickInput;
 			sourceTree = "<group>";
 		};
-		861B11F119E3E06900AAE298 /* Supporting Files */ = {
+		86775D4B19FD9EB2004DB759 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				861B11F219E3E06900AAE298 /* Info.plist */,
+				86CABF0E19F7DE85005409E7 /* Images */,
+				86775D4C19FD9EB2004DB759 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86CABF0E19F7DE85005409E7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				86CABF0F19F7DF17005409E7 /* glass_final_ncR.png */,
+			);
+			name = Images;
+			path = ../NotificationCenterWidget;
 			sourceTree = "<group>";
 		};
 		D60B926018EC304000AF04DE = {
@@ -303,7 +311,7 @@
 			children = (
 				D60B927418EC304000AF04DE /* HydrateMe */,
 				D60B929118EC304000AF04DE /* HydrateMeTests */,
-				861B11F019E3E06900AAE298 /* NotificationCenterWidget */,
+				86775D4A19FD9EB2004DB759 /* HydrateMeQuickInput */,
 				D60B926B18EC304000AF04DE /* Frameworks */,
 				D60B926A18EC304000AF04DE /* Products */,
 			);
@@ -314,7 +322,7 @@
 			children = (
 				D60B926918EC304000AF04DE /* HydrateMe.app */,
 				D60B928918EC304000AF04DE /* HydrateMeTests.xctest */,
-				861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */,
+				86775D4819FD9EB2004DB759 /* HydrateMeQuickInput.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -410,11 +418,17 @@
 		D6A0DAC718EC3E6F00E97AE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				005DDF931907D7210084428C /* GraphSubViewController.h */,
+				0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */,
+				0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */,
+				0004ED0218EDE9C000EAE3F5 /* SoftDrinkSubViewController.h */,
+				0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */,
+				0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */,
+				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
 				005DDF941907D7210084428C /* GraphSubViewController.m */,
 				D6AD21A319050608008772A4 /* CarTableViewController.h */,
 				D6AD21A419050608008772A4 /* CarTableViewController.m */,
 				D6AD21A519050608008772A4 /* CarTableViewCell.h */,
+				005DDF931907D7210084428C /* GraphSubViewController.h */,
 				D6AD21A619050608008772A4 /* CarTableViewCell.m */,
 				0007A64D18FDBB580029CD2C /* WeatherSubViewController.h */,
 				0007A64E18FDBB580029CD2C /* WeatherSubViewController.m */,
@@ -424,12 +438,6 @@
 				D60B92B018EC395300AF04DE /* StartScreenViewController.m */,
 				0031864218EC419B00528B23 /* MainScreenViewController.h */,
 				0031864318EC419B00528B23 /* MainScreenViewController.m */,
-				0004ECFD18EDE21B00EAE3F5 /* WaterSubViewController.h */,
-				0004ECFE18EDE21B00EAE3F5 /* WaterSubViewController.m */,
-				0004ED0218EDE9C000EAE3F5 /* SoftDrinkSubViewController.h */,
-				0004ED0318EDE9C000EAE3F5 /* SoftDrinkSubViewController.m */,
-				0004ED0718EDEA4900EAE3F5 /* CoffeeSubViewController.h */,
-				0004ED0818EDEA4900EAE3F5 /* CoffeeSubViewController.m */,
 				000846EC18F0B0F1000EB4B2 /* StatScreenViewController.h */,
 				000846ED18F0B0F1000EB4B2 /* StatScreenViewController.m */,
 			);
@@ -448,21 +456,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		861B11EC19E3E06900AAE298 /* NotificationCenterWidget */ = {
+		86775D4719FD9EB2004DB759 /* HydrateMeQuickInput */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 861B11FF19E3E06A00AAE298 /* Build configuration list for PBXNativeTarget "NotificationCenterWidget" */;
+			buildConfigurationList = 86775D5519FD9EB2004DB759 /* Build configuration list for PBXNativeTarget "HydrateMeQuickInput" */;
 			buildPhases = (
-				861B11E919E3E06900AAE298 /* Sources */,
-				861B11EA19E3E06900AAE298 /* Frameworks */,
-				861B11EB19E3E06900AAE298 /* Resources */,
+				86775D4419FD9EB2004DB759 /* Sources */,
+				86775D4519FD9EB2004DB759 /* Frameworks */,
+				86775D4619FD9EB2004DB759 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = NotificationCenterWidget;
-			productName = NotificationCenterWidget;
-			productReference = 861B11ED19E3E06900AAE298 /* NotificationCenterWidget.appex */;
+			name = HydrateMeQuickInput;
+			productName = HydrateMeQuickInput;
+			productReference = 86775D4819FD9EB2004DB759 /* HydrateMeQuickInput.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		D60B926818EC304000AF04DE /* HydrateMe */ = {
@@ -477,8 +485,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				861B11F919E3E06900AAE298 /* PBXTargetDependency */,
-				861B11FC19E3E06900AAE298 /* PBXTargetDependency */,
+				86775D5319FD9EB2004DB759 /* PBXTargetDependency */,
 			);
 			name = HydrateMe;
 			productName = HydrateMe;
@@ -512,8 +519,8 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = UNIGULD;
 				TargetAttributes = {
-					861B11EC19E3E06900AAE298 = {
-						CreatedOnToolsVersion = 6.0.1;
+					86775D4719FD9EB2004DB759 = {
+						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 9V5A6L3R8C;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -548,17 +555,18 @@
 			targets = (
 				D60B926818EC304000AF04DE /* HydrateMe */,
 				D60B928818EC304000AF04DE /* HydrateMeTests */,
-				861B11EC19E3E06900AAE298 /* NotificationCenterWidget */,
+				86775D4719FD9EB2004DB759 /* HydrateMeQuickInput */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		861B11EB19E3E06900AAE298 /* Resources */ = {
+		86775D4619FD9EB2004DB759 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861B11F719E3E06900AAE298 /* MainInterface.storyboard in Resources */,
+				86775D5119FD9EB2004DB759 /* MainInterface.storyboard in Resources */,
+				8685702519FDAA9000B60BD3 /* glass_final_ncR.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +574,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0031865618EC64E700528B23 /* sugar_unselected_final.psd in Resources */,
 				0031864E18EC5DB500528B23 /* glass_final.png in Resources */,
 				D611B66919113F29001F0926 /* icon_40.png in Resources */,
 				0031864F18EC5DB500528B23 /* settings_final.png in Resources */,
@@ -579,6 +586,7 @@
 				D6AD7BA618F557690073521D /* soda_can.png in Resources */,
 				D6AD7BA818F559250073521D /* coffee_cup_final.png in Resources */,
 				D60B92A718EC380D00AF04DE /* womanwhite.png in Resources */,
+				86CABF1019F7DF17005409E7 /* glass_final_ncR.png in Resources */,
 				D69BFA4918F573D400ECD2C7 /* cafe_coffee_final.png in Resources */,
 				0062D5C818F5DF3100BD97FD /* TopBarViewController.xib in Resources */,
 				D69F4AD1190429ED00FFC74E /* whiteman_newblue.png in Resources */,
@@ -622,11 +630,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		861B11E919E3E06900AAE298 /* Sources */ = {
+		86775D4419FD9EB2004DB759 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861B11F519E3E06900AAE298 /* TodayViewController.m in Sources */,
+				86775D4F19FD9EB2004DB759 /* TodayViewController.m in Sources */,
+				8685702C19FDB53200B60BD3 /* LoggingDataNC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,15 +672,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		861B11F919E3E06900AAE298 /* PBXTargetDependency */ = {
+		86775D5319FD9EB2004DB759 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 861B11EC19E3E06900AAE298 /* NotificationCenterWidget */;
-			targetProxy = 861B11F819E3E06900AAE298 /* PBXContainerItemProxy */;
-		};
-		861B11FC19E3E06900AAE298 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 861B11EC19E3E06900AAE298 /* NotificationCenterWidget */;
-			targetProxy = 861B11FB19E3E06900AAE298 /* PBXContainerItemProxy */;
+			target = 86775D4719FD9EB2004DB759 /* HydrateMeQuickInput */;
+			targetProxy = 86775D5219FD9EB2004DB759 /* PBXContainerItemProxy */;
 		};
 		D60B929018EC304000AF04DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -700,11 +704,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		861B11FD19E3E06A00AAE298 /* Debug */ = {
+		86775D5619FD9EB2004DB759 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = NotificationCenterWidget/NotificationCenterWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HydrateMeQuickInput/HydrateMeQuickInput.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -712,8 +716,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = NotificationCenterWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = HydrateMeQuickInput/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -722,16 +726,16 @@
 			};
 			name = Debug;
 		};
-		861B11FE19E3E06A00AAE298 /* Release */ = {
+		86775D5719FD9EB2004DB759 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = NotificationCenterWidget/NotificationCenterWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HydrateMeQuickInput/HydrateMeQuickInput.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = NotificationCenterWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = HydrateMeQuickInput/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -772,7 +776,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -804,7 +808,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -826,7 +830,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
 				INFOPLIST_FILE = "HydrateMe/HydrateMe-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
 					"-ObjC",
@@ -854,7 +858,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HydrateMe/HydrateMe-Prefix.pch";
 				INFOPLIST_FILE = "HydrateMe/HydrateMe-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
 					"-ObjC",
@@ -909,13 +913,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		861B11FF19E3E06A00AAE298 /* Build configuration list for PBXNativeTarget "NotificationCenterWidget" */ = {
+		86775D5519FD9EB2004DB759 /* Build configuration list for PBXNativeTarget "HydrateMeQuickInput" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				861B11FD19E3E06A00AAE298 /* Debug */,
-				861B11FE19E3E06A00AAE298 /* Release */,
+				86775D5619FD9EB2004DB759 /* Debug */,
+				86775D5719FD9EB2004DB759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D60B926418EC304000AF04DE /* Build configuration list for PBXProject "HydrateMe" */ = {
 			isa = XCConfigurationList;

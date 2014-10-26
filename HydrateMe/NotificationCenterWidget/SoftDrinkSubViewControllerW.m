@@ -2,15 +2,15 @@
 //  SoftDrinkSubViewController.m
 //  HydrateMe
 //
-//  Created by Simon on 03/04/14.
+//  Created by Shafi on 03/04/14.
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
-#import "SoftDrinkSubViewController.h"
+#import "SoftDrinkSubViewControllerW.h"
 #import "LoggingData.h"
 #import "AppDelegate.h"
-#import <IBMBluemix/IBMBluemix.h>
-#import <IBMData/IBMData.h>
+//#import <IBMBluemix/IBMBluemix.h>
+//#import <IBMData/IBMData.h>
 
 @interface SoftDrinkSubViewController ()
 
@@ -36,8 +36,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    self.managedObjectContext = appDelegate.managedObjectContext;
+ //   AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+   // self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +66,7 @@
     NSInteger softDrinkIntake = [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkIntake"];
     NSInteger softDrinkGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"softDrinkGoal"];
     if ( (softDrinkIntake+amount) > softDrinkGoal) {
-        [self warnAgainstSoftDrink];
+       // [self warnAgainstSoftDrink];
     }
     
     LoggingData *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LoggingData" inManagedObjectContext:self.managedObjectContext];
@@ -87,15 +87,6 @@
     
 }
 
--(void)warnAgainstSoftDrink
-{
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"WARNING"
-                                                     message:@"Too much softdrink can cause diabetes."
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-    
-    [dialog show];
-}
+
 
 @end

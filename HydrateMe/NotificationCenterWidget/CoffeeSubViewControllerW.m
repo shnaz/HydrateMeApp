@@ -2,15 +2,15 @@
 //  CoffeeSubViewController.m
 //  HydrateMe
 //
-//  Created by Simon on 03/04/14.
+//  Created by Shafi on 03/04/14.
 //  Copyright (c) 2014 UNIGULD. All rights reserved.
 //
 
-#import "CoffeeSubViewController.h"
+#import "CoffeeSubViewControllerW.h"
 #import "LoggingData.h"
 #import "AppDelegate.h"
-#import <IBMBluemix/IBMBluemix.h>
-#import <IBMData/IBMData.h>
+//#import <IBMBluemix/IBMBluemix.h>
+//#import <IBMData/IBMData.h>
 
 @interface CoffeeSubViewController ()
 
@@ -37,8 +37,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    self.managedObjectContext = appDelegate.managedObjectContext;
+ //   AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+//    self.managedObjectContext = appDelegate.managedObjectContext;
 
 }
 
@@ -68,7 +68,7 @@
     NSInteger coffeeGoal =   [[NSUserDefaults standardUserDefaults] integerForKey:@"coffeeGoal"];
     
     if ( (coffeeIntake+amount) > coffeeGoal) {
-        [self warnAgainstCoffee];
+    //    [self warnAgainstCoffee];
     }
     
     
@@ -91,15 +91,5 @@
 }
 
 
--(void)warnAgainstCoffee
-{
-    UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"BE CAREFUL"
-                                                     message:@"Too much caffeine can actually cause dehydration"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-    
-    [dialog show];
-}
 
 @end
