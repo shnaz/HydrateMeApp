@@ -37,8 +37,13 @@
 		86E85FF91A00DD5600D2E7BF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E85FF81A00DD5600D2E7BF /* MainInterface.storyboard */; };
 		86E85FFC1A00DD5600D2E7BF /* HydrateMeWaterInput.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 86E85FF01A00DD5600D2E7BF /* HydrateMeWaterInput.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86E860011A00DF1500D2E7BF /* glass_final.png in Resources */ = {isa = PBXBuildFile; fileRef = 0031864818EC5DB500528B23 /* glass_final.png */; };
-		86E860021A00E12E00D2E7BF /* CoreData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */; };
 		86E860031A00E13B00D2E7BF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927218EC304000AF04DE /* CoreData.framework */; };
+		86E860051A00ECA300D2E7BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
+		86E860091A00EED700D2E7BF /* CoreData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */; };
+		86E8600A1A00EEDC00D2E7BF /* LoggingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB422818EF5DC60011E26A /* LoggingData.m */; };
+		86E8600C1A01207200D2E7BF /* CoreData.xcdatamodel in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */; };
+		86E860151A01340300D2E7BF /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68B495B19C8BC57008906B8 /* IBMBluemix.framework */; };
+		86E860161A01340D00D2E7BF /* IBMData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68B495C19C8BC57008906B8 /* IBMData.framework */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -214,6 +219,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E860151A01340300D2E7BF /* IBMBluemix.framework in Frameworks */,
+				86E860161A01340D00D2E7BF /* IBMData.framework in Frameworks */,
+				86E860051A00ECA300D2E7BF /* CoreGraphics.framework in Frameworks */,
 				86E860031A00E13B00D2E7BF /* CoreData.framework in Frameworks */,
 				86E85FF11A00DD5600D2E7BF /* NotificationCenter.framework in Frameworks */,
 			);
@@ -551,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E8600C1A01207200D2E7BF /* CoreData.xcdatamodel in Resources */,
 				86E85FF91A00DD5600D2E7BF /* MainInterface.storyboard in Resources */,
 				86E860011A00DF1500D2E7BF /* glass_final.png in Resources */,
 			);
@@ -619,8 +628,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E8600A1A00EEDC00D2E7BF /* LoggingData.m in Sources */,
 				86E85FF71A00DD5600D2E7BF /* TodayViewController.m in Sources */,
-				86E860021A00E12E00D2E7BF /* CoreData.xcdatamodel in Sources */,
+				86E860091A00EED700D2E7BF /* CoreData.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +707,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -705,6 +719,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -719,10 +737,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HydrateMeWaterInput/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -905,6 +931,7 @@
 				86E85FFF1A00DD5600D2E7BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D60B926418EC304000AF04DE /* Build configuration list for PBXProject "HydrateMe" */ = {
 			isa = XCConfigurationList;
