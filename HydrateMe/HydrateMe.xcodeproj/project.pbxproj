@@ -44,6 +44,7 @@
 		86E8600C1A01207200D2E7BF /* CoreData.xcdatamodel in Resources */ = {isa = PBXBuildFile; fileRef = D60B92A118EC374300AF04DE /* CoreData.xcdatamodel */; };
 		86E860151A01340300D2E7BF /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68B495B19C8BC57008906B8 /* IBMBluemix.framework */; };
 		86E860161A01340D00D2E7BF /* IBMData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68B495C19C8BC57008906B8 /* IBMData.framework */; };
+		86E8601A1A0A5ECD00D2E7BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60B927E18EC304000AF04DE /* AppDelegate.m */; };
 		D60B926D18EC304000AF04DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926C18EC304000AF04DE /* Foundation.framework */; };
 		D60B926F18EC304000AF04DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B926E18EC304000AF04DE /* CoreGraphics.framework */; };
 		D60B927118EC304000AF04DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60B927018EC304000AF04DE /* UIKit.framework */; };
@@ -628,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E8601A1A0A5ECD00D2E7BF /* AppDelegate.m in Sources */,
 				86E8600A1A00EEDC00D2E7BF /* LoggingData.m in Sources */,
 				86E85FF71A00DD5600D2E7BF /* TodayViewController.m in Sources */,
 				86E860091A00EED700D2E7BF /* CoreData.xcdatamodel in Sources */,
